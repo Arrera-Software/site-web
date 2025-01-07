@@ -1,0 +1,104 @@
+    .container-g {
+        display: flex;
+        background-color: white;
+        color: var(--apple-black);
+        padding: 40px;
+        border-radius: 10px;
+        margin: 100px auto;
+        flex-direction: row;
+        width: 90%;
+        max-width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .image-section {
+        flex: 0 0 30%;
+    }
+
+    h1 {
+        margin-right: 0;
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .text-section {
+        flex: 2;
+        padding-left: 20px;
+    }
+
+    .img {
+        width: 100%;
+        height: auto;
+    }
+
+    .services-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 40px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .service-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-icon img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .service-card h2 {
+        color: var(--apple-black);
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .service-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .download-link, .learn-more {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .download-link {
+        background-color: #007AFF;
+        color: white;
+    }
+
+    .learn-more {
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    .download-link:hover {
+        background-color: #0056b3;
+    }
+
+    .learn-more:hover {
+        background-color: #e5e5e5;
+    }

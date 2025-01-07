@@ -24,6 +24,7 @@
                     <a href="index" class="header-link">Accueil</a>
                     <a href="assitant" class="header-link">Assistant</a>
                     <a href="" class="header-link">Contact</a>
+                    <a href="interface" class="header-link">Interface</a>
                     <a href="a-propos" class="header-link">A propos</a>
 
                 </div>

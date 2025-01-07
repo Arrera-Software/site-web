@@ -13,7 +13,7 @@
 .services-hero {
     text-align: center;
     padding: 120px 0;
-    color: --apple-gray;
+    color: var(--apple-gray);
 }
 .services-hero h1 {
     font-size: 48px;

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assitant</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/assistant.css">
 
 </head>
 <body>
@@ -22,7 +23,9 @@
                 <!-- Navigation -->
                 <div class="header-links">
                     <a href="index" class="header-link">Accueil</a>
-                    <a href="assitant" class="header-link">Assistant</a>
+                    <a href="services" class="header-link">Assistant</a>
+                    <a href="interface" class="header-link">Interface</a>
+
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">A propos</a>
 
@@ -37,7 +40,7 @@
             <p class="hero-subtitle">Des outils puissants pour votre productivité</p>
         </section>
 
-   
+        <section class="services-grid">
             <!-- Arrera SIX -->
             <div class="service-card">
                 <div class="service-icon">
@@ -88,7 +91,7 @@
       <footer class="main-footer">
         <div class="container">
             <p class="copyright">
-                © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
+                © 2025 Arrera-Software | Tous droits réservés
             </p>
         </div>
     </footer>
