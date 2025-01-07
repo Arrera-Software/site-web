@@ -1,12 +1,11 @@
 /* Section hÃ©ro style Apple */
 .hero-section {
     background-color: var(--apple-white);
-    margin-top: 200px;
+    margin-top: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 44px;
 }
 
 .container-accueil {
