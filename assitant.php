@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assitant</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/assistant.css">
 
 </head>
 <body>
@@ -38,6 +38,21 @@
         </section>
 
         <section class="services-grid">
+        <!-- Arrera Interface -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/interface-icon.webp" alt="Arrera Interface">
+                    </div>
+                    <h2>Arrera Interface</h2>
+                    <p>Arrera SIX est le premier assistant créé par Arrera. Il a pour but de lancer des tâches sur votre ordinateur à l'aide de commandes vocales.</p>
+                    <div class="service-links">
+                        <a href="#" class="download-link">Télécharger</a>
+                        <a href="#" class="learn-more">Code source</a>
+                        <a href="#" class="learn-more">Toutes les versions</a>
+                    </div>
+                </div>
+
+
             <!-- Arrera SIX -->
             <div class="service-card">
                 <div class="service-icon">
