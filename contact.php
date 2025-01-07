@@ -22,7 +22,7 @@
                 <!-- Navigation -->
                 <div class="header-links">      
                     <a href="index" class="header-link">Accueil</a>
-                    <a href="services" class="header-link">Services</a>
+                    <a href="services" class="header-link">Assistant</a>
                     <a href="" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">A propos</a>
 
@@ -34,7 +34,7 @@
     <main class="contact-container">
         <div class="contact-form-wrapper">
             <h1>Contactez-nous</h1>
-            <form class="contact-form">
+            <form class="contact-form" method="POST" action="scripts/email.php">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required>
                     <label for="name">Nom</label>
@@ -53,6 +53,11 @@
                 <div class="form-group">
                     <textarea id="message" name="message" required></textarea>
                     <label for="message">Message</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="prenom" name="prenom" required>
+                    <label for="prenom">Prénom</label>
                 </div>
                 
                 <button type="submit" class="submit-btn">Envoyer</button>

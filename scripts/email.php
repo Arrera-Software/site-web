@@ -1,4 +1,14 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php'; // Si vous utilisez Composer
+
+// Vérifier si le fichier de configuration existe
+if (!file_exists('../config.php')) {
+    die('Le fichier de configuration est manquant');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
