@@ -39,6 +39,11 @@
                     <input type="text" id="name" name="name" required>
                     <label for="name">Nom</label>
                 </div>
+
+                <div class="form-group">
+                    <input type="text" id="prenom" name="prenom" required>
+                    <label for="prenom">Prénom</label>
+                </div>
                 
                 <div class="form-group">
                     <input type="email" id="email" name="email" required>
@@ -55,10 +60,7 @@
                     <label for="message">Message</label>
                 </div>
                 
-                <div class="form-group">
-                    <input type="text" id="prenom" name="prenom" required>
-                    <label for="prenom">Prénom</label>
-                </div>
+        
                 
                 <button type="submit" class="submit-btn">Envoyer</button>
             </form>
