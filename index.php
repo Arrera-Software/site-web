@@ -33,7 +33,7 @@
 
     <!-- Section de présentation style Apple -->
     <section class="hero-section dark-theme">
-        <div class="container">
+        <div class="container-accueil">
             <h1 class="title">Arrera Software<br></h1>
             <h2 class="texte">Une organisation de développement de logiciels open-source spécialisée dans les assistants personnels.</h2>
         </div>
