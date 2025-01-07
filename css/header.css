@@ -15,7 +15,7 @@
   
   /* Reset de base */
   * {
-    /* margin: 0; */
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
