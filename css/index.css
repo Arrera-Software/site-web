@@ -9,7 +9,7 @@
 }
 
 .container-accueil {
-    background: linear-gradient(to bottom, #2440ffa6, #ffffffc7);
+    background: linear-gradient(to bottom, #ffffffa6, #ffffffc7);
     border-radius: 16px;
     padding: 15px;
     transition: all 0.8s ease-in-out;
@@ -18,7 +18,7 @@
 }
 
 .container-accueil:hover {
-    background: linear-gradient(to bottom, #2440ffa6, #ffffffc7);
+    background: linear-gradient(to top, #b8b8b8a6, #ffffffc7);
     background-size: 200% 200%;
     background-position: 0% 100%;
     transition: all 0.8s ease-in-out;
