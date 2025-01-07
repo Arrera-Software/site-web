@@ -8,7 +8,7 @@
 
   body {
     background-color: #1d1d1f;  /* Fond sombre d'Apple */
-    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenêtre */
+    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃªtre */
     display: flex;
     flex-direction: column; /* Organise le contenu verticalement */
 }
@@ -51,7 +51,7 @@
   /* Style du logo */
   .logo-img {
       height: 40px;
-      margin-top: 10px;
+      margin-top: 20px;
   }
   
   /* Navigation links */
@@ -86,7 +86,7 @@
     text-align: center;
     margin-top: auto; /* Pousse le footer vers le bas */
     width: 100%;
-    position: relative; /* Assure que le footer reste en bas même avec peu de contenu */
+    position: relative; /* Assure que le footer reste en bas mÃªme avec peu de contenu */
     bottom: 0;
 }
 
@@ -103,7 +103,7 @@
 
 @media (max-width: 768px) {
     .main-header .container {
-        padding: 0 20px; /* Réduire le padding sur les petits écrans */
+        padding: 0 20px; /* RÃ©duire le padding sur les petits Ã©crans */
     }
 
     .logo-img {
@@ -115,10 +115,10 @@
     
     
     .header-links {
-        flex-direction: row; /* Aligner les éléments horizontalement */
+        flex-direction: row; /* Aligner les Ã©lÃ©ments horizontalement */
         margin-top : 120px;
         margin-left : -350px;
-        gap: px; /* Réduire l'espace entre les liens */
+        gap: px; /* RÃ©duire l'espace entre les liens */
     }
 }
     

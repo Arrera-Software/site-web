@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services</title>
+    <title>Assitant</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/services.css">
 
@@ -22,7 +22,7 @@
                 <!-- Navigation -->
                 <div class="header-links">
                     <a href="index" class="header-link">Accueil</a>
-                    <a href="" class="header-link">Services</a>
+                    <a href="services" class="header-link">Assistant</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">A propos</a>
 
