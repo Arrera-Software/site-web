@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.mail.ovh.net'; // Remplacez par votre serveur SMTP
         $mail->SMTPAuth = true;
-        $mail->Username = 'contact@arrera-software.com'; // Remplacez par votre adresse email
+        $mail->Username = 'contact@arrera-software.fr'; // Remplacez par votre adresse email
         $mail->Password = $config['smtp_password']; // Utilisez le mot de passe de votre fichier config.php
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Destinataires
         $mail->setFrom($email, "$nom $prenom");
-        $mail->addAddress('contact@arrera-software.com');
+        $mail->addAddress('contact@arrera-software.fr');
 
         // Contenu de l'email
         $mail->isHTML(false);
