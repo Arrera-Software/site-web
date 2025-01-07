@@ -9,18 +9,6 @@
 
 </head>
 <body>
-    
-<audio id="audio" src="img/logopng.mp3" style="display:none;" autoplay loop></audio>
-<script>
-  // Réglez le volume une fois que l'audio est chargé
-  document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('audio');
-    audio.volume = 0.5; // Régler le volume à 50%
-    audio.play().catch(error => {
-      console.warn("L'audio ne peut pas être lu automatiquement à cause des restrictions du navigateur. L'utilisateur doit interagir avec la page.");
-    });
-  });
-</script>
     <!-- Header principal -->
     <header class="main-header">
         <div class="container">
