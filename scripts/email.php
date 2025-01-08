@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../vendor/autoload.php'; // Si vous utilisez Composer
 
 // Vérifier si le fichier de configuration existe
-if (!file_exists('../config.php')) {
+if (!file_exists('../configmail.php')) {
     die('Le fichier de configuration est manquant');
 }
 

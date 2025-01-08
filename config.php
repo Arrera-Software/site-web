@@ -1,9 +1,5 @@
 <?php
 
-return [
-    'smtp_password' => 'uD^5m@r6t}3*S9z',
-];
-
 
 // Charger les variables d'environnement depuis .env
 $envFile = __DIR__ . '/.env';
@@ -27,7 +23,7 @@ try {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]
     );
-} catch(PDOException $e) {
+} catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
 ?>
