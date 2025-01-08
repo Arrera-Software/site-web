@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Connexion réussie
             session_start(); // Démarrer la session
             $_SESSION['identifiant'] = $user; // Ajouter l'identifiant dans la session
-            echo "vive apple";
+            header("Location: https://c.tenor.com/gYFRUvpL0jUAAAAd/tenor.gif");
         } else {
             // Échec de la connexion
             echo "1.Nom d'utilisateur ou mot de passe incorrect.";
