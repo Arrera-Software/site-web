@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // Vérification de l'identifiant unique
-        $check_stmt = $pdo->prepare("SELECT COUNT(*) FROM user WHERE identifiant = ?");
-        $check_stmt->execute([$identifiant]);
+        $checkuser = $pdo->prepare("SELECT COUNT(*) FROM user WHERE identifiant = ?");
+        $checkuser->execute([$identifiant]);
         
-        if ($check_stmt->fetchColumn() > 0) {
+        if ($checkuser->fetchColumn() > 0) {
             echo "<script>console.log('Cet identifiant existe déjà.');</script>";
             header("Location: ../connexion");
             exit();
