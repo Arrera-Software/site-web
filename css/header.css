@@ -46,7 +46,9 @@
       align-items: center;
       justify-content: center;
       height: 44px;
-  }
+      background-color: var(--apple-black);
+      padding : 30px;
+    }
   
   /* Style du logo */
   .logo-img {
