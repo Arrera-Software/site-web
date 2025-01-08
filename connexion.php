@@ -36,8 +36,8 @@
             <h1>Espace membre</h1>
             <form class="login-form" action="scripts/login.php" method="POST">
                 <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder=" " required>
-                    <label for="email">Adresse email</label>
+                    <input type="text" id="identifiant" name="identifiant" placeholder=" " required>
+                    <label for="text">Identifiant</label>
                 </div>
                 
                 <div class="form-group">
