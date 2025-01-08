@@ -32,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérifier le mot de passe
         if (password_verify($pass, $row['password'])) {
             // Connexion réussie
+            session_start(); // Démarrer la session
+            $_SESSION['identifiant'] = $user; // Ajouter l'identifiant dans la session
             echo "vive apple";
         } else {
             // Échec de la connexion

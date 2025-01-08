@@ -44,7 +44,7 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface I2025</h1>
+            <h1>Arrera Interface 2025</h1>
             <p>Prochaine version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
@@ -62,7 +62,7 @@
             <p>Module de traitement de texte développé pour fonctionner avec les assistants d'Arrera</p>
             <div class="service-links">
 
-                <a href="#" class="learn-more">Code source</a>
+                <a href="https://github.com/Arrera-Software/Arrera-Postite" class="learn-more">Code source</a>
             </div>
         </div>
         <div class="service-card">
@@ -73,7 +73,7 @@
             <p>Module permettant d'avoir une interface pour accéder à des raccourcis web, lançable depuis les assistants.</p>
             <div class="service-links">
 
-                <a href="#" class="learn-more">Code source</a>
+                <a href="https://github.com/Arrera-Software/Arrera-raccourci" class="learn-more">Code source</a>
             </div>
         </div>
         <div class="service-card">
@@ -84,7 +84,7 @@
             <p>Module inclus directement dans l'interface pour installer les différents modules disponibles et les maintenir à jour.</p>
             <div class="service-links">
 
-                <a href="#" class="learn-more">Code source</a>
+                <a href="https://github.com/Arrera-Software/Arrera-Tiger-Interface" class="learn-more">Code source</a>
             </div>
         </div>
         <div class="service-card">
@@ -95,7 +95,7 @@
             <p>Application pour télécharger des vidéos YouTube, soit en vidéo, soit en musique.</p>
             <div class="service-links">
 
-                <a href="#" class="learn-more">Code source</a>
+                <a href="https://github.com/Arrera-Software/Arrera-VideoDownload" class="learn-more">Code source</a>
             </div>
         </div>
 
