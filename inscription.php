@@ -34,7 +34,7 @@
     <main class="login-container">
         <div class="login-form-wrapper">
             <h1>Inscription de membre</h1>
-            <form class="login-form" action="scripts/login.php" method="POST">
+            <form class="login-form" action="scripts/inscription.php" method="POST">
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder=" " required>
                     <label for="email">Adresse email</label>
@@ -56,6 +56,26 @@
                     togglePassword.addEventListener('click', function (e) {
                         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
                         password.setAttribute('type', type);
+                        this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+                    });
+                </script>
+
+                <div class="form-group">
+                    <div style="position: relative;">
+                        <input type="password" id="password2" name="password2" placeholder=" " required>
+                        <label for="password2">Confirmer le mot de passe</label>
+                        <button type="button" id="togglePassword2" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+                <script>
+                    const togglePassword2 = document.querySelector('#togglePassword2');
+                    const password2 = document.querySelector('#password2');
+                    
+                    togglePassword2.addEventListener('click', function (e) {
+                        const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+                        password2.setAttribute('type', type);
                         this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
                     });
                 </script>
