@@ -38,6 +38,8 @@
         <section class="image-section">
             <img src="img/logo-arrera.webp" alt="Arrera Software" class="img">
         </section>
+        <a href="#" class="download-interface">Télécharger</a>
+
     </div>
 
     
@@ -55,6 +57,48 @@
                 <a href="#" class="learn-more">Toutes les versions</a>
             </div>
         </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="img/#.webp" alt="LOGO">
+            </div>
+            <h2>Titre application</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <div class="service-links">
+                <a href="#" class="download-link">Télécharger</a>
+                <a href="#" class="learn-more">Code source</a>
+                <a href="#" class="learn-more">Toutes les versions</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="img/#.webp" alt="LOGO">
+            </div>
+            <h2>Titre application</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <div class="service-links">
+                <a href="#" class="download-link">Télécharger</a>
+                <a href="#" class="learn-more">Code source</a>
+                <a href="#" class="learn-more">Toutes les versions</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <img src="img/#.webp" alt="LOGO">
+            </div>
+            <h2>Titre application</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <div class="service-links">
+                <a href="#" class="download-link">Télécharger</a>
+                <a href="#" class="learn-more">Code source</a>
+                <a href="#" class="learn-more">Toutes les versions</a>
+            </div>
+        </div>
+
+        
+
     </main>
 
     <!-- Footer -->
