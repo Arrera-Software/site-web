@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/connexion.css">
+    <link rel="stylesheet" href="css/inscription.css">
 
 </head>
 <body>
@@ -21,7 +21,6 @@
                 </div>
                 <!-- Navigation -->
                 <div class="header-links">
-                    <a href="index" class="header-link">Accueil</a>
                     <a href="services" class="header-link">Assistant</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">A propos</a>
