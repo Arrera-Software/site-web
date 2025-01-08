@@ -21,7 +21,6 @@
                 </div>
                 <!-- Navigation -->
                 <div class="header-links">
-                    <a href="index" class="header-link">Accueil</a>
                     <a href="assitant" class="header-link">Assistant</a>
                     <a href="interface" class="header-link">Interface</a>
                     <a href="contact" class="header-link">Contact</a>

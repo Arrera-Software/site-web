@@ -20,8 +20,7 @@
                     </a>
                 </div>
                 <!-- Navigation -->
-                <div class="header-links">      
-                    <a href="index" class="header-link">Accueil</a>
+                <div class="header-links">
                     <a href="assitant" class="header-link">Assistant</a>
                     <a href="" class="header-link">Contact</a>
                     <a href="interface" class="header-link">Interface</a>
