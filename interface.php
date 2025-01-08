@@ -34,7 +34,6 @@
         <div class="text-section">
             <h1>Arrera Interface I2024</h1>
             <p>Première version de l'interface Arrera.</p>
-            <a href="" class="download-link">Télécharger</a>
         </div>
         <section class="image-section">
             <img src="img/ArreraI2024.webp" alt="Arrera Interface I2024" class="img">
@@ -47,11 +46,11 @@
         <div class="text-section">
             <h1>Arrera Interface I2025</h1>
             <p>Prochaine version de l'interface Arrera.</p>
-            <a href="" class="download-link">Voir les sources</a>
         </div>
         <section class="image-section">
-            <img src="img/#.webp" alt="Arrera Interface I2025" class="img">
+            <img src="img/i2025-icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
+        <a href="#" class="download-interface">Voir les sources</a>
     </div>
 
     <main class="services-container">
@@ -100,7 +99,7 @@
             </div>
         </div>
 
-        <div class="service-card">
+        <!--<div class="service-card">
             <div class="service-icon">
                 <img src="img/#.webp" alt="LOGO">
             </div>
@@ -111,35 +110,7 @@
                 <a href="#" class="learn-more">Code source</a>
                 <a href="#" class="learn-more">Toutes les versions</a>
             </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="img/#.webp" alt="LOGO">
-            </div>
-            <h2>Titre application</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-            <div class="service-links">
-                <a href="#" class="download-link">Télécharger</a>
-                <a href="#" class="learn-more">Code source</a>
-                <a href="#" class="learn-more">Toutes les versions</a>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="img/#.webp" alt="LOGO">
-            </div>
-            <h2>Titre application</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-            <div class="service-links">
-                <a href="#" class="download-link">Télécharger</a>
-                <a href="#" class="learn-more">Code source</a>
-                <a href="#" class="learn-more">Toutes les versions</a>
-            </div>
-        </div>
-
-        
+        </div>-->
 
     </main>
 
