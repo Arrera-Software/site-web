@@ -61,7 +61,7 @@
             <h2>Arrera Postite</h2>
             <p>Module de traitement de texte développé pour fonctionner avec les assistants d'Arrera</p>
             <div class="service-links">
-                <a href="#" class="download-link">Télécharger</a>
+
                 <a href="#" class="learn-more">Code source</a>
             </div>
         </div>
@@ -72,7 +72,7 @@
             <h2>Arrera Raccourci</h2>
             <p>Module permettant d'avoir une interface pour accéder à des raccourcis web, lançable depuis les assistants.</p>
             <div class="service-links">
-                <a href="#" class="download-link">Télécharger</a>
+
                 <a href="#" class="learn-more">Code source</a>
             </div>
         </div>
@@ -83,7 +83,7 @@
             <h2>Arrera Tiger</h2>
             <p>Module inclus directement dans l'interface pour installer les différents modules disponibles et les maintenir à jour.</p>
             <div class="service-links">
-                <a href="#" class="download-link">Télécharger</a>
+
                 <a href="#" class="learn-more">Code source</a>
             </div>
         </div>
@@ -94,7 +94,7 @@
             <h2>Arrera Video download</h2>
             <p>Application pour télécharger des vidéos YouTube, soit en vidéo, soit en musique.</p>
             <div class="service-links">
-                <a href="#" class="download-link">Télécharger</a>
+
                 <a href="#" class="learn-more">Code source</a>
             </div>
         </div>
