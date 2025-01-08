@@ -33,7 +33,7 @@
     <div class="container-g">
         <div class="text-section">
             <h1>Arrera Interface I2024</h1>
-            <p>Premier version de l'interface Arrera</p>
+            <p>Première version de l'interface Arrera.</p>
             <a href="" class="download-link">Télécharger</a>
         </div>
         <section class="image-section">
@@ -44,7 +44,7 @@
     <div class="container-g">
         <div class="text-section">
             <h1>Arrera Interface I2025</h1>
-            <p>Prochainne version de l'interface Arrera</p>
+            <p>Prochaine version de l'interface Arrera.</p>
             <a href="" class="download-link">Voir les sources</a>
         </div>
         <section class="image-section">
@@ -58,7 +58,7 @@
                 <img src="img/postite.webp" alt="LOGO">
             </div>
             <h2>Arrera Postite</h2>
-            <p>Module de traitement de texte développer pour fonction avec les assistants d'Arrera</p>
+            <p>Module de traitement de texte développé pour fonctionner avec les assistants d'Arrera</p>
             <div class="service-links">
                 <a href="#" class="download-link">Télécharger</a>
                 <a href="#" class="learn-more">Code source</a>
@@ -69,7 +69,7 @@
                 <img src="img/arrera-raccourci.webp" alt="LOGO">
             </div>
             <h2>Arrera Raccourci</h2>
-            <p>Module qui permet d'avoir une interface pour avoir des raccourcie web et qui sois lansable depuis les assistants</p>
+            <p>Module permettant d'avoir une interface pour accéder à des raccourcis web, lançable depuis les assistants.</p>
             <div class="service-links">
                 <a href="#" class="download-link">Télécharger</a>
                 <a href="#" class="learn-more">Code source</a>
@@ -80,7 +80,7 @@
                 <img src="img/ArreraTiger.webp" alt="LOGO">
             </div>
             <h2>Arrera Tiger</h2>
-            <p>Module inclus directement dans l'interface pour installer les différents modules disponible et de les matenir a jour</p>
+            <p>Module inclus directement dans l'interface pour installer les différents modules disponibles et les maintenir à jour.</p>
             <div class="service-links">
                 <a href="#" class="download-link">Télécharger</a>
                 <a href="#" class="learn-more">Code source</a>
@@ -91,7 +91,7 @@
                 <img src="img/ArreraVideoDownload.webp" alt="LOGO">
             </div>
             <h2>Arrera Video download</h2>
-            <p>Application pour télécharger des video youtubes sois en video ou en musique</p>
+            <p>Application pour télécharger des vidéos YouTube, soit en vidéo, soit en musique.</p>
             <div class="service-links">
                 <a href="#" class="download-link">Télécharger</a>
                 <a href="#" class="learn-more">Code source</a>
