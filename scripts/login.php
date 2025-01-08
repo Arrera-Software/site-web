@@ -35,11 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "vive apple";
         } else {
             // Échec de la connexion
-            echo "1Nom d'utilisateur ou mot de passe incorrect.";
+            echo "1.Nom d'utilisateur ou mot de passe incorrect.";
         }
     } else {
         // Échec de la connexion
-        echo "2Nom d'utilisateur ou mot de passe incorrect.";
+        echo "2.Nom d'utilisateur ou mot de passe incorrect.";
     }
 }
 ?>
