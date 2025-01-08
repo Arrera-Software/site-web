@@ -22,7 +22,7 @@
                 </div>
                 <!-- Navigation -->
                 <div class="header-links">
-                    <a href="services" class="header-link">Assistant</a>
+                    <a href="assistant" class="header-link">Assistant</a>
                     <a href="interface" class="header-link">Interface</a>
 
                     <a href="contact" class="header-link">Contact</a>
