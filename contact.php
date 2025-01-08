@@ -6,7 +6,7 @@
     <title>Contact</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/contact.css">
-
+    <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
     <!-- Header principal -->

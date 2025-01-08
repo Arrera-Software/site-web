@@ -7,7 +7,7 @@
     <title>Assitant</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/assistant.css">
-
+    <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
     <!-- Header principal -->
