@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -52,11 +51,21 @@
                 <script>
                     const togglePassword = document.querySelector('#togglePassword');
                     const password = document.querySelector('#password');
+                    const password2 = document.querySelector('#password2');
+                    const form = document.querySelector('.login-form');
                     
                     togglePassword.addEventListener('click', function (e) {
                         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
                         password.setAttribute('type', type);
                         this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+                    });
+
+                    // Vérification des mots de passe
+                    form.addEventListener('submit', function(e) {
+                        if (password.value !== password2.value) {
+                            e.preventDefault();
+                            alert('Les mots de passe ne correspondent pas !');
+                        }
                     });
                 </script>
 
@@ -71,7 +80,6 @@
                 </div>
                 <script>
                     const togglePassword2 = document.querySelector('#togglePassword2');
-                    const password2 = document.querySelector('#password2');
                     
                     togglePassword2.addEventListener('click', function (e) {
                         const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';

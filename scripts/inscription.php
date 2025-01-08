@@ -1,5 +1,21 @@
 <?php
-require_once '../config.php';
+// Afficher les erreurs pour le débogage
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Vérifier si le fichier config.php existe
+$configFile = __DIR__ . '/../config.php';
+if (!file_exists($configFile)) {
+    die("Le fichier config.php n'existe pas dans : " . $configFile);
+}
+
+// Inclure le fichier de configuration
+require_once $configFile;
+
+// Vérifier si $pdo est défini
+if (!isset($pdo)) {
+    die("La connexion PDO n'a pas été établie correctement");
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $identifiant = $_POST['identifiant'];
@@ -8,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérification de la correspondance des mots de passe
     if ($password !== $password2) {
-        echo "<script>alert('Les mots de passe ne correspondent pas.');</script>";
+        echo "<script>console.log('Les mots de passe ne correspondent pas.');</script>";
         header("Location: ../inscription");
         exit();
     }
@@ -19,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $check_stmt->execute([$identifiant]);
         
         if ($check_stmt->fetchColumn() > 0) {
-            echo "<script>alert('Cet identifiant existe déjà.');</script>";
+            echo "<script>console.log('Cet identifiant existe déjà.');</script>";
             header("Location: ../connexion");
             exit();
         }
@@ -35,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
 
     } catch (PDOException $e) {
-        echo "<script>alert('Erreur, veuillez réessayer.');</script>";
+        echo "<script>console.log('Erreur, veuillez réessayer.');</script>";
         header("Location: ../inscription");
         exit();
     }
