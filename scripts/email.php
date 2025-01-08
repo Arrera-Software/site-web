@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sujet = $_POST['sujet'];
     $message = $_POST['message'];
 
-    $config = require '../config.php'; // Inclure le fichier de configuration
+    $config = require '../configmail.php'; // Inclure le fichier de configuration
 
     $mail = new PHPMailer(true);
 
