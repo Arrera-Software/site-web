@@ -84,10 +84,10 @@ echo '</div>'; // Ferme la div de la popup
 $pdo = null; // Ferme la connexion PDO
 ?>
 
-<!-- NE PAS SUPPRIMER SINON !!! -->
+<!-- NE PAS SUPPRIMER  !!! -->
 
 <main class="container-articles">
-    <!-- Les articles seront affichés ici -->
+    <!-- Les articles seront affichés dynamiquement ici -->
 </main>
 
 <!-- Footer -->
