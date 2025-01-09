@@ -38,21 +38,28 @@
 <?php
 // Charger les variables d'environnement à partir du fichier .env
 require 'vendor/autoload.php'; // Assurez-vous que le chemin vers le fichier autoload est correct
- // Start of Selection
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__); // Crée une instance de Dotenv pour charger les variables d'environnement depuis le dossier courant
-$dotenv->load(); // Charge les variables d'environnement
 
+$envFile = __DIR__ . '/.env'; // Chemin vers le fichier .env
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+            list($key, $value) = explode('=', $line, 2);
+            $_ENV[trim($key)] = trim($value); // Charge les variables d'environnement
+        }
+    }
+}
 // Connexion à la base de données avec les informations d'identification stockées dans les variables d'environnement
-$conn = new PDO($_ENV['DB_DSN'], $_ENV['DB_USER'], $_ENV['DB_PASS']); // Crée une nouvelle connexion PDO
-
-// Vérification de la connexion à la base de données
-if ($conn->connect_error) { // Si une erreur de connexion se produit
-    die("Échec de la connexion: " . $conn->connect_error); // Affiche un message d'erreur et arrête l'exécution
+try {
+    $conn = new PDO("mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_NAME']};charset=utf8", $_ENV['DB_USER'], $_ENV['DB_PASS']); // Crée une nouvelle connexion PDO
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Définit le mode d'erreur
+} catch (PDOException $e) {
+    die("Échec de la connexion: " . $e->getMessage()); // Affiche un message d'erreur et arrête l'exécution
 }
 
 // Requête SQL pour récupérer les articles de la base de données
 $sql = "SELECT titre, contenu, image FROM articles"; // Déclare la requête SQL
-$result = $conn->query($pdo); // Exécute la requête et stocke le résultat
+$result = $conn->query($sql); // Exécute la requête et stocke le résultat
 
 // Affichage des articles récupérés
 if ($result->num_rows > 0) { // Vérifie s'il y a des articles dans le résultat
