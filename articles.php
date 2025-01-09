@@ -62,8 +62,8 @@ $sql = "SELECT titre, contenu, pj_image FROM articles"; // Déclare la requête 
 $result = $conn->query($sql); // Exécute la requête et stocke le résultat
 
 // Affichage des articles récupérés
-if ($result->num_rows > 0) { // Vérifie s'il y a des articles dans le résultat
-    while($row = $result->fetch_assoc()) { // Parcourt chaque ligne du résultat
+if ($result->rowCount() > 0) { // Vérifie s'il y a des articles dans le résultat
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) { // Parcourt chaque ligne du résultat
         echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\')">'; // Ouvre une nouvelle carte d'article avec un événement onclick
         echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>'; // Affiche le titre de l'article
         echo '<img src="' . htmlspecialchars($row['pj_image']) . '" alt="Image de l\'article">'; // Affiche l'image de l'article
@@ -80,7 +80,7 @@ echo '<div id="popup-content"></div>'; // Contenu de la popup
 echo '</div>'; // Ferme la div de la popup
 
 // Fermeture de la connexion à la base de données
-$conn->close(); // Ferme la connexion PDO
+$conn = null; // Ferme la connexion PDO
 ?>
 
 <main class="container-articles">
