@@ -4,7 +4,7 @@
     color: var(--apple-black);
     padding: 40px;
     border-radius: 10px;
-    margin: 100px auto;
+    margin: auto;
     flex-direction: row;
     width: 90%;
     max-width: 1200px;
@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    margin-top: 90px;
 }
 
 @keyframes fadeIn {
@@ -52,6 +53,7 @@ h1 {
     padding: 40px;
     margin: 0 auto;
     /* max-width: 1200px; */
+    margin-top: 50px;
 }
 
 .service-card {
