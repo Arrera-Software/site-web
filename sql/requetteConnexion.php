@@ -10,6 +10,7 @@ $sql = "SELECT name,password FROM user WHERE name=? ";
 if ($conn->connect_error) {
     die("Connexion échouée: " . $conn->connect_error);
 }
+
 $requette = $conn->prepare($sql);
 $requette->bind_param("s",$name);
 if ($requette->execute())
