@@ -34,13 +34,13 @@
                     <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
-
                     <?php
-                        if (isset($_COOKIE['identifiant'])) {
-                            echo '<span class="header-link">Bonjour, ' . $_COOKIE['identifiant'] . ' !</span>';
+                        if (isset($_SESSION['identifiant'])) {
+                            echo '<span class="header-link">Bonjour, ' . $_SESSION['identifiant'] . ' !</span>';
                         } 
                         else {
-                    }
+                                null;           
+                        }
                     ?>
                     
                 </div>

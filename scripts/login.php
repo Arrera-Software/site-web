@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($pass, $row['password'])) {
             // Connexion réussie
             session_start(); // Démarrer la session
-            $session_user = $_SESSION['identifiant']; // Ajouter l'identifiant dans la session
+            $_SESSION['identifiant'] = $user; // Ajouter l'identifiant dans la session
+
             header("Location: ../index");
         } else {
             // Échec de la connexion
