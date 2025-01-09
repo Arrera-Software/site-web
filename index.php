@@ -28,13 +28,15 @@
                     <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
+
                     <?php
                         if (isset($_COOKIE['identifiant'])) {
-                            echo '<a href="connexion" class="header-link">Bonjour, ' . $_COOKIE['identifiant'] . ' !</a>';
+                            echo '<span class="header-link">Bonjour, ' . $_COOKIE['identifiant'] . ' !</span>';
                         } 
                         else {
                     }
                     ?>
+                    
                 </div>
             </div>
         </div>
