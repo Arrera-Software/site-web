@@ -32,7 +32,7 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface I2024</h1>
+            <h1>Arrera I2024</h1>
             <p>Première version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
@@ -44,7 +44,7 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface I2025</h1>
+            <h1>Arrera I2025</h1>
             <p>Prochaine version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
