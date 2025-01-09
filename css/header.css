@@ -8,7 +8,7 @@
 
   body {
     background-color: #1d1d1f;  /* Fond sombre d'Apple */
-    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃªtre */
+    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃƒÂªtre */
     display: flex;
     flex-direction: column; /* Organise le contenu verticalement */
 }
@@ -62,7 +62,7 @@
       display: flex;
       gap: 24px;
       flex-direction: row;
-      /* flex-wrap: nowrap; */
+      flex-wrap: nowrap;
       align-content: center;
       margin-top: -5px;
   }
@@ -75,6 +75,13 @@
       padding: 15px;
       text-align: center;
       margin-top: 10px;
+  }
+
+  .header-link-connexion {
+      color: var(--apple-black);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
   }
   
   .header-link:hover {
@@ -90,7 +97,7 @@
     text-align: center;
     margin-top: auto; /* Pousse le footer vers le bas */
     width: 100%;
-    position: relative; /* Assure que le footer reste en bas mÃªme avec peu de contenu */
+    position: relative; /* Assure que le footer reste en bas mÃƒÂªme avec peu de contenu */
     bottom: 0;
 }
 
@@ -107,7 +114,7 @@
 
 @media (max-width: 768px) {
     .main-header .container {
-        padding: 0 20px; /* RÃ©duire le padding sur les petits Ã©crans */
+        padding: 0 20px; /* RÃƒÂ©duire le padding sur les petits ÃƒÂ©crans */
     }
 
     h1 {
@@ -123,10 +130,10 @@
     
     
     .header-links {
-        flex-direction: row; /* Aligner les Ã©lÃ©ments horizontalement */
+        flex-direction: row; /* Aligner les ÃƒÂ©lÃƒÂ©ments horizontalement */
         margin-top : 0px;
         margin-left : -350px;
-        gap: 1px; /* RÃ©duire l'espace entre les liens */
+        gap: 1px; /* RÃƒÂ©duire l'espace entre les liens */
         display:none;
     }
 }

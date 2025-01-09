@@ -36,7 +36,10 @@
                     <a href="a-propos" class="header-link">À propos</a>
                     <?php
                         if (isset($_SESSION['identifiant'])) {
-                            echo '<span class="header-link">Bonjour, ' . $_SESSION['identifiant'] . ' !</span>';
+                            echo '<select class="header-link-connexion" onchange="location.href=this.value;">';
+                            echo '<option value="">Bonjour, ' . $_SESSION['identifiant'] . ' !</option>';
+                            echo '<option value="scripts/deconnexion">Se déconnecter</option>';
+                            echo '</select>';
                         } 
                         else {
                                 null;           

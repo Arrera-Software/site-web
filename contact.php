@@ -10,12 +10,12 @@
 </head>
 <body>
     <!-- Header principal -->
-    <header class="main-header">
+      <header class="main-header">
         <div class="container">
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index">
+                    <a href="">
                         <img src="img/file.webp" alt="Logo" class="logo-img">
                     </a>
                 </div>
@@ -26,11 +26,22 @@
                     <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
+                    <?php
+                        if (isset($_SESSION['identifiant'])) {
+                            echo '<select class="header-link-connexion" onchange="location.href=this.value;">';
+                            echo '<option value="">Bonjour, ' . $_SESSION['identifiant'] . ' !</option>';
+                            echo '<option value="scripts/deconnexion">Se déconnecter</option>';
+                            echo '</select>';
+                        } 
+                        else {
+                                null;           
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>
     </header>
-
     <main class="contact-container">
         <div class="contact-form-wrapper">
             <h1>Contactez-nous</h1>
