@@ -33,25 +33,25 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface I2024</h1>
+            <h1>Arrera I2024</h1>
             <p>Première version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
             <img src="img/ArreraI2024.webp" alt="Arrera Interface I2024" class="img">
         </section>
-        <a href="https://github.com/Arrera-Software/Arrera-Interface" class="download-interface">Télécharger</a>
+        <a href="https://github.com/Arrera-Software/Arrera-Interface/releases/tag/I2024-2.05.1" class="download-interface">Télécharger</a>
 
     </div>
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface I2025</h1>
+            <h1>Arrera I2025</h1>
             <p>Prochaine version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
             <img src="img/i2025-icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
-        <a href"" class="download-interface">COMING SOON</a>
+        <a href = "https://github.com/Arrera-Software/Arrera-Interface/tree/I2025" class="download-interface">Voir le dépôt de développement.</a>
     </div>
 
     <main class="services-container">
