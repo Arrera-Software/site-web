@@ -23,6 +23,7 @@
                 <div class="header-links">
                     <a href="assitant" class="header-link">Assistant</a>
                     <a href="interface" class="header-link">Interface</a>
+                    <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
                 </div>
