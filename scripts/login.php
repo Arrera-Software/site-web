@@ -34,14 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Connexion réussie
             session_start(); // Démarrer la session
             $_SESSION['identifiant'] = $user; // Ajouter l'identifiant dans la session
-            header("Location: https://c.tenor.com/gYFRUvpL0jUAAAAd/tenor.gif");
+            header("Location: ../index");
         } else {
             // Échec de la connexion
-            echo "1.Nom d'utilisateur ou mot de passe incorrect.";
+            echo "1. Nom d'utilisateur ou mot de passe incorrect.";
         }
     } else {
         // Échec de la connexion
-        echo "2.Nom d'utilisateur ou mot de passe incorrect.";
+        echo "2. Nom d'utilisateur ou mot de passe incorrect.";
     }
 }
 ?>
