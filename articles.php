@@ -7,6 +7,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,30 +16,31 @@
     <link rel="stylesheet" href="css/articles.css">
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
+
 <body>
-<!-- Header principal -->
-<header class="main-header">
-    <div class="container">
-        <div class="header-content">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="index">
-                    <img src="img/file.webp" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            <!-- Navigation -->
-            <div class="header-links">
-                <a href="assitant" class="header-link">Assistant</a>
-                <a href="interface" class="header-link">Interface</a>
-                <a href="articles" class="header-link">Articles</a>
-                <a href="contact" class="header-link">Contact</a>
-                <a href="a-propos" class="header-link">À propos</a>
+    <!-- Header principal -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index">
+                        <img src="img/file.webp" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                <!-- Navigation -->
+                <div class="header-links">
+                    <a href="assitant" class="header-link">Assistant</a>
+                    <a href="interface" class="header-link">Interface</a>
+                    <a href="articles" class="header-link">Articles</a>
+                    <a href="contact" class="header-link">Contact</a>
+                    <a href="a-propos" class="header-link">À propos</a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<?php
+    <?php
 
 // Vérifier si le fichier config.php existe
 $configFile = __DIR__ . '/config.php';
@@ -84,32 +86,33 @@ echo '</div>'; // Ferme la div de la popup
 $pdo = null; // Ferme la connexion PDO
 ?>
 
-<!-- NE PAS SUPPRIMER  !!! -->
+    <!-- NE PAS SUPPRIMER  !!! -->
 
-<main class="container-articles">
-    <!-- Les articles seront affichés dynamiquement ici -->
-</main>
+    <main class="container-articles">
+        <!-- Les articles seront affichés dynamiquement ici -->
+    </main>
 
-<!-- Footer -->
-<footer class="main-footer">
-    <div class="container">
-        <p class="copyright">
-            © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
-        </p>
-    </div>
-</footer>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p class="copyright">
+                © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
+            </p>
+        </div>
+    </footer>
 
-<script>
-function openPopup(content, title) {
-    const popupContent = document.getElementById("popup-content");
-    popupContent.innerHTML = "Titre : " + "<h2>" + title + "</h2>" + content;
-    document.getElementById("popup").style.display = "flex"; // Utiliser flex pour centrer
-}
+    <script>
+    function openPopup(content, title) {
+        const popupContent = document.getElementById("popup-content");
+        popupContent.innerHTML = "<h2>Titre : " + title + "</h2><br><br>" + content;
+        document.getElementById("popup").style.display = "flex"; // Utiliser flex pour centrer
+    }
 
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
-</script>
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+    </script>
 
 </body>
+
 </html>

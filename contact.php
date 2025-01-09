@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
+
 <body>
     <!-- Header principal -->
-      <header class="main-header">
+    <header class="main-header">
         <div class="container">
             <div class="header-content">
                 <!-- Logo -->
@@ -37,7 +39,7 @@
                                 null;           
                         }
                     ?>
-                    
+
                 </div>
             </div>
         </div>
@@ -55,31 +57,31 @@
                     <input type="text" id="prenom" name="prenom" required>
                     <label for="prenom">Prénom</label>
                 </div>
-                
+
                 <div class="form-group">
                     <input type="email" id="email" name="email" required>
                     <label for="email">Email</label>
                 </div>
-                
+
                 <div class="form-group">
                     <input type="text" id="subject" name="sujet" required>
                     <label for="subject">Sujet</label>
                 </div>
-                
+
                 <div class="form-group">
                     <textarea id="message" name="message" required></textarea>
                     <label for="message">Message</label>
                 </div>
-                
-        
-                
+
+
+
                 <button type="submit" class="submit-btn">Envoyer</button>
             </form>
         </div>
     </main>
 
-  <!-- Footer -->
-  <footer class="main-footer">
+    <!-- Footer -->
+    <footer class="main-footer">
         <div class="container">
             <p class="copyright">
                 © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
@@ -90,4 +92,5 @@
 
 
 </body>
+
 </html>
