@@ -1,10 +1,10 @@
 .container-g {
     display: flex;
-    background-color: white;
+    background-color: #e1e1e1;
     color: var(--apple-black);
     padding: 40px;
     border-radius: 10px;
-    margin: 90px 250px auto;
+    margin: 100px auto;
     flex-direction: row;
     width: 90%;
     max-width: 1200px;
@@ -13,7 +13,6 @@
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    margin-top: 70px;
 }
 
 @keyframes fadeIn {

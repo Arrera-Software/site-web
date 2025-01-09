@@ -23,6 +23,7 @@
                 <div class="header-links">
                     <a href="assitant" class="header-link">Assistant</a>
                     <a href="interface" class="header-link">Interface</a>
+                    <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
                 </div>
@@ -32,7 +33,7 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface 2024</h1>
+            <h1>Arrera Interface I2024</h1>
             <p>Première version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
@@ -44,7 +45,7 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Interface 2025</h1>
+            <h1>Arrera Interface I2025</h1>
             <p>Prochaine version de l'interface Arrera.</p>
         </div>
         <section class="image-section">
