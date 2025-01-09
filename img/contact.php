@@ -36,7 +36,7 @@
             <h1>Contactez-nous</h1>
             <form class="contact-form" method="POST" action="scripts/email.php">
                 <div class="form-group">
-                    <input type="text" id="name" name="nom" required>
+                    <input type="text" id="name" name="name" required>
                     <label for="name">Nom</label>
                 </div>
 
@@ -51,7 +51,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <input type="text" id="subject" name="sujet" required>
+                    <input type="text" id="subject" name="subject" required>
                     <label for="subject">Sujet</label>
                 </div>
                 

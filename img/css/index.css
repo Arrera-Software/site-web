@@ -1,0 +1,89 @@
+/* Section hÃ©ro style Apple */
+.hero-section {
+    background-color: var(--apple-white);
+    margin-top: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-accueil {
+    background: linear-gradient(to bottom, #ffffffa6, #ffffffc7);
+    border-radius: 16px;
+    padding: 15px;
+    transition: all 0.8s ease-in-out;
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+}
+
+.container-accueil:hover {
+    background: linear-gradient(to top, #b8b8b8a6, #ffffffc7);
+    background-size: 200% 200%;
+    background-position: 0% 100%;
+    transition: all 0.8s ease-in-out;
+}
+
+
+.title {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    color: var(--apple-black);
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.texte {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--apple-gray);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+        padding: 0 20px;
+    }
+    
+    .texte {
+        font-size: 24px;
+        padding: 0 20px;
+    }
+    
+    .hero-section {
+        margin-top: 300px;
+        padding: 20px;
+    }
+}
+
+/* Section hÃ©ro style Apple avec thÃ¨me sombre */
+.hero-section.dark-theme {
+    background-color: var(--apple-black);
+}

@@ -1,37 +1,44 @@
 .article-card {
-    background-color: white; /* Couleur de fond blanche */
-    border-radius: 10px; /* Arrondi des coins */
-    padding: 15px; /* Espacement interne */
-    margin: 70px; /* Espacement externe */
-    cursor: pointer; /* Curseur en forme de main */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    margin-top: 140px;
+    display: flex; /* Utiliser flexbox */
+    flex-wrap: wrap; /* Permettre le retour à la ligne */
+    justify-content: space-around; /* Espacement entre les cartes */
+    margin: 150px; /* Espacement externe */
+    background-color: #f8f9fa; /* Couleur de fond des cartes */
+    border-radius: 15px; /* Arrondi des coins */
+    padding: 20px; /* Espacement interne */
+    margin: 150px; /* Espacement externe entre les cartes */
+    width: 200px; /* Largeur fixe pour les cartes */
+    box-shadow: 0 4px 10px rgb(207 42 42 / 64%); /* Ombre des cartes */
+    text-align: center; /* Centrer le texte */
 }
 
 .popup {
-    position: fixed; /* Position fixe */
-    left: 0;
-    top: 0;
-    width: 100%; /* Prend toute la largeur */
-    height: 100%; /* Prend toute la hauteur */
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-    display: flex; /* Utilise flexbox pour centrer */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+   position: fixed; /* Position fixe */
+   left: 0;
+   top: 0;
+   width: 100%; /* Prend toute la largeur */
+   height: 100%; /* Prend toute la hauteur */
+   background-color: rgb(8 8 8 / 76%); /* Fond semi-transparent */
+   display: flex; /* Utilise flexbox pour centrer */
+   justify-content: center; /* Centre horizontalement */
+   align-items: center; /* Centre verticalement */
+   color: #000000;
+   z-index: 9999;
 }
 
 .popup-content {
-    background-color: white; /* Fond blanc pour le contenu */
-    border-radius: 10px; /* Arrondi des coins */
-    padding: 20px; /* Espacement interne */
-    max-width: 600px; /* Largeur maximale */
-    width: 80%; /* Largeur par défaut */
+   background-color: white; /* Fond blanc pour le contenu */
+   border-radius: 10px; /* Arrondi des coins */
+   padding: 20px; /* Espacement interne */
+   max-width: 600px; /* Largeur maximale */
+   width: 80%; /* Largeur par défaut */
 }
 
 .close {
-    cursor: pointer; /* Curseur en forme de main */
-    font-size: 24px; /* Taille de la police */
-    position: absolute; /* Position absolue */
-    right: 20px; /* Position à droite */
-    top: 10px; /* Position en haut */
+   cursor: pointer; /* Curseur en forme de main */
+   font-size: 24px; /* Taille de la police */
+   position: absolute; /* Position absolue */
+   right: 20px; /* Position à droite */
+   top: 10px; /* Position en haut */
+   color : red;
 }

@@ -10,19 +10,11 @@ if (!file_exists('../configmail.php')) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validation et assainissement des entrées
-    $nom = htmlspecialchars(trim(filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING)));
-    $prenom = htmlspecialchars(trim(filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING)));
-    $email = filter_var(trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)), FILTER_VALIDATE_EMAIL);
-    $sujet = htmlspecialchars(trim(filter_input(INPUT_POST, 'sujet', FILTER_SANITIZE_STRING)));
-    $message = htmlspecialchars(trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING)));
-
-    // Vérification de l'email
-    if ($email === false) {
-        echo "<script>alert('Adresse email invalide.');</script>";
-        header('Location: ../contact.php');
-        exit();
-    }
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $sujet = $_POST['sujet'];
+    $message = $_POST['message'];
 
     $config = require '../configmail.php'; // Inclure le fichier de configuration
 
@@ -47,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Contenu de l'email
         $mail->isHTML(false);
-        $mail->Subject = "Nouveau message de " . $nom . " " . $prenom . " à propos de : " . $sujet;
-        $mail->Body = "Informations du client:\nNom: " . $nom . "\nPrénom: " . $prenom . "\nEmail: " . $email . "\nSujet: " . $sujet . "\n\nMessage:\n" . $message . "\n";
+        $mail->Subject = "Nouveau message de $nom $prenom à propos de : $sujet";
+        $mail->Body = "Informations du client:\nNom: $nom\nPrénom: $prenom\nEmail: $email\nSujet: $sujet\n\nMessage:\n$message\n";
 
 
       // S'assurer que l'encodage est bien UTF-8

@@ -65,9 +65,9 @@ try {
 // Affichage des articles récupérés
 if ($result->rowCount() > 0) { // Vérifie s'il y a des articles dans le résultat
     while($row = $result->fetch(PDO::FETCH_ASSOC)) { // Parcourt chaque ligne du résultat
-        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\')">'; // Ouvre une nouvelle carte d'article avec un événement onclick
-        echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>'; // Affiche le titre de l'article
-        echo '<img src="' . htmlspecialchars($row['pj_image']) . '" alt="Image de l\'article">'; // Affiche l'image de l'article
+        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\')">'; // Ajout du titre à la fonction openPopup
+        echo '<h2>' . "Titre : " . htmlspecialchars($row['titre']) . '</h2><br><br>'; // Affiche le titre de l'article
+        echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>'; // Affiche un aperçu de 150 caractères du contenu
         echo '</div>'; // Ferme la carte d'article
     }
 } else {
@@ -77,12 +77,14 @@ if ($result->rowCount() > 0) { // Vérifie s'il y a des articles dans le résult
 // Ajout de la popup pour afficher le contenu complet de l'article
 echo '<div id="popup" class="popup" style="display:none;">'; // Crée une div pour la popup
 echo '<span class="close" onclick="closePopup()">&times;</span>'; // Bouton de fermeture
-echo '<div id="popup-content"></div>'; // Contenu de la popup
+echo '<div id="popup-content" class="popup-content"></div>'; // Contenu de la popup avec la classe ajoutée
 echo '</div>'; // Ferme la div de la popup
 
 // Fermeture de la connexion à la base de données
 $pdo = null; // Ferme la connexion PDO
 ?>
+
+<!-- NE PAS SUPPRIMER SINON !!! -->
 
 <main class="container-articles">
     <!-- Les articles seront affichés ici -->
@@ -98,13 +100,14 @@ $pdo = null; // Ferme la connexion PDO
 </footer>
 
 <script>
-function openPopup(content) {
-    document.getElementById("popup-content").innerHTML = content; // Met à jour le contenu de la popup
-    document.getElementById("popup").style.display = "block"; // Affiche la popup
+function openPopup(content, title) {
+    const popupContent = document.getElementById("popup-content");
+    popupContent.innerHTML = "Titre : " + "<h2>" + title + "</h2>" + content;
+    document.getElementById("popup").style.display = "flex"; // Utiliser flex pour centrer
 }
 
 function closePopup() {
-    document.getElementById("popup").style.display = "none"; // Cache la popup
+    document.getElementById("popup").style.display = "none";
 }
 </script>
 

@@ -1,0 +1,39 @@
+.article-card {
+    background-color: white; /* Couleur de fond blanche */
+    border-radius: 10px; /* Arrondi des coins */
+    padding: 20px; /* Espacement interne */
+    /* margin: 10px; */ /* Espacement externe */
+    cursor: pointer; /* Curseur en forme de main */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-top: 150px;
+}
+
+.popup {
+    position: fixed; /* Position fixe */
+    left: 0;
+    top: 0;
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    background-color: rgb(0 0 0 / 39%); /* Fond semi-transparent */
+    display: flex; /* Utilise flexbox pour centrer */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    z-index: 99999;
+}
+
+.popup-content {
+    background-color: white; /* Fond blanc pour le contenu */
+    border-radius: 10px; /* Arrondi des coins */
+    padding: 25px; /* Espacement interne */
+    max-width: 900px; /* Largeur maximale */
+    width: 100%; /* Largeur par défaut */
+}
+
+.close {
+    cursor: pointer; /* Curseur en forme de main */
+    font-size: 24px; /* Taille de la police */
+    position: absolute; /* Position absolue */
+    right: 20px; /* Position à droite */
+    top: 10px; /* Position en haut */
+    color: red;
+}
