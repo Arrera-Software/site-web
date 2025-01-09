@@ -11,10 +11,15 @@ if (!file_exists('../configmail.php')) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validation et assainissement des entrées
+    // Récupère et assainit le nom
     $nom = htmlspecialchars(trim(filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING)));
+    // Récupère et assainit le prénom
     $prenom = htmlspecialchars(trim(filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING)));
+    // Récupère et valide l'email
     $email = filter_var(trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)), FILTER_VALIDATE_EMAIL);
+    // Récupère et assainit le sujet
     $sujet = htmlspecialchars(trim(filter_input(INPUT_POST, 'sujet', FILTER_SANITIZE_STRING)));
+    // Récupère et assainit le message
     $message = htmlspecialchars(trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING)));
 
     // Vérification de l'email
