@@ -63,14 +63,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         // Requête SQL simplifiée
-        $sql = "INSERT INTO articles (titre, contenu, pj_image) 
-                VALUES (:titre, :contenu, :pj_image)";
+        $sql = "INSERT INTO articles (titre, contenu, pj_image, date_creation, editeur) 
+                VALUES (:titre, :contenu, :pj_image, :date_creation, :editeur)";
         $stmt = $pdo->prepare($sql);
         
+        // Récupérer l'éditeur (par exemple, depuis la session ou un champ de formulaire)
+        $editeur = $_SESSION['identifiant']; // Exemple d'utilisation de l'identifiant de l'utilisateur connecté
+        $date_creation = date('Y-m-d H:i:s'); // Date actuelle
+
         // Lier les paramètres
         $stmt->bindParam(':titre', $titre);
         $stmt->bindParam(':contenu', $contenu);
         $stmt->bindParam(':pj_image', $imagePath);
+        $stmt->bindParam(':date_creation', $date_creation); // Lier la date de création
+        $stmt->bindParam(':editeur', $editeur); // Lier l'éditeur
 
         // Ajouter du débogage
         if (!$stmt->execute()) {

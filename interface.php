@@ -69,7 +69,7 @@
         <section class="image-section">
             <img src="img/i2025-icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
-        <a href = "https://github.com/Arrera-Software/Arrera-Interface/tree/I2025" class="download-interface">Voir le dépôt de développement.</a>
+        <a href = "https://github.com/Arrera-Software/Arrera-Interface/tree/I2025" class="download-interface">Voir le dépôt de développement</a>
     </div>
 
     <main class="services-container">

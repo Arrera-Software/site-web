@@ -71,7 +71,7 @@ if (!isset($pdo)) {
 }
 
 // Requête SQL pour récupérer les articles de la base de données
-$sql = "SELECT titre, contenu, pj_image FROM articles"; // Déclare la requête SQL
+$sql = "SELECT titre, contenu, pj_image, date_creation, editeur FROM articles"; // Déclare la requête SQL
 try {
     $result = $pdo->query($sql); // Exécute la requête et stocke le résultat
 } catch (PDOException $e) {
@@ -89,6 +89,8 @@ if ($result->rowCount() > 0) {
         }
         echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>';
         echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>';
+        echo '<p><img src="img/calendar.png" alt="Calendrier" class="img"> Date  : ' . htmlspecialchars($row['date_creation']) . '</p>';
+        echo '<img src="img/copy-writing.png" alt="Editeur" class="img"> Éditeur : ' . htmlspecialchars($row['editeur']) . '</p>';
         echo '</div>';
     }
     echo '</div>';
@@ -109,12 +111,12 @@ echo '</div>'; // Ferme la div de la popup
 // Ajout du popup pour créer un article
 if (isset($_SESSION['identifiant'])) {
     echo '<div id="add-article-popup" class="popup" style="display:none;">';
-    echo '<span class="close" onclick="closeAddArticlePopup()">&times;</span>';
+    echo '<span class="close" onclick="closePopup()">&times;</span>'; // Bouton de fermeture    
     echo '<div class="popup-content">';
     echo '<h2>Ajouter un article</h2>';
     echo '<form action="ajouter_article.php" method="POST" enctype="multipart/form-data">';
     echo '<input type="text" name="titre" placeholder="Titre de l\'article" required><br><br>';
-    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required style="height: 540px; width: 840px; resize: none;"></textarea>';
+    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required style="height: 500px; resize: none;"></textarea>';
     echo '<input type="file" name="pj_image" accept="image/*"><br><br>';
     echo '<button type="submit">Publier l\'article</button>';
     echo '</form>';
@@ -159,7 +161,10 @@ $pdo = null; // Ferme la connexion PDO
     }
 
     function closePopup() {
-        document.getElementById("popup").style.display = "none";
+        const popup = document.getElementById("popup");
+        if (popup) {
+            popup.style.display = "none"; // Ferme la popup
+        }
     }
 
     function openAddArticlePopup() {
