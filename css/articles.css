@@ -1,44 +1,91 @@
 .article-card {
-    display: flex; /* Utiliser flexbox */
-    flex-wrap: wrap; /* Permettre le retour à la ligne */
-    justify-content: space-around; /* Espacement entre les cartes */
-    margin: 150px; /* Espacement externe */
-    background-color: #f8f9fa; /* Couleur de fond des cartes */
-    border-radius: 15px; /* Arrondi des coins */
-    padding: 20px; /* Espacement interne */
-    margin: 150px; /* Espacement externe entre les cartes */
-    width: 200px; /* Largeur fixe pour les cartes */
-    box-shadow: 0 4px 10px rgb(207 42 42 / 64%); /* Ombre des cartes */
-    text-align: center; /* Centrer le texte */
+   background-color: #ffffff;
+   border-radius: 15px;
+   padding: 25px;
+   margin: 15px;
+   width: calc(33.33% - 30px); /* Pour avoir 3 cartes côte à côte */
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   text-align: left;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   cursor: pointer;
+   display: inline-block; /* Change en inline-block */
+   vertical-align: top;
+   min-height: 200px; /* Hauteur minimum pour uniformité */
+}
+
+.container-articles {
+   display: flex; /* Utilise flexbox */
+   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+   gap: 20px; /* Espacement uniforme entre les cartes */
+   justify-content: flex-start;
+   padding: 20px;
+   max-width: 1200px;
+   margin: 0 auto;
 }
 
 .popup {
-   position: fixed; /* Position fixe */
-   left: 0;
-   top: 0;
-   width: 100%; /* Prend toute la largeur */
-   height: 100%; /* Prend toute la hauteur */
-   background-color: rgb(8 8 8 / 76%); /* Fond semi-transparent */
-   display: flex; /* Utilise flexbox pour centrer */
-   justify-content: center; /* Centre horizontalement */
-   align-items: center; /* Centre verticalement */
-   color: #000000;
-   z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .popup-content {
-   background-color: white; /* Fond blanc pour le contenu */
-   border-radius: 10px; /* Arrondi des coins */
-   padding: 20px; /* Espacement interne */
-   max-width: 600px; /* Largeur maximale */
-   width: 80%; /* Largeur par défaut */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.popup-content input[type="text"],
+.popup-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.popup-content textarea {
+  height: 200px;
+  resize: vertical;
 }
 
 .close {
-   cursor: pointer; /* Curseur en forme de main */
-   font-size: 24px; /* Taille de la police */
-   position: absolute; /* Position absolue */
-   right: 20px; /* Position à droite */
-   top: 10px; /* Position en haut */
-   color : red;
+ cursor: pointer; /* Curseur en forme de main */
+ font-size: 24px; /* Taille de la police */
+ position: absolute; /* Position absolue */
+ right: 20px; /* Position à droite */
+ top: 10px; /* Position en haut */
+ color : red;
+}
+
+.toast {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   padding: 15px 25px;
+   border-radius: 5px;
+   color: white;
+   font-weight: bold;
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+   z-index: 10000;
+}
+
+.toast.success {
+   background-color: #4CAF50;
+}
+
+.toast.error {
+   background-color: #f44336;
+}
+
+.toast.show {
+   opacity: 1;
 }

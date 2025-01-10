@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,8 +13,8 @@
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
-      <!-- Header principal -->
-      <header class="main-header">
+     <!-- Header principal -->
+     <header class="main-header">
         <div class="container">
             <div class="header-content">
                 <!-- Logo -->

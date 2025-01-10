@@ -24,7 +24,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index">
+                    <a href="">
                         <img src="img/file.webp" alt="Logo" class="logo-img">
                     </a>
                 </div>
@@ -35,6 +35,19 @@
                     <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
+                    <?php
+                        if (isset($_SESSION['identifiant'])) {
+                            echo '<select class="header-link-connexion" onchange="handleSelectChange(this.value);">';
+                            echo '<option value="">Bonjour, ' . $_SESSION['identifiant'] . ' !</option>';
+                            echo '<option value="add">Ajouter un article</option>';
+                            echo '<option value="logout">Se déconnecter</option>';
+                            echo '</select>';
+                        } 
+                        else {
+                                null;           
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>
@@ -47,7 +60,6 @@ $configFile = __DIR__ . '/config.php';
 if (!file_exists($configFile)) {
     die("Le fichier config.php n'existe pas dans : " . $configFile);
 }
-
 // Inclure le fichier de configuration
 require_once $configFile;
 
@@ -64,33 +76,57 @@ try {
     die("Erreur lors de l'exécution de la requête : " . $e->getMessage());
 }
 
-// Affichage des articles récupérés
-if ($result->rowCount() > 0) { // Vérifie s'il y a des articles dans le résultat
-    while($row = $result->fetch(PDO::FETCH_ASSOC)) { // Parcourt chaque ligne du résultat
-        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\')">'; // Ajout du titre à la fonction openPopup
-        echo '<h2>' . "Titre : " . htmlspecialchars($row['titre']) . '</h2><br><br>'; // Affiche le titre de l'article
-        echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>'; // Affiche un aperçu de 150 caractères du contenu
-        echo '</div>'; // Ferme la carte d'article
+// Déplacer cette partie à l'intérieur de la balise main
+echo '<main class="container-articles">';
+if ($result->rowCount() > 0) {
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\')">';
+        echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>';
+        echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>';
+        echo '</div>';
     }
 } else {
-    echo "Aucun article trouvé."; // Affiche un message si aucun article n'est trouvé
+    echo "Aucun article trouvé.";
 }
+echo '</main>';
 
-// Ajout de la popup pour afficher le contenu complet de l'article
-echo '<div id="popup" class="popup" style="display:none;">'; // Crée une div pour la popup
+// Garder la popup en dehors du main
+echo '<div id="popup" class="popup" style="display:none;">';
 echo '<span class="close" onclick="closePopup()">&times;</span>'; // Bouton de fermeture
 echo '<div id="popup-content" class="popup-content"></div>'; // Contenu de la popup avec la classe ajoutée
 echo '</div>'; // Ferme la div de la popup
+
+// Ajout du popup pour créer un article
+if (isset($_SESSION['identifiant'])) {
+    echo '<div id="add-article-popup" class="popup" style="display:none;">';
+    echo '<span class="close" onclick="closeAddArticlePopup()">&times;</span>';
+    echo '<div class="popup-content">';
+    echo '<h2>Ajouter un article</h2>';
+    echo '<form action="ajouter_article.php" method="POST" enctype="multipart/form-data">';
+    echo '<input type="text" name="titre" placeholder="Titre de l\'article" required><br><br>';
+    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required></textarea><br><br>';
+    echo '<input type="file" name="pj_image" accept="image/*"><br><br>';
+    echo '<button type="submit">Publier l\'article</button>';
+    echo '</form>';
+    echo '</div>';
+    echo '</div>';
+}
+
+// Afficher un message de succès si un article a été ajouté
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    echo '<p style="color: green;">Article ajouté avec succès !</p>';
+}
+
+// Afficher un message d'erreur si l'ajout a échoué
+if (isset($_GET['error']) && $_GET['error'] == 1) {
+    echo '<p style="color: red;">Erreur lors de l\'ajout de l\'article.</p>';
+}
 
 // Fermeture de la connexion à la base de données
 $pdo = null; // Ferme la connexion PDO
 ?>
 
     <!-- NE PAS SUPPRIMER  !!! -->
-
-    <main class="container-articles">
-        <!-- Les articles seront affichés dynamiquement ici -->
-    </main>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -111,7 +147,24 @@ $pdo = null; // Ferme la connexion PDO
     function closePopup() {
         document.getElementById("popup").style.display = "none";
     }
+
+    function openAddArticlePopup() {
+        document.getElementById("add-article-popup").style.display = "flex"; // Ouvre la popup
+    }
+
+    function closeAddArticlePopup() {
+        document.getElementById("add-article-popup").style.display = "none"; // Ferme la popup
+    }
+
+    function handleSelectChange(value) {
+        if (value === 'add') {
+            openAddArticlePopup();
+        } else if (value === 'logout') {
+            window.location.href = 'scripts/deconnexion';
+        }
+    }
     </script>
+
 
 </body>
 
