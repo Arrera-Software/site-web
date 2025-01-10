@@ -79,12 +79,14 @@ try {
 // Déplacer cette partie à l'intérieur de la balise main
 echo '<main class="container-articles">';
 if ($result->rowCount() > 0) {
+    echo '<div class="container-articles">';
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\')">';
         echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>';
         echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>';
         echo '</div>';
     }
+    echo '</div>';
 } else {
     echo "Aucun article trouvé.";
 }

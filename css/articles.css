@@ -1,22 +1,21 @@
 .article-card {
+   flex: 0 1 calc(33.33% - 20px); /* Important: utilisation de flex-basis */
    background-color: #ffffff;
    border-radius: 15px;
    padding: 25px;
-   margin: 15px;
-   width: calc(33.33% - 30px); /* Pour avoir 3 cartes côte à côte */
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
    text-align: left;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    cursor: pointer;
-   display: inline-block; /* Change en inline-block */
-   vertical-align: top;
-   min-height: 200px; /* Hauteur minimum pour uniformité */
+   min-height: 170px;
+   margin-top: 90px;
 }
 
 .container-articles {
-   display: flex; /* Utilise flexbox */
-   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
-   gap: 20px; /* Espacement uniforme entre les cartes */
+   display: flex;
+   flex-direction: row; /* Force l'alignement horizontal */
+   flex-wrap: wrap;
+   gap: 20px;
    justify-content: flex-start;
    padding: 20px;
    max-width: 1200px;
