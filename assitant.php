@@ -1,4 +1,6 @@
-
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,6 +29,19 @@
                     <a href="articles" class="header-link">Articles</a>
                     <a href="contact" class="header-link">Contact</a>
                     <a href="a-propos" class="header-link">À propos</a>
+                    <?php
+                        if (isset($_SESSION['identifiant'])) {
+                            echo '<div class="header-link-connexion">';
+                            echo 'Bonjour, ' . $_SESSION['identifiant'];
+                            echo '<div class="dropdown-menu">';
+                            echo '<a href="scripts/deconnexion">Se déconnecter</a>';
+                            echo '</div>';
+                            echo '</div>';
+                        } 
+                        else {
+                                null;           
+                        }
+                    ?>
                 </div>
             </div>
         </div>
