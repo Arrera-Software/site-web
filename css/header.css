@@ -8,7 +8,7 @@
 
   body {
     background-color: #1d1d1f;  /* Fond sombre d'Apple */
-    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃƒÂªtre */
+    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃƒÆ’Ã‚Âªtre */
     display: flex;
     flex-direction: column; /* Organise le contenu verticalement */
 }
@@ -85,10 +85,11 @@
       padding: 15px;
       cursor: pointer;
       display: inline-block;
+      margin-top : 10px;
   }
 
   .header-link-connexion:after {
-      content: '▾';
+      content: '\2304';
       margin-left: 5px;
       transition: transform 0.3s ease;
       display: inline-block;
@@ -152,7 +153,7 @@
     text-align: center;
     margin-top: auto; /* Pousse le footer vers le bas */
     width: 100%;
-    position: relative; /* Assure que le footer reste en bas mÃƒÂªme avec peu de contenu */
+    position: relative; /* Assure que le footer reste en bas mÃƒÆ’Ã‚Âªme avec peu de contenu */
     bottom: 0;
 }
 
@@ -169,7 +170,7 @@
 
 @media (max-width: 768px) {
     .main-header .container {
-        padding: 0 20px; /* RÃƒÂ©duire le padding sur les petits ÃƒÂ©crans */
+        padding: 0 20px; /* RÃƒÆ’Ã‚Â©duire le padding sur les petits ÃƒÆ’Ã‚Â©crans */
     }
 
     h1 {
@@ -185,10 +186,10 @@
     
     
     .header-links {
-        flex-direction: row; /* Aligner les ÃƒÂ©lÃƒÂ©ments horizontalement */
+        flex-direction: row; /* Aligner les ÃƒÆ’Ã‚Â©lÃƒÆ’Ã‚Â©ments horizontalement */
         margin-top : 0px;
         margin-left : -350px;
-        gap: 1px; /* RÃƒÂ©duire l'espace entre les liens */
+        gap: 1px; /* RÃƒÆ’Ã‚Â©duire l'espace entre les liens */
         display:none;
     }
 }
