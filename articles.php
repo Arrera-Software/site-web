@@ -108,7 +108,7 @@ if (isset($_SESSION['identifiant'])) {
     echo '<h2>Ajouter un article</h2>';
     echo '<form action="ajouter_article.php" method="POST" enctype="multipart/form-data">';
     echo '<input type="text" name="titre" placeholder="Titre de l\'article" required><br><br>';
-    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required></textarea><br><br>';
+    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required style="height: 540px; width: 840px; resize: none;"></textarea>';
     echo '<input type="file" name="pj_image" accept="image/*"><br><br>';
     echo '<button type="submit">Publier l\'article</button>';
     echo '</form>';
