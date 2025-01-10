@@ -39,6 +39,7 @@
                             echo '<div class="header-link-connexion">';
                             echo 'Bonjour, ' . $_SESSION['identifiant'];
                             echo '<div class="dropdown-menu">';
+                            echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
                             echo '<a href="scripts/deconnexion">Se déconnecter</a>';
                             echo '</div>';
                             echo '</div>';
@@ -59,6 +60,7 @@
             <h1 class="title">Arrera Software<br></h1>
             <h2 class="texte">Une organisation de développement de logiciels open-source spécialisée dans les assistants
                 personnels.</h2>
+                
         </div>
     </section>
 

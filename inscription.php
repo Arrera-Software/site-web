@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') { // Vérifier si le rôle est 'admin'
+        header("Location: ../index"); // Rediriger vers la page d'accueil si le rôle ne correspond pas
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

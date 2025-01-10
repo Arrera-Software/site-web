@@ -22,8 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_POST['identifiant'];
     $pass = $_POST['password'];
 
-    // Préparer la requête pour vérifier les informations d'identification
-    $stmt = $pdo->prepare("SELECT * FROM user WHERE identifiant = :identifiant");
+    // Préparer la requête pour vérifier les informations d'identification et récupérer le rôle
+    $stmt = $pdo->prepare("SELECT user.identifiant, user.password, role.nom_role AS role_nom FROM user INNER JOIN role ON user.role = role.id WHERE user.identifiant = :identifiant");
+
     $stmt->bindParam(':identifiant', $user);
     $stmt->execute();
 
@@ -34,15 +35,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Connexion réussie
             session_start(); // Démarrer la session
             $_SESSION['identifiant'] = $user; // Ajouter l'identifiant dans la session
+            $_SESSION['role'] = $row['role_nom']; // Ajouter le rôle en texte dans la session
 
             header("Location: ../index");
+            exit(); // Ajouter exit après header pour éviter l'exécution du code suivant
         } else {
             // Échec de la connexion
-            echo "1. Nom d'utilisateur ou mot de passe incorrect.";
+            echo "Nom d'utilisateur ou mot de passe incorrect.";
         }
     } else {
         // Échec de la connexion
-        echo "2. Nom d'utilisateur ou mot de passe incorrect.";
+        echo "Nom d'utilisateur ou mot de passe incorrect.";
     }
 }
 ?>
