@@ -114,15 +114,8 @@ if (isset($_SESSION['identifiant'])) {
     echo '</div>';
 }
 
-// Afficher un message de succès si un article a été ajouté
-if (isset($_GET['success']) && $_GET['success'] == 1) {
-    echo '<p style="color: green;">Article ajouté avec succès !</p>';
-}
-
-// Afficher un message d'erreur si l'ajout a échoué
-if (isset($_GET['error']) && $_GET['error'] == 1) {
-    echo '<p style="color: red;">Erreur lors de l\'ajout de l\'article.</p>';
-}
+// Par une div pour le toast
+echo '<div id="toast" class="toast"></div>';
 
 // Fermeture de la connexion à la base de données
 $pdo = null; // Ferme la connexion PDO
@@ -165,6 +158,27 @@ $pdo = null; // Ferme la connexion PDO
             window.location.href = 'scripts/deconnexion';
         }
     }
+
+    function showToast(message, type) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.className = `toast ${type}`; // success ou error
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000); // Le toast disparaît après 3 secondes
+    }
+
+    // Vérifier les paramètres d'URL au chargement de la page
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === '1') {
+            showToast('Article ajouté avec succès !', 'success');
+        } else if (urlParams.get('error') === '1') {
+            showToast('Erreur lors de l\'ajout de l\'article.', 'error');
+        }
+    });
     </script>
 
 

@@ -41,6 +41,7 @@
   border-radius: 5px;
   max-width: 500px;
   width: 90%;
+  position: relative;
 }
 
 .popup-content input[type="text"],
@@ -57,24 +58,31 @@
 
 .close {
  cursor: pointer; /* Curseur en forme de main */
- font-size: 24px; /* Taille de la police */
+ font-size: 30px; /* Taille de la police */
  position: absolute; /* Position absolue */
- right: 20px; /* Position à droite */
- top: 10px; /* Position en haut */
+ right: 10px; /* Position à droite */
+ top: 5px; /* Position en haut */
  color : red;
 }
 
 .toast {
    position: fixed;
-   bottom: 20px;
+   top: 20px;
    right: 20px;
    padding: 15px 25px;
    border-radius: 5px;
    color: white;
    font-weight: bold;
    opacity: 0;
-   transition: opacity 0.5s ease-in-out;
+   transition: opacity 0.3s ease-in-out;
    z-index: 10000;
+   animation: fadeOut 2s forwards 2s; /* Ajout de l'animation pour rester 2 secondes */
+}
+
+@keyframes fadeOut {
+   to {
+      opacity: 0;
+   }
 }
 
 .toast.success {
