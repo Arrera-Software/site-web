@@ -1,89 +1,100 @@
 /* Section hÃ©ro style Apple */
 .hero-section {
-    background-color: var(--apple-white);
-    margin-top: 250px;
+    background: linear-gradient(135deg, #000 0%, #333 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de grille en arrière-plan */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(#222 1px, transparent 1px),
+                linear-gradient(90deg, #222 1px, transparent 1px);
+    background-size: 30px 30px;
+    transform: rotate(-45deg);
+    animation: gridMove 15s linear infinite;
 }
 
 .container-accueil {
-    background: linear-gradient(to bottom, #ffffffa6, #ffffffc7);
-    border-radius: 16px;
-    padding: 15px;
-    transition: all 0.8s ease-in-out;
-    background-size: 200% 200%;
-    background-position: 0% 0%;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
 }
-
-.container-accueil:hover {
-    background: linear-gradient(to top, #b8b8b8a6, #ffffffc7);
-    background-size: 200% 200%;
-    background-position: 0% 100%;
-    transition: all 0.8s ease-in-out;
-}
-
 
 .title {
-    font-size: 56px;
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -0.005em;
-    color: var(--apple-black);
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+    font-size: 72px;
+    background: linear-gradient(45deg, #fff, #7d7d7d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 .texte {
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--apple-gray);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards 0.3s;
+    color: #999;
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* Nouvelles animations */
+@keyframes gridMove {
+    0% {
+        transform: rotate(-45deg) translateY(0);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+        transform: rotate(-45deg) translateY(-50%);
     }
 }
 
-/* Responsive */
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Animation pour le conteneur */
+.container-accueil:hover {
+    transform: scale(1.02);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.05);
+}
+
 @media (max-width: 768px) {
     .title {
-        font-size: 40px;
-        padding: 0 20px;
+        font-size: 42px;
+        letter-spacing: -1px;
     }
     
     .texte {
-        font-size: 24px;
+        font-size: 18px;
         padding: 0 20px;
     }
     
-    .hero-section {
-        margin-top: 300px;
-        padding: 20px;
+    .container-accueil {
+        padding: 30px;
+        margin: 20px;
     }
-}
-
-/* Section hÃ©ro style Apple avec thÃ¨me sombre */
-.hero-section.dark-theme {
-    background-color: var(--apple-black);
 }

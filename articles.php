@@ -24,7 +24,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="">
+                    <a href="index">
                         <img src="img/file.webp" alt="Logo" class="logo-img">
                     </a>
                 </div>
@@ -83,7 +83,10 @@ echo '<main class="container-articles">';
 if ($result->rowCount() > 0) {
     echo '<div class="container-articles">';
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\')">';
+        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\', \'' . (!empty($row['pj_image']) ? htmlspecialchars($row['pj_image']) : '') . '\')">';
+        if (!empty($row['pj_image'])) {
+            echo '<img src="' . htmlspecialchars($row['pj_image']) . '" alt="Image de l\'article" class="article-image">';
+        }
         echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>';
         echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>';
         echo '</div>';
@@ -97,7 +100,10 @@ echo '</main>';
 // Garder la popup en dehors du main
 echo '<div id="popup" class="popup" style="display:none;">';
 echo '<span class="close" onclick="closePopup()">&times;</span>'; // Bouton de fermeture
-echo '<div id="popup-content" class="popup-content"></div>'; // Contenu de la popup avec la classe ajoutée
+echo '<div id="popup-content" class="popup-content">';
+echo '<div id="popup-image"></div>'; // Nouvel élément pour l'image
+echo '<div id="popup-text"></div>'; // Élément pour le texte
+echo '</div>';
 echo '</div>'; // Ferme la div de la popup
 
 // Ajout du popup pour créer un article
@@ -135,10 +141,21 @@ $pdo = null; // Ferme la connexion PDO
     </footer>
 
     <script>
-    function openPopup(content, title) {
+    function openPopup(content, title, image) {
         const popupContent = document.getElementById("popup-content");
-        popupContent.innerHTML = "<h2>Titre : " + title + "</h2><br><br>" + content;
-        document.getElementById("popup").style.display = "flex"; // Utiliser flex pour centrer
+        const popupImage = document.getElementById("popup-image");
+        const popupText = document.getElementById("popup-text");
+        
+        // Ajouter l'image si elle existe
+        if (image) {
+            popupImage.innerHTML = `<img src="${image}" alt="Image de l'article" class="popup-image">`;
+        } else {
+            popupImage.innerHTML = '';
+        }
+        
+        // Ajouter le titre et le contenu
+        popupText.innerHTML = "<h2>Titre : " + title + "</h2><br><br>" + content;
+        document.getElementById("popup").style.display = "flex";
     }
 
     function closePopup() {
