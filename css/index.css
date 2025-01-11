@@ -1,7 +1,12 @@
+html, body {
+    height: 100%; /* S'assurer que le parent occupe 100% de la fenêtre */
+    margin: 0;
+}
+
 /* Section hÃ©ro style Apple */
 .hero-section {
     background: linear-gradient(135deg, #000 0%, #333 100%);
-    min-height: 100vh;
+    height: 15000px; /* Prend toute la hauteur du parent */
     margin: 0;
     padding: 0;
     display: flex;
