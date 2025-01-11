@@ -8,7 +8,7 @@
 
   body {
     background-color: #1d1d1f;  /* Fond sombre d'Apple */
-    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃƒÆ’Ã‚Âªtre */
+    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la fenÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªtre */
     display: flex;
     flex-direction: column; /* Organise le contenu verticalement */
 }
@@ -46,7 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 44px;
+      height: 50px;
       background-color: var(--apple-black);
       padding : 30px;
     }
@@ -155,7 +155,7 @@
     text-align: center;
     margin-top: auto; /* Pousse le footer vers le bas */
     width: 100%;
-    position: relative; /* Assure que le footer reste en bas mÃƒÆ’Ã‚Âªme avec peu de contenu */
+    position: relative; /* Assure que le footer reste en bas mÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªme avec peu de contenu */
     bottom: 0;
 }
 
@@ -170,12 +170,12 @@
     color: #86868b;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .main-header .container {
         padding: 0 20px; /* Garde l'espace horizontal */
         padding-bottom: 30px; /* Ajoute un espace en bas de 30px (ajuste selon tes besoins) */
     }
-}
+
 
     h1 {
         margin-top : 60px
@@ -189,9 +189,9 @@
 
     
     .header-links {
-        flex-direction: row; /* Aligner les ÃƒÆ’Ã‚Â©lÃƒÆ’Ã‚Â©ments horizontalement */
+        flex-direction: row; /* Aligner les ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©ments horizontalement */
         margin-top : 75px;
         margin-left: -375px;
-        gap: 1px; /* RÃƒÆ’Ã‚Â©duire l'espace entre les liens */
+        gap: 1px; /* RÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â©duire l'espace entre les liens */
     }
-    
+}
