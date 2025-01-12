@@ -16,6 +16,7 @@
 
 .container-articles {
    display: flex;
+   color:white;
    flex-direction: row;
    flex-wrap: wrap;
    gap: 30px;
