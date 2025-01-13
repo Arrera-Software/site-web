@@ -38,15 +38,15 @@
                     <?php
                         if (isset($_SESSION['identifiant'])) {
                             echo '<div class="header-link-connexion">';
-                            echo 'Bonjour, ' . $_SESSION['identifiant'];
+                            echo 'Bonjour, ' . htmlspecialchars($_SESSION['identifiant']);
                             echo '<div class="dropdown-menu">';
-                            echo '<a href="#" onclick="openAddArticlePopup(); return false;">Ajouter un article</a>';
+                            echo '<a href="#" onclick="openAddArticlePopup()">Ajouter un article</a>';
                             echo '<a href="scripts/deconnexion">Se déconnecter</a>';
                             echo '</div>';
                             echo '</div>';
                         } 
                         else {
-                                null;           
+                            echo null;           
                         }
                     ?>
                     
@@ -83,14 +83,19 @@ echo '<main class="container-articles">';
 if ($result->rowCount() > 0) {
     echo '<div class="container-articles">';
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        echo '<div class="article-card" onclick="openPopup(\'' . htmlspecialchars($row['contenu']) . '\', \'' . htmlspecialchars($row['titre']) . '\', \'' . (!empty($row['pj_image']) ? htmlspecialchars($row['pj_image']) : '') . '\')">';
+        // Échapper les caractères spéciaux pour JavaScript
+        $content = str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['contenu'])));
+        $title = str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['titre'])));
+        $image = !empty($row['pj_image']) ? str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['pj_image']))) : '';
+        
+        echo '<div class="article-card" onclick="openPopup(\'' . $content . '\', \'' . $title . '\', \'' . $image . '\')">';
         if (!empty($row['pj_image'])) {
             echo '<img src="' . htmlspecialchars($row['pj_image']) . '" alt="Image de l\'article" class="article-image">';
         }
         echo '<h2>' . htmlspecialchars($row['titre']) . '</h2>';
         echo '<p>' . htmlspecialchars(substr($row['contenu'], 0, 150)) . '...</p>';
         echo '<p><img src="img/calendar.png" alt="Calendrier" class="img"> Date  : ' . htmlspecialchars($row['date_creation']) . '</p>';
-        echo '<img src="img/copy-writing.png" alt="Editeur" class="img"> Éditeur : ' . htmlspecialchars($row['editeur']) . '</p>';
+        echo '<p><img src="img/copy-writing.png" alt="Editeur" class="img"> Éditeur : ' . htmlspecialchars($row['editeur']) . '</p>';
         echo '</div>';
     }
     echo '</div>';
@@ -111,7 +116,7 @@ echo '</div>'; // Ferme la div de la popup
 // Ajout du popup pour créer un article
 if (isset($_SESSION['identifiant'])) {
     echo '<div id="add-article-popup" class="popup" style="display:none;">';
-    echo '<span class="close" onclick="closePopup()">&times;</span>'; // Bouton de fermeture    
+    echo '<span class="close" onclick="closeAddArticlePopup()">&times;</span>'; // Bouton de fermeture    
     echo '<div class="popup-content">';
     echo '<h2>Ajouter un article</h2>';
     echo '<form action="ajouter_article.php" method="POST" enctype="multipart/form-data">';
@@ -155,8 +160,10 @@ $pdo = null; // Ferme la connexion PDO
             popupImage.innerHTML = '';
         }
         
-        // Ajouter le titre et le contenu
-        popupText.innerHTML = "<h2>Titre : " + title + "</h2><br><br>" + content;
+        // Ajouter le titre et le contenu en décodant les caractères HTML
+        const decodedTitle = title.replace(/\\'/g, "'");
+        const decodedContent = content.replace(/\\'/g, "'");
+        popupText.innerHTML = `<h2>Titre : ${decodedTitle}</h2><br><br>${decodedContent}`;
         document.getElementById("popup").style.display = "flex";
     }
 
@@ -186,7 +193,7 @@ $pdo = null; // Ferme la connexion PDO
     function showToast(message, type) {
         const toast = document.getElementById('toast');
         toast.textContent = message;
-        toast.className = `toast ${type}`; // success ou error
+        toast.className = 'toast ' + type; // success ou error
         toast.classList.add('show');
         
         setTimeout(() => {
