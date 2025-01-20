@@ -104,6 +104,7 @@
             <div class="service-links">
 
                 <a href="https://github.com/Arrera-Software/Arrera-Tiger-Interface" class="learn-more">Code source</a>
+                <a href="https://arrera-software.fr/tigerFile.json" class="learn-more">Fichier de depots</a>
             </div>
         </div>
         <div class="service-card">
