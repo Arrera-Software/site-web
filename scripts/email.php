@@ -4,12 +4,24 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php'; // Charger l'autoloader de Composer
 
+session_start();
+
 // Vérifier si le fichier de configuration existe
 if (!file_exists('../configmail.php')) {
     die('Le fichier de configuration est manquant'); // Arrêter l'exécution si le fichier de configuration est manquant
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requête est POST
+    // Vérification du captcha
+    $captcha_input = strtoupper(trim($_POST['captcha']));
+    if (!isset($_SESSION['captcha_text']) || $captcha_input !== $_SESSION['captcha_text']) {
+        echo "<script>alert('Code de vérification incorrect. Veuillez réessayer.');</script>";
+        header('Location: ../contact.php');
+        exit();
+    }
+    // Supprimer le captcha de la session
+    unset($_SESSION['captcha_text']);
+
     // Validation et assainissement des entrées
     // Récupère et assainit le nom
     $nom = htmlspecialchars(trim(filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING))); // Envoie le nom

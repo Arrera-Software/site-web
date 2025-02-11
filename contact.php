@@ -78,7 +78,13 @@
                     <label for="message">Message</label>
                 </div>
 
-
+                <!-- Ajout du nouveau captcha -->
+                <div class="form-group">
+                    <img src="scripts/generate_captcha.php" alt="CAPTCHA" id="captchaImage">
+                    <button type="button" onclick="refreshCaptcha()" class="refresh-captcha">Rafraîchir</button>
+                    <input type="text" id="captcha" name="captcha" required>
+                    <label for="captcha">Entrez le code ci-dessus</label>
+                </div>
 
                 <button type="submit" class="submit-btn">Envoyer</button>
             </form>
@@ -94,7 +100,11 @@
         </div>
     </footer>
 
-
+    <script>
+    function refreshCaptcha() {
+        document.getElementById('captchaImage').src = 'scripts/generate_captcha.php?' + new Date().getTime();
+    }
+    </script>
 
 </body>
 
