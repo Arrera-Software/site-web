@@ -57,7 +57,7 @@
         <section class="image-section">
             <img src="img/ArreraI2024.webp" alt="Arrera Interface I2024" class="img">
         </section>
-        <a href="https://github.com/Arrera-Software/Arrera-Interface/releases/tag/I2024-2.05.1" class="download-interface">Télécharger</a>
+        <a href="https://github.com/Arrera-Software/Arrera-Interface/releases/tag/I2024-2.05.2" class="download-interface">Télécharger</a>
 
     </div>
 
