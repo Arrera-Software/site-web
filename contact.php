@@ -1,5 +1,18 @@
 <?php
     session_start();
+
+// Débogage des erreurs
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Vérification du fichier .env
+$envFile = __DIR__ . '/.env';
+if (!file_exists($envFile)) {
+    error_log("Fichier .env introuvable dans : " . $envFile);
+} else {
+    $config = parse_ini_file($envFile);
+    error_log("Configuration SMTP trouvée : " . (isset($config['SMTP_PASSWORD']) ? 'Oui' : 'Non'));
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
