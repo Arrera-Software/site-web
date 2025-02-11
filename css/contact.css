@@ -156,3 +156,61 @@
 .refresh-captcha:hover {
     background: #e0e0e0;
 }
+
+/* Styles pour les notifications toast */
+.toast {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.toast.success {
+    background-color: #4CAF50;
+    border-left: 4px solid #2E7D32;
+}
+
+.toast.error {
+    background-color: #f44336;
+    border-left: 4px solid #B71C1C;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    .toast {
+        top: 80px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}

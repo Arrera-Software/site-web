@@ -6,16 +6,24 @@ require '../vendor/autoload.php'; // Charger l'autoloader de Composer
 
 session_start();
 
-// Vérifier si le fichier de configuration existe
-if (!file_exists('../configmail.php')) {
-    die('Le fichier de configuration est manquant'); // Arrêter l'exécution si le fichier de configuration est manquant
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requête est POST
+    // Sauvegarder les données du formulaire dans la session
+    $_SESSION['form_data'] = [
+        'nom' => $_POST['nom'],
+        'prenom' => $_POST['prenom'],
+        'email' => $_POST['email'],
+        'sujet' => $_POST['sujet'],
+        'message' => $_POST['message']
+    ];
+
     // Vérification du captcha
     $captcha_input = strtoupper(trim($_POST['captcha']));
     if (!isset($_SESSION['captcha_text']) || $captcha_input !== $_SESSION['captcha_text']) {
-        echo "<script>alert('Code de vérification incorrect. Veuillez réessayer.');</script>";
+        $_SESSION['toast'] = [
+            'type' => 'error',
+            'message' => 'Code de vérification incorrect. Veuillez réessayer.'
+        ];
         header('Location: ../contact.php');
         exit();
     }
@@ -41,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requ�
         exit(); // Terminer le script
     }
 
-    $config = require '../configmail.php'; // Inclure le fichier de configuration
+    $config = parse_ini_file('../.env'); // Charger les variables d'environnement depuis le fichier .env
 
     $mail = new PHPMailer(true); // Créer une instance de PHPMailer
 
@@ -51,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requ�
         $mail->Host = 'smtp.mail.ovh.net'; // Définir le serveur SMTP
         $mail->SMTPAuth = true; // Activer l'authentification SMTP
         $mail->Username = 'contact@arrera-software.fr'; // Définir l'adresse email
-        $mail->Password = $config['smtp_password']; // Utiliser le mot de passe du fichier de configuration
+        $mail->Password = $config['SMTP_PASSWORD']; // Utiliser $config au lieu de $_ENV
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Activer le cryptage SMTPS
         $mail->Port = 465; // Définir le port SMTP
 
@@ -71,19 +79,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requ�
         header('Content-Type: text/html; charset=utf-8'); // Définir l'encodage de la réponse
 
         // Traitement de l'envoi du message
-        if ($mail->send()) { // Si l'email est envoyé avec succès
-            echo "<script>alert('Votre message a été envoyé avec succès ! Nous allons revenir très vite vers vous !');</script>"; // Alerte de succès
-            header('Location: ../contact.php'); // Rediriger vers la page de contact
-            exit(); // Terminer le script
-        } else { // Si l'envoi échoue
-            echo "<script>alert('Erreur lors de l\'envoi du message. Veuillez réessayer plus tard !');</script>"; // Alerte d'erreur
-            header('Location: ../contact.php'); // Rediriger vers la page de contact
-            exit(); // Terminer le script
+        if ($mail->send()) {
+            // Nettoyer les données du formulaire de la session
+            unset($_SESSION['form_data']);
+            $_SESSION['toast'] = [
+                'type' => 'success',
+                'message' => 'Votre message a été envoyé avec succès ! Nous allons revenir très vite vers vous !'
+            ];
+            header('Location: ../contact.php');
+            exit();
+        } else {
+            $_SESSION['toast'] = [
+                'type' => 'error',
+                'message' => 'Erreur lors de l\'envoi du message. Veuillez réessayer plus tard !'
+            ];
+            header('Location: ../contact.php');
+            exit();
         }
-    } catch (Exception $e) { // Gérer les exceptions
-        echo "<script>alert('Une erreur est survenue lors de l\'envoi de l\'email !');</script>"; // Alerte d'erreur
-        header('Location: ../contact.php'); // Rediriger vers la page de contact
-        exit(); // Terminer le script
+    } catch (Exception $e) {
+        $_SESSION['toast'] = [
+            'type' => 'error',
+            'message' => 'Une erreur est survenue lors de l\'envoi de l\'email !'
+        ];
+        header('Location: ../contact.php');
+        exit();
     }
 }
 ?>
