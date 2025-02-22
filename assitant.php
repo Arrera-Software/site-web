@@ -62,7 +62,7 @@
                 <h2>Arrera SIX</h2>
                 <p>Arrera SIX est le premier assistant créé par Arrera. Il a pour but de lancer des tâches sur votre ordinateur à l'aide de commandes vocales.</p>
                 <div class="service-links">
-                    <a href="https://github.com/Arrera-Software/Ryley/releases/tag/I2025-1.00" class="download-link">Télécharger</a>
+                    <a href="https://github.com/Arrera-Software/Ryley/releases/tag/I2025-1.01" class="download-link">Télécharger</a>
                     <a href="https://github.com/Arrera-Software/Six" class="learn-more">Code source</a>
                     <a href="https://github.com/Arrera-Software/Six/releases" class="learn-more">Toutes les versions</a>
                 </div>
@@ -76,7 +76,7 @@
                 <h2>Arrera RYLEY</h2>
                 <p>Arrera Ryley est le deuxième assistant d'Arrera. Il a pour but de lancer des tâches, comme SIX, et de vous aider dans votre projet de développement grâce à la fonctionnalité CODEHELP. Contrôle uniquement par texte.</p>
                 <div class="service-links">
-                    <a href="https://github.com/Arrera-Software/Six/releases/tag/I2025-1.00" class="download-link">Télécharger</a>
+                    <a href="https://github.com/Arrera-Software/Six/releases/tag/I2025-1.01" class="download-link">Télécharger</a>
                     <a href="https://github.com/Arrera-Software/Ryley" class="learn-more">Code source</a>
                     <a href="https://github.com/Arrera-Software/Ryley/releases" class="learn-more">Toutes les versions</a>
                 </div>
