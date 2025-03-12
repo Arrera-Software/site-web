@@ -1,0 +1,152 @@
+.container-g {
+    display: flex;
+    background-color: #e1e1e1;
+    color: var(--apple-black);
+    padding: 40px;
+    border-radius: 10px;
+    margin: 100px auto;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1200px;
+    align-items: center;
+    animation: fadeIn 0.6s ease-out; /* Ajout de l'animation */
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-section {
+    flex: 2;
+    padding-left: 20px;
+    max-width: 55%;
+}
+
+.image-section {
+    flex: 0 0 30%;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.download-link, .download-interface, .learn-more {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.download-link {
+    background-color: #007AFF;
+    color: white;
+}
+
+.download-interface {
+    background-color: #007AFF;
+    color: white;
+    margin-top: 250px;
+    position: absolute; /* Position absolue */
+    margin-left : 0;
+    padding : 15px;
+}
+
+.learn-more {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}
+
+.learn-more:hover {
+    background-color: #e5e5e5;
+}
+
+.title-session{
+    color: white;
+    align-self: center;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    animation: cardAppear 0.6s ease-out forwards; /* Ajout de l'animation pour les cartes de service */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ajout pour le positionnement absolu du bouton */
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.service-card h2 {
+    color: var(--apple-black);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.service-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.download-link, .download-interface, .learn-more {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    margin: 0 auto;
+    /* max-width: 1200px; */
+    margin-top: 50px;
+}
