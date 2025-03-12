@@ -98,18 +98,6 @@
         </div>
         <div class="service-card">
             <div class="service-icon">
-                <img src="img/ArreraTiger.webp" alt="LOGO">
-            </div>
-            <h2>Arrera Tiger</h2>
-            <p>Module inclus directement dans l'interface pour installer les différents modules disponibles et les maintenir à jour.</p>
-            <div class="service-links">
-
-                <a href="https://github.com/Arrera-Software/Arrera-Tiger-Interface" class="learn-more">Code source</a>
-                <a href="https://arrera-software.fr/depots.json" class="learn-more">Fichier de depots</a>
-            </div>
-        </div>
-        <div class="service-card">
-            <div class="service-icon">
                 <img src="img/ArreraVideoDownload.webp" alt="LOGO">
             </div>
             <h2>Arrera Video download</h2>
