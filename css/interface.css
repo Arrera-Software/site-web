@@ -143,3 +143,35 @@ h1 {
 .learn-more:hover {
     background-color: #e5e5e5;
 }
+
+@media (max-width: 480px) {
+    .container-g {
+        display: flex;
+        flex-direction: column; /* Contenu empilé */
+        align-items: center;
+        justify-content: center; /* Centre les éléments */
+    }
+
+    .text-section {
+        padding: 0;
+        text-align: center; /* Centre le texte */
+    }
+
+    .image-section {
+        text-align: center;
+    }
+
+    .img {
+        max-width: 80%; /* Limite la taille des images */
+        height: auto;
+    }
+
+    .download-interface {
+        margin-top: 20px; /* Ajoute un espace entre l'image et le bouton */
+        width: auto; /* Ajuste automatiquement la largeur */
+        align-self: center; /* Centre le bouton si container-g utilise le flexbox */
+        padding: 10px 20px; /* Embellit l'espacement interne */
+        text-align: center; /* Centre le texte à l'intérieur */
+        margin-top: 100%;
+    }
+}
