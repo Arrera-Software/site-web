@@ -78,8 +78,8 @@
         <section class="image-section">
             <img src="img/arrera-tiger.webp" alt="Arrera Interface I2024" class="img">
         </section>
-        <p class="download-interface">Sort bientôt</p>
-        <!--<a href="" class="download-interface">Télécharger le setup</a>-->
+        <!--<p class="download-interface">Sort bientôt</p>-->
+        <a href="https://github.com/Arrera-Software/arrera-tiger-updater/releases/tag/1.00" class="download-interface">Télécharger l'installateur</a>
     </div>
 
     <div class="title-session">
