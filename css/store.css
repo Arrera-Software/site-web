@@ -24,19 +24,14 @@
     }
 }
 
-.image-section {
-    flex: 0 0 30%;
-}
-
-h1 {
-    margin-right: 0;
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
 .text-section {
     flex: 2;
     padding-left: 20px;
+    max-width: 55%;
+}
+
+.image-section {
+    flex: 0 0 30%;
 }
 
 .img {
@@ -44,15 +39,43 @@ h1 {
     height: auto;
 }
 
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 40px;
-    margin: 0 auto;
-    /* max-width: 1200px; */
-    margin-top: 50px;
+.download-link, .download-interface, .learn-more {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.download-link {
+    background-color: #007AFF;
+    color: white;
+}
+
+.download-interface {
+    background-color: #007AFF;
+    color: white;
+    margin-top: 250px;
+    position: absolute; /* Position absolue */
+    margin-left : 0;
+    padding : 15px;
+}
+
+.learn-more {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}
+
+.learn-more:hover {
+    background-color: #e5e5e5;
+}
+
+.title-session{
+    color: white;
+    align-self: center;
 }
 
 .service-card {
@@ -117,31 +140,15 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-.download-link {
-    background-color: #007AFF;
-    color: white;
-}
-
-.download-interface {
-    background-color: #007AFF;
-    color: white;
-    margin-top: 250px;
-    position: absolute; /* Position absolue */
-    margin-left : 0;
-    padding : 15px;
-}
-
-.learn-more {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.download-link:hover {
-    background-color: #0056b3;
-}
-
-.learn-more:hover {
-    background-color: #e5e5e5;
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    margin: 0 auto;
+    /* max-width: 1200px; */
+    margin-top: 50px;
 }
 
 @media (max-width: 480px) {
@@ -172,6 +179,6 @@ h1 {
         align-self: center; /* Centre le bouton si container-g utilise le flexbox */
         padding: 10px 20px; /* Embellit l'espacement interne */
         text-align: center; /* Centre le texte à l'intérieur */
-        margin-top: 100%;
+        margin-top: 150%;
     }
 }
