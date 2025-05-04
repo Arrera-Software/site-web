@@ -61,8 +61,8 @@
 
   "arrera-postite": {
     "version" : "I2025-2.00",
-    "linkWin" : "https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.00/arrera-postiste-linux-x64.zip",
-    "linkLinux" : "https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.00/arrera-postiste-windows-x64.zip",
+    "linkWin" : "https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.00/arrera-postiste-windows-x64.zip",
+    "linkLinux" : "https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.00/arrera-postiste-linux-x64.zip",
     "namezipwin" : "arrera-postiste-windows-x64.zip",
     "nameziplinux" : "arrera-postiste-linux-x64.zip",
     "namefolderWin" : "arrera-postiste-windows-x64",
