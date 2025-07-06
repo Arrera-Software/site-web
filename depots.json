@@ -80,7 +80,7 @@
     "img" : "https://raw.githubusercontent.com/Arrera-Software/Arrera-raccourci/refs/heads/main/image/icon.png"},
 
   "arrera-postite": {
-    "version" : "I2025-2.05",
+    "version" : "I2025-2.10",
     "linkWin" : "https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.10/arrera-postiste-windows-x64.zip",
     "linkLinux" : "https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.10/arrera-postiste-linux-x64.zip",
     "linkMac":"https://github.com/Arrera-Software/Arrera-Postite/releases/download/I2025-2.10/arrera-postiste-mac-arm64.zip",
