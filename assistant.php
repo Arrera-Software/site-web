@@ -113,7 +113,7 @@
                 <h2>Arrera COPILOTE</h2>
                 <p>Arrera COPILOTE est le dernier assistant d'Arrera. Il propose une interface regroupant les deux assistants d'Arrera avec toutes leurs fonctionnalités. De plus, il offre deux modes de contrôle : vocal et texte.</p>
                 <div class="service-links">
-                    <a href="https://github.com/Arrera-Software/Arrera-Copilote/releases/tag/I204-1.00" class="download-link">Télécharger</a>
+                    <a href="https://github.com/Arrera-Software/Arrera-Copilote/releases/tag/I2025-1.00" class="download-link">Télécharger</a>
                     <a href="https://github.com/Arrera-Software/Arrera-Copilote" class="learn-more">Code source</a>
                     <a href="https://github.com/Arrera-Software/Arrera-Copilote/releases" class="learn-more">Toutes les versions</a>
                 </div>
