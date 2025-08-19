@@ -1,9 +1,9 @@
 {
   "arrera-interface": {
-    "version" : "I2025-1.00",
-    "linkWin" : "https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-1.00/arrera-interface-windows-x86.zip",
-    "linkLinux" : "https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-1.00/arrera-interface-linux-x86.zip",
-    "linkMac":"",
+    "version" : "I2025-2.00",
+    "linkWin" : "https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-2.00/arrera-interface-windows-x86.zip",
+    "linkLinux" : "https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-2.00/arrera-interface-linux-x86.zip",
+    "linkMac":"https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-2.00/arrera-interface.dmg",
     "namezipwin" : "arrera-interface-windows-x86.zip",
     "nameziplinux" : "arrera-interface-linux-x86.zip",
     "namefolderWin" : "arrera-interface-windows-x86",
