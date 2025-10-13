@@ -25,7 +25,7 @@
             <div class="header-content">
             <!-- Logo -->
             <div class="logo">
-                <a href="">
+                <a href="index">
                 <img src="img/file.webp" alt="Logo" class="logo-img">
                 </a>
             </div>
