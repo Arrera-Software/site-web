@@ -17,7 +17,7 @@
             <!-- Logo -->
             <div class="logo">
                 <a href="index">
-                <img src="img/file.webp" alt="Logo" class="logo-img">
+                <img src="img/arrera-software.webp" alt="Logo" class="logo-img">
                 </a>
             </div>
             
