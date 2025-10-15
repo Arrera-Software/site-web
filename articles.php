@@ -92,8 +92,8 @@ if (!isset($pdo)) {
     die("La connexion PDO n'a pas été établie correctement");
 }
 
-// Requête SQL pour récupérer les articles de la base de données
-$sql = "SELECT titre, contenu, pj_image, date_creation, editeur FROM articles"; // Déclare la requête SQL
+// Requête SQL pour récupérer les articles de la base de données (du plus récent au plus ancien)
+$sql = "SELECT titre, contenu, pj_image, date_creation, editeur FROM articles ORDER BY date_creation DESC"; // Déclare la requête SQL
 try {
     $result = $pdo->query($sql); // Exécute la requête et stocke le résultat
 } catch (PDOException $e) {
