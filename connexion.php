@@ -13,29 +13,7 @@
 
 </head>
 <body>
-    <!-- Header principal -->
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index">
-                        <img src="img/arrera-software.webp" alt="Logo" class="logo-img">
-                    </a>
-                </div>
-                <!-- Navigation -->
-                <div class="header-links">
-                    <a href="assitant" class="header-link">Assistant</a>
-                    <a href="interface" class="header-link">Interface</a>
-                    <a href="store" class="header-link">Store</a>
-                    <a href="articles" class="header-link">Articles</a>
-                    <a href="contact" class="header-link">Contact</a>
-                    <a href="a-propos" class="header-link">À propos</a>
-
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include 'header-footer/header.php'; ?>
 
     <main class="login-container">
         <div class="login-form-wrapper">
@@ -75,14 +53,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <p class="copyright">
-                © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
-            </p>
-        </div>
-    </footer>
+    <?php include 'header-footer/footer.php'; ?>
 
 </body>
 </html>
