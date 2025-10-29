@@ -30,13 +30,6 @@
                 <p>Fondateur</p>
             </div>
             <div class="team-member">
-                <a href="https://github.com/skoyzz" target="_blank">
-                    <img src="img/skoyzz.webp" alt="Quentin B" class="member-img">
-                </a>
-                <h3>Quentin B</h3>
-                <p>Développeur Web</p>
-            </div>
-            <div class="team-member">
                 <img src="img/charlotte.webp" alt="Charlotte B" class="member-img">
                 <h3>Charlotte B</h3>
                 <p>Correctrice</p>
