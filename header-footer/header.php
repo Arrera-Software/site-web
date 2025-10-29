@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="logo">
             <a href="index">
-            <img src="img/arrera-software.webp" alt="Logo" class="logo-img">
+            <img src="../img/arrera-software.webp" alt="Logo" class="logo-img">
             </a>
         </div>
         
@@ -20,19 +20,19 @@
         
         <!-- Navigation -->
         <div class="header-links">
-            <a href="assistant" class="header-link">Assistant</a>
-            <a href="interface" class="header-link">Interface</a>
-            <a href="store" class="header-link">Store</a>
-            <a href="articles" class="header-link">Articles</a>
-            <a href="contact" class="header-link">Contact</a>
-            <a href="a-propos" class="header-link">À propos</a>
+            <a href="/assistant" class="header-link">Assistant</a>
+            <a href="/interface" class="header-link">Interface</a>
+            <a href="/store" class="header-link">Store</a>
+            <a href="/articles" class="header-link">Articles</a>
+            <a href="/contact" class="header-link">Contact</a>
+            <a href="/a-propos" class="header-link">À propos</a>
             <?php
             if (isset($_SESSION['identifiant'])) {
                 echo '<div class="header-link-connexion">';
                 echo 'Bonjour, ' . $_SESSION['identifiant'];
                 echo '<div class="dropdown-menu">';
                 echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
-                echo '<a href="scripts/deconnexion">Se déconnecter</a>';
+                echo '<a href="/scripts/deconnexion">Se déconnecter</a>';
                 echo '</div>';
                 echo '</div>';
             } 
