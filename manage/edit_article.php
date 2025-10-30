@@ -22,28 +22,53 @@ if ($id <= 0) {
     die('ID article invalide.');
 }
 
+// Construire la liste des images autorisées (pour affichage et validation)
+$availableImages = [];
+$imgDir = __DIR__ . '/../img/';
+$uploadDir = __DIR__ . '/../uploads/';
+if (file_exists($imgDir)) {
+    foreach (glob($imgDir . '*.{png,jpg,jpeg,gif,webp}', GLOB_BRACE) as $f) {
+        $availableImages['img/' . basename($f)] = $f;
+    }
+}
+if (file_exists($uploadDir)) {
+    foreach (glob($uploadDir . '*.{png,jpg,jpeg,gif,webp}', GLOB_BRACE) as $f) {
+        $availableImages['uploads/' . basename($f)] = $f;
+    }
+}
+
 // Traitement POST (mise à jour)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titre = $_POST['titre'] ?? '';
     $contenu = $_POST['contenu'] ?? '';
+
+    // Récupérer la sélection d'image existante si fournie
+    $selected_image = $_POST['selected_image'] ?? null;
 
     if (empty($titre) || empty($contenu)) {
         $error = 'Le titre et le contenu sont requis.';
     } else {
         // Gestion de l'image
         $pj_image = null;
+
+        // (availableImages construit plus haut pour la validation)
+
+        // Priorité : upload d'un nouveau fichier > sélection d'une image existante
         if (isset($_FILES['pj_image']) && $_FILES['pj_image']['error'] === UPLOAD_ERR_OK) {
-            $uploadDir = __DIR__ . '/../uploads/';
-            if (!file_exists($uploadDir)) mkdir($uploadDir, 0777, true);
+            $uploadDirFs = __DIR__ . '/../uploads/';
+            if (!file_exists($uploadDirFs)) mkdir($uploadDirFs, 0777, true);
             $ext = pathinfo($_FILES['pj_image']['name'], PATHINFO_EXTENSION);
             $fileName = uniqid() . '.' . $ext;
-            $dest = $uploadDir . $fileName;
+            $dest = $uploadDirFs . $fileName;
             if (!move_uploaded_file($_FILES['pj_image']['tmp_name'], $dest)) {
                 $error = 'Erreur lors de l upload de l image.';
             } else {
                 // chemin relatif pour stockage
                 $pj_image = 'uploads/' . $fileName;
             }
+        } elseif (!empty($selected_image) && isset($availableImages[$selected_image])) {
+            // Utiliser une image existante sélectionnée (après validation)
+            $pj_image = $selected_image;
         }
 
         try {
@@ -120,6 +145,28 @@ try {
 
             <h2>Remplacer l'image (optionnel)</h2>
             <input type="file" name="pj_image" accept="image/*">
+
+            <h2>Ou choisir une icône existante</h2>
+            <?php if (count($availableImages) === 0): ?>
+                <div>Aucune image disponible dans <code>/img</code> ou <code>/uploads</code>.</div>
+            <?php else: ?>
+                <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;">
+                    <label style="display:block;text-align:center;width:110px;">
+                        <input type="radio" name="selected_image" value="" <?php echo empty($article['pj_image']) ? 'checked' : ''; ?>>
+                        <div style="font-size:13px;margin-top:6px;">Aucune</div>
+                    </label>
+                    <?php foreach ($availableImages as $rel => $full):
+                        $checked = ($article['pj_image'] === $rel) ? 'checked' : '';
+                        $idImg = 'sel_' . md5($rel);
+                    ?>
+                        <label for="<?php echo $idImg; ?>" style="cursor:pointer; display:inline-block; text-align:center; width:110px;">
+                            <input type="radio" id="<?php echo $idImg; ?>" name="selected_image" value="<?php echo htmlspecialchars($rel); ?>" <?php echo $checked; ?> style="display:block;margin:4px auto;">
+                            <img src="/<?php echo htmlspecialchars($rel); ?>" alt="" style="max-width:100px; max-height:80px; display:block; margin:0 auto; border:1px solid #ddd; padding:4px; background:#fff;">
+                            <div style="font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><?php echo htmlspecialchars(basename($rel)); ?></div>
+                        </label>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
 
             <div>
                 <button class="btn btn-save" type="submit">Enregistrer</button>
