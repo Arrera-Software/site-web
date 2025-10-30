@@ -14,7 +14,7 @@
     <title>Inscription</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/inscription.css">
-
+    <link rel="icon" href="/img/logo-arrera.webp">
 </head>
 <body>
     <?php include 'header-footer/header.php'; ?>

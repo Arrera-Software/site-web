@@ -10,7 +10,7 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/connexion.css">
-
+    <link rel="icon" href="/img/logo-arrera.webp">
 </head>
 <body>
     <?php include 'header-footer/header.php'; ?>
