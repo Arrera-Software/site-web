@@ -104,6 +104,7 @@ try {
                             <td>
                                 <div class="actions">
                                     <a class="btn btn-edit" href="edit_article.php?id=<?php echo urlencode($a['id']); ?>">Modifier</a>
+                                    <a class="btn btn-archive" href="" target="_blank">Archiver</a>
                                     <form method="post" style="display:inline;" onsubmit="return confirm('Supprimer cet article ?');">
                                         <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($a['id']); ?>">
                                         <button type="submit" class="btn btn-del">Supprimer</button>
