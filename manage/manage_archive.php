@@ -17,7 +17,7 @@ if (!file_exists($configFile)) {
 require_once $configFile;
 
 try {
-    $sql = 'SELECT id, titre, editeur, date_creation, pj_image FROM articles ORDER BY date_creation DESC';
+    $sql = 'SELECT id, titre, editeur, date_creation, pj_image FROM archive ORDER BY date_creation DESC';
     $stmt = $pdo->query($sql);
     $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -86,10 +86,15 @@ try {
                             </td>
                             <td>
                                 <div class="actions">
-                                    <a class="btn btn-edit" href="edit_article.php?id=<?php echo urlencode($a['id']); ?>">Modifier</a>
-                                    <form method="post" action="/scripts/archive_article.php" style="display:inline;" onsubmit="return confirm('Archiver cet article ?');">
-                                        <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($a['id']); ?>">
-                                        <button type="submit" class="btn btn-del">Archiver</button>
+                                    <!-- Restaurer depuis l'archive -->
+                                    <form method="post" action="/scripts/restore_archive.php" style="display:inline;" onsubmit="return confirm('Restaurer cet article ?');">
+                                        <input type="hidden" name="archive_id" value="<?php echo htmlspecialchars($a['id']); ?>">
+                                        <button type="submit" class="btn btn-create">Réactiver</button>
+                                    </form>
+                                    <!-- Suppression définitive : formulaire POST vers scripts/delete_archive.php -->
+                                    <form method="post" action="/scripts/delete_archive.php" style="display:inline;" onsubmit="return confirm('Supprimer définitivement cet article ? Cette action est irréversible.');">
+                                        <input type="hidden" name="archive_id" value="<?php echo htmlspecialchars($a['id']); ?>">
+                                        <button type="submit" class="btn btn-del">Supprimer</button>
                                     </form>
                                 </div>
                             </td>
@@ -99,8 +104,7 @@ try {
             </table>
         <?php endif; ?>
         <div>
-            <a href="add_article.php" class="btn btn-create">Créer un nouvel article</a>
-            <a href="manage_archive.php" class="btn btn-archive">Gestion des archive</a>
+            <a href="manage_article.php" class="btn btn-archive">Gestion des article</a>
         </div>
     </main>
 

@@ -42,9 +42,16 @@ main{
 }
 
 .btn-archive { 
-    text-decoration: none;
+    display: inline-block;
+    margin: 0; 
+    padding: 10px 15px;
     background: orange; 
     color: white; 
+    text-decoration: none;
+    border-radius: 4px; 
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .btn-edit:hover { 
@@ -62,8 +69,8 @@ main{
 }
 
 .btn-create { 
-    display: block;
-    margin: 20px auto;
+    display: inline-block;
+    margin: 0; 
     padding: 10px 15px; 
     background: #4CAF50; 
     color: white; 
@@ -72,6 +79,15 @@ main{
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+}
+
+/* Conteneur des boutons en bas de la page : les centrer et les afficher côte à côte */
+main > div:last-of-type {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    align-items: center;
 }
 
 .btn-create:hover { 
