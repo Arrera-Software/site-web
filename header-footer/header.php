@@ -32,7 +32,7 @@
                 echo 'Bonjour, ' . $_SESSION['identifiant'];
                 echo '<div class="dropdown-menu">';
                 echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
-                echo '<a href="/manage/article">Manage articles</a>';
+                echo '<a href="/manage/manage_article">Manage articles</a>';
                 echo '<a href="/scripts/deconnexion">Se déconnecter</a>';
                 echo '</div>';
                 echo '</div>';
