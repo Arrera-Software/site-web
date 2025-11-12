@@ -116,7 +116,7 @@ try {
                 </tbody>
             </table>
         <?php endif; ?>
-
+        <a href="add_article.php" class="btn btn-create">Créer un nouvel article</a>
     </main>
 
     <?php include '../header-footer/footer.php'; ?>
