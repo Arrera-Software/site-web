@@ -48,12 +48,13 @@ echo '<main class="container-articles">';
 if ($result->rowCount() > 0) {
     echo '<div class="container-articles">';
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        // Échapper les caractères spéciaux pour JavaScript
-        $content = str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['contenu'])));
-        $title = str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['titre'])));
-        $image = !empty($row['pj_image']) ? str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['pj_image']))) : '';
-        
-        echo '<div class="article-card" onclick="openPopup(\'' . $content . '\', \'' . $title . '\', \'' . $image . '\')">';
+        // Pour éviter les problèmes d'échappement dans l'attribut onclick,
+        // on encode le contenu et le titre en base64 et on les met dans des data-attributes.
+        $content_b64 = base64_encode($row['contenu']);
+        $title_b64 = base64_encode($row['titre']);
+        $image = !empty($row['pj_image']) ? $row['pj_image'] : '';
+
+        echo '<div class="article-card" data-content-b64="' . htmlspecialchars($content_b64, ENT_QUOTES) . '" data-title-b64="' . htmlspecialchars($title_b64, ENT_QUOTES) . '" data-image="' . htmlspecialchars($image, ENT_QUOTES) . '" onclick="openPopupFromElement(this)">';
         if (!empty($row['pj_image'])) {
             echo '<img src="' . htmlspecialchars($row['pj_image']) . '" alt="Image de l\'article" class="article-image">';
         }
@@ -106,6 +107,41 @@ $pdo = null; // Ferme la connexion PDO
         const decodedTitle = title.replace(/\\'/g, "'");
         const decodedContent = content.replace(/\\'/g, "'");
         popupText.innerHTML = `<h2>Titre : ${decodedTitle}</h2><br><br>${decodedContent}`;
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    // Décoder base64 UTF-8 sécurisé
+    function b64DecodeUnicode(str) {
+        // From https://developer.mozilla.org/en-US/docs/Glossary/Base64#the_unicode_problem
+        try {
+            return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        } catch (e) {
+            // si problème, fallback simple
+            return atob(str);
+        }
+    }
+
+    // Ouvrir la popup en lisant les data-attributes d'un élément
+    function openPopupFromElement(el) {
+        const popupImage = document.getElementById("popup-image");
+        const popupText = document.getElementById("popup-text");
+
+        const contentB64 = el.dataset.contentB64 || '';
+        const titleB64 = el.dataset.titleB64 || '';
+        const image = el.dataset.image || '';
+
+        const content = contentB64 ? b64DecodeUnicode(contentB64) : '';
+        const title = titleB64 ? b64DecodeUnicode(titleB64) : '';
+
+        if (image) {
+            popupImage.innerHTML = `<img src="${image}" alt="Image de l'article" class="popup-image">`;
+        } else {
+            popupImage.innerHTML = '';
+        }
+
+        popupText.innerHTML = `<h2>Titre : ${title}</h2><br><br>${content}`;
         document.getElementById("popup").style.display = "flex";
     }
 
