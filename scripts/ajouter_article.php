@@ -7,8 +7,8 @@ if (!isset($_SESSION['identifiant'])) {
     exit();
 }
 
-// Vérifier si le fichier config.php existe
-$configFile = __DIR__ . '/config.php';
+// Vérifier si le fichier config.php existe (un niveau au-dessus du dossier scripts)
+$configFile = __DIR__ . '/../config.php';
 if (!file_exists($configFile)) {
     die("Le fichier config.php n'existe pas dans : " . $configFile);
 }
@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titre = $_POST['titre'] ?? null;
     $contenu = $_POST['contenu'] ?? null;
     $pj_image = $_FILES['pj_image'] ?? null;
+    $image_choice = $_POST['image_choice'] ?? 'none';
+    $existing_image = $_POST['existing_image'] ?? '';
 
     // Validation des données
     if (empty($titre) || empty($contenu)) {
@@ -33,50 +35,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Traitement de l'image (si nécessaire)
+    // Traitement de l'image selon le choix : none / existing / upload
     $imagePath = null;
-    if ($pj_image && $pj_image['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'uploads/'; // Répertoire de destination
-        
+    if ($image_choice === 'existing' && !empty($existing_image)) {
+        // On utilise le chemin fourni (ex: img/nom.jpg ou uploads/nom.jpg)
+        $imagePath = $existing_image;
+    } elseif ($image_choice === 'upload' && $pj_image && $pj_image['error'] === UPLOAD_ERR_OK) {
+        // Uploader le fichier dans /uploads
+        $uploadDirFs = __DIR__ . '/../uploads/'; // chemin filesystem
+        $uploadDirWeb = 'uploads/'; // chemin à stocker en base
+
         // Créer le répertoire s'il n'existe pas
-        if (!file_exists($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
+        if (!file_exists($uploadDirFs)) {
+            mkdir($uploadDirFs, 0777, true);
         }
-        
+
+        // Vérifier le type de fichier
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mime = finfo_file($finfo, $pj_image['tmp_name']);
+        finfo_close($finfo);
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        if (!in_array($mime, $allowedTypes)) {
+            header("Location: /manage/add_article.php?error=invalid_image");
+            exit();
+        }
+
         // Générer un nom de fichier unique
         $extension = pathinfo($pj_image['name'], PATHINFO_EXTENSION);
         $uniqueName = uniqid() . '.' . $extension;
-        $imagePath = $uploadDir . $uniqueName;
+        $destFs = $uploadDirFs . $uniqueName;
 
-        // Vérifier le type de fichier
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-        if (!in_array($pj_image['type'], $allowedTypes)) {
-            header("Location: articles.php?error=1");
+        if (!move_uploaded_file($pj_image['tmp_name'], $destFs)) {
+            header("Location: /manage/add_article.php?error=upload_failed");
             exit();
         }
 
-        if (!move_uploaded_file($pj_image['tmp_name'], $imagePath)) {
-            header("Location: articles.php?error=1");
-            exit();
-        }
+        $imagePath = $uploadDirWeb . $uniqueName;
     }
 
     try {
-        // Requête SQL simplifiée
-        $sql = "INSERT INTO articles (titre, contenu, pj_image, date_creation, editeur) 
-                VALUES (:titre, :contenu, :pj_image, :date_creation, :editeur)";
-        $stmt = $pdo->prepare($sql);
+    // Requête SQL simplifiée
+    $sql = "INSERT INTO articles (titre, contenu, pj_image, date_creation, editeur) 
+        VALUES (:titre, :contenu, :pj_image, :date_creation, :editeur)";
+    $stmt = $pdo->prepare($sql);
         
-        // Récupérer l'éditeur (par exemple, depuis la session ou un champ de formulaire)
-        $editeur = $_SESSION['identifiant']; // Exemple d'utilisation de l'identifiant de l'utilisateur connecté
+        $editeur = $_SESSION['identifiant']; // valeur par défaut
+        try {
+            $uStmt = $pdo->prepare('SELECT name FROM user WHERE identifiant = :ident');
+            $uStmt->bindParam(':ident', $_SESSION['identifiant']);
+            $uStmt->execute();
+            $uRow = $uStmt->fetch(PDO::FETCH_ASSOC);
+            if ($uRow && !empty($uRow['name'])) {
+                $editeur = $uRow['name'];
+            }
+        } catch (PDOException $e) {
+            // Si erreur, on conserve l'identifiant en tant qu'éditeur
+            // (ne pas échouer l'insertion à cause d'un souci de lecture du nom)
+        }
         $date_creation = date('Y-m-d H:i:s'); // Date actuelle
 
-        // Lier les paramètres
-        $stmt->bindParam(':titre', $titre);
-        $stmt->bindParam(':contenu', $contenu);
-        $stmt->bindParam(':pj_image', $imagePath);
-        $stmt->bindParam(':date_creation', $date_creation); // Lier la date de création
-        $stmt->bindParam(':editeur', $editeur); // Lier l'éditeur
+    // Lier les paramètres
+    $stmt->bindParam(':titre', $titre);
+    $stmt->bindParam(':contenu', $contenu);
+    $stmt->bindParam(':pj_image', $imagePath);
+    $stmt->bindParam(':date_creation', $date_creation); // Lier la date de création
+    $stmt->bindParam(':editeur', $editeur); // Lier l'éditeur
 
         // Ajouter du débogage
         if (!$stmt->execute()) {
@@ -84,8 +107,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Erreur SQL : " . print_r($error, true));
         }
         
-        header("Location: articles.php?success=1");
-        exit();
+    // Rediriger vers la gestion des articles
+    header("Location: /manage/manage_article.php?success=1");
+    exit();
         
     } catch (PDOException $e) {
         die("Erreur : " . $e->getMessage());
