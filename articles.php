@@ -78,22 +78,6 @@ echo '<div id="popup-text"></div>'; // Élément pour le texte
 echo '</div>';
 echo '</div>'; // Ferme la div de la popup
 
-// Ajout du popup pour créer un article
-if (isset($_SESSION['identifiant'])) {
-    echo '<div id="add-article-popup" class="popup" style="display:none;">';
-    echo '<span class="close" onclick="closeAddArticlePopup()">&times;</span>'; // Bouton de fermeture    
-    echo '<div class="popup-content">';
-    echo '<h2>Ajouter un article</h2>';
-    echo '<form action="ajouter_article.php" method="POST" enctype="multipart/form-data">';
-    echo '<input type="text" name="titre" placeholder="Titre de l\'article" required><br><br>';
-    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required style="height: 500px; resize: none;"></textarea>';
-    echo '<input type="file" name="pj_image" accept="image/*"><br><br>';
-    echo '<button type="submit">Publier l\'article</button>';
-    echo '</form>';
-    echo '</div>';
-    echo '</div>';
-}
-
 // Par une div pour le toast
 echo '<div id="toast" class="toast"></div>';
 
