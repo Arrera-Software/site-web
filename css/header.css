@@ -142,10 +142,6 @@
       color: var(--apple-white);
   }
   
-  .header-link:hover {
-      /* color: var(--apple-blue); */
-  }
-  
 
   /* Footer */
   .main-footer {
@@ -230,6 +226,21 @@
   
   .mobile-link:hover {
     background-color: #2d2d2f;
+  }
+
+  .mobile-user {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 12px;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mobile-user-greeting {
+    color: white;
+    padding: 0 20px;
+    font-weight: 600;
   }
   
   /* Afficher le menu hamburger en mode mobile */

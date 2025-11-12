@@ -51,6 +51,16 @@
             <a href="articles" class="mobile-link">Articles</a>
             <a href="contact" class="mobile-link">Contact</a>
             <a href="a-propos" class="mobile-link">À propos</a>
+            <?php
+            // Afficher les actions de l'utilisateur dans le menu mobile si connecté
+            if (isset($_SESSION['identifiant'])) {
+                echo '<div class="mobile-user">';
+                echo '<div class="mobile-user-greeting">Bonjour, ' . htmlspecialchars($_SESSION['identifiant']) . '</div>';
+                echo '<a class="mobile-link" href="/manage/manage_article">Gestion des articles</a>';
+                echo '<a class="mobile-link" href="/scripts/deconnexion">Se déconnecter</a>';
+                echo '</div>';
+            }
+            ?>
         </div>
         
         </div>
