@@ -19,6 +19,7 @@ if (!isset($pdo)) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $identifiant = $_POST['identifiant'];
+    $name = $_POST['name'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
@@ -41,9 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insertion de l'utilisateur avec uniquement identifiant et mot de passe hashé
-        $stmt = $pdo->prepare("INSERT INTO user (identifiant, password) VALUES (?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO user (identifiant, name, password) VALUES (?, ?, ?)");
         $stmt->execute([
             $identifiant,
+            $name,
             password_hash($password, PASSWORD_DEFAULT) // Le mot de passe est hashé ici
         ]);
 

@@ -27,6 +27,10 @@
                     <input type="text" id="identifiant" name="identifiant" placeholder=" " required>
                     <label for="identifiant">Identifiant</label>
                 </div>
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">Nom</label>
+                </div>
                 
                 <div class="form-group">
                     <div style="position: relative;">
@@ -77,11 +81,8 @@
                     });
                 </script>
                 
-                <button type="submit" class="login-btn">Se connecter</button>
-                
-                <div class="forgot-password">
-                    <a href="scripts/mdp-oublie">Mot de passe oublié ?</a>
-                </div>
+                <button type="submit" class="login-btn">Inscrire</button>
+
             </form>
         </div>
     </main>
