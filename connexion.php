@@ -46,9 +46,6 @@
                 
                 <button type="submit" class="login-btn">Se connecter</button>
                 
-                <div class="forgot-password">
-                    <a href="scripts/mdp-oublie">Mot de passe oublié ?</a>
-                </div>
             </form>
         </div>
     </main>
