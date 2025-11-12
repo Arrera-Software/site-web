@@ -16,25 +16,6 @@ if (!file_exists($configFile)) {
 }
 require_once $configFile;
 
-// Assumptions : la table `articles` contient une colonne `id` (clé primaire)
-
-// Gestion de la suppression
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
-    $deleteId = intval($_POST['delete_id']);
-    if ($deleteId > 0) {
-        try {
-            $stmt = $pdo->prepare('DELETE FROM articles WHERE id = :id');
-            $stmt->bindParam(':id', $deleteId, PDO::PARAM_INT);
-            $stmt->execute();
-            header('Location: manage_article.php?deleted=1');
-            exit();
-        } catch (PDOException $e) {
-            $errorMsg = 'Erreur lors de la suppression : ' . $e->getMessage();
-        }
-    }
-}
-
-// Récupérer les articles
 try {
     $sql = 'SELECT id, titre, editeur, date_creation, pj_image FROM articles ORDER BY date_creation DESC';
     $stmt = $pdo->query($sql);
@@ -69,7 +50,9 @@ try {
             <div style="color: red; margin-bottom: 12px;"><?php echo htmlspecialchars($errorMsg); ?></div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['deleted'])): ?>
+        <?php if (isset($_GET['archived'])): ?>
+            <div style="color: green; margin-bottom:12px;">Article archivé avec succès.</div>
+        <?php elseif (isset($_GET['deleted'])): ?>
             <div style="color: green; margin-bottom:12px;">Article supprimé avec succès.</div>
         <?php endif; ?>
 
@@ -104,10 +87,9 @@ try {
                             <td>
                                 <div class="actions">
                                     <a class="btn btn-edit" href="edit_article.php?id=<?php echo urlencode($a['id']); ?>">Modifier</a>
-                                    <a class="btn btn-archive" href="" target="_blank">Archiver</a>
-                                    <form method="post" style="display:inline;" onsubmit="return confirm('Supprimer cet article ?');">
+                                    <form method="post" action="/scripts/archive_article.php" style="display:inline;" onsubmit="return confirm('Archiver cet article ?');">
                                         <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($a['id']); ?>">
-                                        <button type="submit" class="btn btn-del">Supprimer</button>
+                                        <button type="submit" class="btn btn-del">Archiver</button>
                                     </form>
                                 </div>
                             </td>
