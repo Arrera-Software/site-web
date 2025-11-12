@@ -4,7 +4,7 @@
         <div class="header-content">
         <!-- Logo -->
         <div class="logo">
-            <a href="index">
+            <a href="/index">
             <img src="../img/arrera-software.webp" alt="Logo" class="logo-img">
             </a>
         </div>
@@ -32,6 +32,7 @@
                 echo 'Bonjour, ' . $_SESSION['identifiant'];
                 echo '<div class="dropdown-menu">';
                 echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
+                echo '<a href="/manage/article">Manage articles</a>';
                 echo '<a href="/scripts/deconnexion">Se déconnecter</a>';
                 echo '</div>';
                 echo '</div>';
