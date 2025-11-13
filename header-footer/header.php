@@ -33,6 +33,7 @@
                 echo '<div class="dropdown-menu">';
                 echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
                 echo '<a href="/manage/manage_article">Manage articles</a>';
+                echo '<a href="/manage/manage_btn">Manage buttons</a>';
                 echo '<a href="/scripts/deconnexion">Se déconnecter</a>';
                 echo '</div>';
                 echo '</div>';
@@ -57,6 +58,7 @@
                 echo '<div class="mobile-user">';
                 echo '<div class="mobile-user-greeting">Bonjour, ' . htmlspecialchars($_SESSION['identifiant']) . '</div>';
                 echo '<a class="mobile-link" href="/manage/manage_article">Gestion des articles</a>';
+                echo '<a class="mobile-link" href="/manage/manage_btn">Gestion des boutons</a>';
                 echo '<a class="mobile-link" href="/scripts/deconnexion">Se déconnecter</a>';
                 echo '</div>';
             }
