@@ -12,7 +12,21 @@
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
-    <?php include 'header-footer/header.php'; ?>
+    <?php include 'header-footer/header.php'; 
+
+    $btnFile= 'scripts/script_link_btn.php';
+    if (!file_exists($btnFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $btnFile;
+
+    $configFile = 'config.php';
+    if (!file_exists($configFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $configFile;
+
+    ?>
 
     <div class="container-g">
         <div class="text-section">
@@ -22,8 +36,7 @@
         <section class="image-section">
             <img src="img/arrera-tiger.webp" alt="Arrera Interface I2024" class="img">
         </section>
-        <!--<p class="download-interface">Sort bientôt</p>-->
-        <a href="https://github.com/Arrera-Software/arrera-tiger-updater/releases/tag/1.00" class="download-interface">Télécharger l'installateur</a>
+        <a href="<?php echo getLink($pdo,'tiger-download'); ?>" class="download-interface">Télécharger l'installateur</a>
     </div>
 
     <div class="title-session">

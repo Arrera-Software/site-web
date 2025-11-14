@@ -13,7 +13,21 @@
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
-    <?php include 'header-footer/header.php'; ?>
+    <?php include 'header-footer/header.php'; 
+
+    $btnFile= 'scripts/script_link_btn.php';
+    if (!file_exists($btnFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $btnFile;
+
+    $configFile = 'config.php';
+    if (!file_exists($configFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $configFile;
+
+    ?>
 
     <div class="container-g">
         <div class="text-section">
@@ -23,7 +37,7 @@
         <section class="image-section">
             <img src="img/i2025-icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
-        <a href = "https://github.com/Arrera-Software/Arrera-Interface/releases/tag/I2025-2.50-LTS" class="download-interface">Télécharger</a>
+        <a href = "<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="download-interface">Télécharger</a>
     </div>
 
     <div class="container-g">
