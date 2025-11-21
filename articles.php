@@ -18,64 +18,7 @@
 </head>
 
 <body>
-    <!-- Header principal -->
-    <!-- Header principal -->
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="index">
-                <img src="img/file.webp" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            
-            <!-- Hamburger button -->
-            <script>
-                function toggleMenu() {
-                    var menuItems = document.querySelector('.mobile-nav');
-                    menuItems.classList.toggle('hidden');
-                }
-            </script>
-            <button class="hamburger-menu" onclick="toggleMenu()">&#9776;</button>
-            
-            <!-- Navigation -->
-            <div class="header-links">
-                <a href="assistant" class="header-link">Assistant</a>
-                <a href="interface" class="header-link">Interface</a>
-                <a href="store" class="header-link">Store</a>
-                <a href="articles" class="header-link">Articles</a>
-                <a href="contact" class="header-link">Contact</a>
-                <a href="a-propos" class="header-link">À propos</a>
-                <?php
-                if (isset($_SESSION['identifiant'])) {
-                    echo '<div class="header-link-connexion">';
-                    echo 'Bonjour, ' . $_SESSION['identifiant'];
-                    echo '<div class="dropdown-menu">';
-                    echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
-                    echo '<a href="scripts/deconnexion">Se déconnecter</a>';
-                    echo '</div>';
-                    echo '</div>';
-                } 
-                else {
-                        null;           
-                }
-                ?>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav hidden">
-                <a href="assistant" class="mobile-link">Assistant</a>
-                <a href="interface" class="mobile-link">Interface</a>
-                <a href="store" class="mobile-link">Store</a>
-                <a href="articles" class="mobile-link">Articles</a>
-                <a href="contact" class="mobile-link">Contact</a>
-                <a href="a-propos" class="mobile-link">À propos</a>
-            </div>
-            
-            </div>
-        </div>
-    </header>
+    <?php include 'header-footer/header.php'; ?>
 
     <?php
 
@@ -92,8 +35,8 @@ if (!isset($pdo)) {
     die("La connexion PDO n'a pas été établie correctement");
 }
 
-// Requête SQL pour récupérer les articles de la base de données
-$sql = "SELECT titre, contenu, pj_image, date_creation, editeur FROM articles"; // Déclare la requête SQL
+// Requête SQL pour récupérer les articles de la base de données (du plus récent au plus ancien)
+$sql = "SELECT titre, contenu, pj_image, date_creation, editeur FROM articles ORDER BY date_creation DESC"; // Déclare la requête SQL
 try {
     $result = $pdo->query($sql); // Exécute la requête et stocke le résultat
 } catch (PDOException $e) {
@@ -105,12 +48,13 @@ echo '<main class="container-articles">';
 if ($result->rowCount() > 0) {
     echo '<div class="container-articles">';
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        // Échapper les caractères spéciaux pour JavaScript
-        $content = str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['contenu'])));
-        $title = str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['titre'])));
-        $image = !empty($row['pj_image']) ? str_replace(array("\r", "\n"), '', addslashes(htmlspecialchars($row['pj_image']))) : '';
-        
-        echo '<div class="article-card" onclick="openPopup(\'' . $content . '\', \'' . $title . '\', \'' . $image . '\')">';
+        // Pour éviter les problèmes d'échappement dans l'attribut onclick,
+        // on encode le contenu et le titre en base64 et on les met dans des data-attributes.
+        $content_b64 = base64_encode($row['contenu']);
+        $title_b64 = base64_encode($row['titre']);
+        $image = !empty($row['pj_image']) ? $row['pj_image'] : '';
+
+        echo '<div class="article-card" data-content-b64="' . htmlspecialchars($content_b64, ENT_QUOTES) . '" data-title-b64="' . htmlspecialchars($title_b64, ENT_QUOTES) . '" data-image="' . htmlspecialchars($image, ENT_QUOTES) . '" onclick="openPopupFromElement(this)">';
         if (!empty($row['pj_image'])) {
             echo '<img src="' . htmlspecialchars($row['pj_image']) . '" alt="Image de l\'article" class="article-image">';
         }
@@ -135,22 +79,6 @@ echo '<div id="popup-text"></div>'; // Élément pour le texte
 echo '</div>';
 echo '</div>'; // Ferme la div de la popup
 
-// Ajout du popup pour créer un article
-if (isset($_SESSION['identifiant'])) {
-    echo '<div id="add-article-popup" class="popup" style="display:none;">';
-    echo '<span class="close" onclick="closeAddArticlePopup()">&times;</span>'; // Bouton de fermeture    
-    echo '<div class="popup-content">';
-    echo '<h2>Ajouter un article</h2>';
-    echo '<form action="ajouter_article.php" method="POST" enctype="multipart/form-data">';
-    echo '<input type="text" name="titre" placeholder="Titre de l\'article" required><br><br>';
-    echo '<textarea name="contenu" placeholder="Contenu de l\'article" required style="height: 500px; resize: none;"></textarea>';
-    echo '<input type="file" name="pj_image" accept="image/*"><br><br>';
-    echo '<button type="submit">Publier l\'article</button>';
-    echo '</form>';
-    echo '</div>';
-    echo '</div>';
-}
-
 // Par une div pour le toast
 echo '<div id="toast" class="toast"></div>';
 
@@ -160,14 +88,7 @@ $pdo = null; // Ferme la connexion PDO
 
     <!-- NE PAS SUPPRIMER  !!! -->
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <p class="copyright">
-                © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
-            </p>
-        </div>
-    </footer>
+    <?php include 'header-footer/footer.php'; ?>
 
     <script>
     function openPopup(content, title, image) {
@@ -186,6 +107,41 @@ $pdo = null; // Ferme la connexion PDO
         const decodedTitle = title.replace(/\\'/g, "'");
         const decodedContent = content.replace(/\\'/g, "'");
         popupText.innerHTML = `<h2>Titre : ${decodedTitle}</h2><br><br>${decodedContent}`;
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    // Décoder base64 UTF-8 sécurisé
+    function b64DecodeUnicode(str) {
+        // From https://developer.mozilla.org/en-US/docs/Glossary/Base64#the_unicode_problem
+        try {
+            return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        } catch (e) {
+            // si problème, fallback simple
+            return atob(str);
+        }
+    }
+
+    // Ouvrir la popup en lisant les data-attributes d'un élément
+    function openPopupFromElement(el) {
+        const popupImage = document.getElementById("popup-image");
+        const popupText = document.getElementById("popup-text");
+
+        const contentB64 = el.dataset.contentB64 || '';
+        const titleB64 = el.dataset.titleB64 || '';
+        const image = el.dataset.image || '';
+
+        const content = contentB64 ? b64DecodeUnicode(contentB64) : '';
+        const title = titleB64 ? b64DecodeUnicode(titleB64) : '';
+
+        if (image) {
+            popupImage.innerHTML = `<img src="${image}" alt="Image de l'article" class="popup-image">`;
+        } else {
+            popupImage.innerHTML = '';
+        }
+
+        popupText.innerHTML = `<h2>Titre : ${title}</h2><br><br>${content}`;
         document.getElementById("popup").style.display = "flex";
     }
 

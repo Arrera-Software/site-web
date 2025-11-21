@@ -179,6 +179,10 @@
         align-self: center; /* Centre le bouton si container-g utilise le flexbox */
         padding: 10px 20px; /* Embellit l'espacement interne */
         text-align: center; /* Centre le texte à l'intérieur */
-        margin-top: 150%;
+        /* Sur mobile on remet en position normale pour qu'il ne reste pas enfermé
+           dans la carte blanche : */
+        position: static;
+        margin-top: 20px;
+        z-index: 2; /* s'assurer que le bouton reste au-dessus si nécessaire */
     }
 }

@@ -1,0 +1,96 @@
+main{
+    padding:20px;
+}
+
+.manage-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 20px 0; 
+    
+}
+.manage-table th, .manage-table td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    color: white; 
+}
+.manage-table th { 
+    background: #f4f4f4; 
+    text-align: left; 
+    color: black;
+}
+
+.actions { 
+    display: flex; 
+    gap: 8px; }
+
+.btn { 
+    padding: 6px 10px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px; 
+}
+
+.btn-edit { 
+    text-decoration: none;
+    background: #4CAF50; 
+    color: white; 
+}
+.btn-del { 
+    text-decoration: none;
+    background: #f44336; 
+    color: white; 
+}
+
+.btn-archive { 
+    display: inline-block;
+    margin: 0; 
+    padding: 10px 15px;
+    background: orange; 
+    color: white; 
+    text-decoration: none;
+    border-radius: 4px; 
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.btn-edit:hover { 
+    background: #00f808; 
+    color: white; 
+}
+.btn-del:hover { 
+    background: #ff1100; 
+    color: white; 
+}
+
+.btn-archive:hover { 
+    background: rgb(255, 183, 48); 
+    color: white; 
+}
+
+.btn-create { 
+    display: inline-block;
+    margin: 0; 
+    padding: 10px 15px; 
+    background: #4CAF50; 
+    color: white; 
+    text-decoration: none;
+    border-radius: 4px; 
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+/* Conteneur des boutons en bas de la page : les centrer et les afficher côte à côte */
+main > div:last-of-type {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.btn-create:hover { 
+    background: #00ff48; 
+    color: white; 
+}

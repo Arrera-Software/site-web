@@ -13,65 +13,41 @@
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
-     <!-- Header principal -->
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="index">
-                <img src="img/file.webp" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            
-            <!-- Hamburger button -->
-            <script>
-                function toggleMenu() {
-                    var menuItems = document.querySelector('.mobile-nav');
-                    menuItems.classList.toggle('hidden');
-                }
-            </script>
-            <button class="hamburger-menu" onclick="toggleMenu()">&#9776;</button>
-            
-            <!-- Navigation -->
-            <div class="header-links">
-                <a href="assistant" class="header-link">Assistant</a>
-                <a href="interface" class="header-link">Interface</a>
-                <a href="store" class="header-link">Store</a>
-                <a href="articles" class="header-link">Articles</a>
-                <a href="contact" class="header-link">Contact</a>
-                <a href="a-propos" class="header-link">À propos</a>
-                <?php
-                if (isset($_SESSION['identifiant'])) {
-                    echo '<div class="header-link-connexion">';
-                    echo 'Bonjour, ' . $_SESSION['identifiant'];
-                    echo '<div class="dropdown-menu">';
-                    echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
-                    echo '<a href="scripts/deconnexion">Se déconnecter</a>';
-                    echo '</div>';
-                    echo '</div>';
-                } 
-                else {
-                        null;           
-                }
-                ?>
-            </div>
+    <?php include 'header-footer/header.php'; 
 
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav hidden">
-                <a href="assistant" class="mobile-link">Assistant</a>
-                <a href="interface" class="mobile-link">Interface</a>
-                <a href="store" class="mobile-link">Store</a>
-                <a href="articles" class="mobile-link">Articles</a>
-                <a href="contact" class="mobile-link">Contact</a>
-                <a href="a-propos" class="mobile-link">À propos</a>
-            </div>
-            
-            </div>
+    $btnFile= 'scripts/script_link_btn.php';
+    if (!file_exists($btnFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $btnFile;
+
+    $configFile = 'config.php';
+    if (!file_exists($configFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $configFile;
+
+    ?>
+
+    <nav class="pill-nav">
+        <a href="#i2026" class="pill-btn">VERSION 2026</a>
+        <a href="#i2025" class="pill-btn">VERSION 2025</a>
+        <a href="#i2024" class="pill-btn">VERSION 2024</a>
+        <a href="#module" class="pill-btn">MODULES</a>
+    </nav>
+
+    <div id="i2026" class="container-g">
+        <div class="text-section">
+            <h1>Arrera I2026</h1>
+            <p></p>
         </div>
-    </header>
+        <section class="image-section">
+            <img src="img/I2026-Icon.webp" alt="Arrera Interface I2025" class="img">
+        </section>
+        <a href = "<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="download-interface">Télécharger</a>
+    </div>
 
-    <div class="container-g">
+    <div id="i2025" class="container-g">
         <div class="text-section">
             <h1>Arrera I2025</h1>
             <p>Prochaine version de l'interface Arrera.</p>
@@ -79,10 +55,10 @@
         <section class="image-section">
             <img src="img/i2025-icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
-        <a href = "https://github.com/Arrera-Software/Arrera-Interface/releases/tag/I2025-2.50-LTS" class="download-interface">Télécharger</a>
+        <a href = "<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="download-interface">Télécharger</a>
     </div>
 
-    <div class="container-g">
+    <div id="i2024" class="container-g">
         <div class="text-section">
             <h1>Arrera I2024</h1>
             <p>Première version de l'interface Arrera. (Plus maintenue)</p>
@@ -92,7 +68,7 @@
         </section>
     </div>
 
-    <main class="services-container">
+    <main id="module" class="services-container">
         <div class="service-card">
             <div class="service-icon">
                 <img src="img/postite.webp" alt="LOGO">
@@ -142,13 +118,7 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <p class="copyright">
-                © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
-            </p>
-        </div>
-    </footer>
+    <?php include 'header-footer/footer.php'; ?>
+    <script src="js/interface.js"></script>
 </body>
 </html>

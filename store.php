@@ -12,63 +12,21 @@
     <link rel="icon" href="img/logo-arrera.webp">
 </head>
 <body>
-    <!-- Header principal -->
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="index">
-                <img src="img/file.webp" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            
-            <!-- Hamburger button -->
-            <script>
-                function toggleMenu() {
-                    var menuItems = document.querySelector('.mobile-nav');
-                    menuItems.classList.toggle('hidden');
-                }
-            </script>
-            <button class="hamburger-menu" onclick="toggleMenu()">&#9776;</button>
-            
-            <!-- Navigation -->
-            <div class="header-links">
-                <a href="assistant" class="header-link">Assistant</a>
-                <a href="interface" class="header-link">Interface</a>
-                <a href="store" class="header-link">Store</a>
-                <a href="articles" class="header-link">Articles</a>
-                <a href="contact" class="header-link">Contact</a>
-                <a href="a-propos" class="header-link">À propos</a>
-                <?php
-                if (isset($_SESSION['identifiant'])) {
-                    echo '<div class="header-link-connexion">';
-                    echo 'Bonjour, ' . $_SESSION['identifiant'];
-                    echo '<div class="dropdown-menu">';
-                    echo "Rôle : " . $_SESSION['role']; // Afficher le rôle
-                    echo '<a href="scripts/deconnexion">Se déconnecter</a>';
-                    echo '</div>';
-                    echo '</div>';
-                } 
-                else {
-                        null;           
-                }
-                ?>
-            </div>
+    <?php include 'header-footer/header.php'; 
 
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav hidden">
-                <a href="assistant" class="mobile-link">Assistant</a>
-                <a href="interface" class="mobile-link">Interface</a>
-                <a href="store" class="mobile-link">Store</a>
-                <a href="articles" class="mobile-link">Articles</a>
-                <a href="contact" class="mobile-link">Contact</a>
-                <a href="a-propos" class="mobile-link">À propos</a>
-            </div>
-            
-            </div>
-        </div>
-    </header>
+    $btnFile= 'scripts/script_link_btn.php';
+    if (!file_exists($btnFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $btnFile;
+
+    $configFile = 'config.php';
+    if (!file_exists($configFile)) {
+        die('Fichier de configuration introuvable.');
+    }
+    require_once $configFile;
+
+    ?>
 
     <div class="container-g">
         <div class="text-section">
@@ -78,8 +36,7 @@
         <section class="image-section">
             <img src="img/arrera-tiger.webp" alt="Arrera Interface I2024" class="img">
         </section>
-        <!--<p class="download-interface">Sort bientôt</p>-->
-        <a href="https://github.com/Arrera-Software/arrera-tiger-updater/releases/tag/1.00" class="download-interface">Télécharger l'installateur</a>
+        <a href="<?php echo getLink($pdo,'tiger-download'); ?>" class="download-interface">Télécharger l'installateur</a>
     </div>
 
     <div class="title-session">
@@ -130,13 +87,6 @@
     </main>
 
 
-     <!-- Footer -->
-     <footer class="main-footer">
-        <div class="container">
-            <p class="copyright">
-                © <?php echo date('Y'); ?> Arrera-Software | Tous droits réservés
-            </p>
-        </div>
-    </footer>
+    <?php include 'header-footer/footer.php'; ?>
 
 </body>
