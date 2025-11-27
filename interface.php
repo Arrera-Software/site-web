@@ -39,18 +39,18 @@
     <div id="i2026" class="container-g">
         <div class="text-section">
             <h1>Arrera I2026</h1>
-            <p></p>
+            <p>Reprise de la base de l'interface I2025, avec un changement de design pour quelque chose de plus moderne, tout en gardant la même ergonomie que la version I2025. Refonte complète de la partie communication avec les assistants pour plus de fonctionnalités et de stabilité.</p>
         </div>
         <section class="image-section">
             <img src="img/I2026-Icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
-        <a href = "<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="download-interface">Télécharger</a>
+        <a href = "<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="download-interface">Voir le code source</a>
     </div>
 
     <div id="i2025" class="container-g">
         <div class="text-section">
             <h1>Arrera I2025</h1>
-            <p>Prochaine version de l'interface Arrera.</p>
+            <p>Refonte totale de l'interface par rapport à la version I2024. Inspiration du design de l'interface de NexStep OS. Début de la communication avec les assistants d'Arrera.</p>
         </div>
         <section class="image-section">
             <img src="img/i2025-icon.webp" alt="Arrera Interface I2025" class="img">
