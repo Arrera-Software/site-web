@@ -1,23 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.pill-btn');
-    const sections = document.querySelectorAll('div[id]'); // Select divs with IDs (sections)
+    const sections = document.querySelectorAll('div[id], main[id]'); // Select divs and main with IDs (sections)
 
     function changeLinkState() {
-        let index = sections.length;
+        let current = '';
 
-        while (--index && window.scrollY + 150 < sections[index].offsetTop) { }
-
-        navLinks.forEach((link) => link.classList.remove('active'));
-
-        // Find the link that corresponds to the current section
-        // We match the href attribute of the link with the id of the section
-        if (index >= 0) {
-            const currentSectionId = sections[index].id;
-            const activeLink = document.querySelector(`.pill-btn[href="#${currentSectionId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
+        // Check if we are at the bottom of the page
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+            // Force the last section to be active if at bottom
+            current = sections[sections.length - 1].id;
+        } else {
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY + 300 >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
         }
+
+        navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
     }
 
     changeLinkState();

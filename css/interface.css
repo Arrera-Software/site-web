@@ -65,6 +65,7 @@
     position: relative;
     padding-bottom: 100px;
     /* Add space for the absolute button */
+    scroll-margin-top: 150px;
 }
 
 @keyframes fadeIn {
@@ -123,6 +124,7 @@ h1 {
     margin: 0 auto;
     max-width: 1400px;
     margin-top: 20px;
+    scroll-margin-top: 150px;
 }
 
 .service-card {
