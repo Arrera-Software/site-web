@@ -1,177 +1,252 @@
+/* Navigation Pill Style */
+.pill-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: var(--apple-black);
+    /* Match site background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 50px;
+    /* Adjust for fixed header height */
+    z-index: 998;
+    /* Below header (9999) but above content */
+    margin-top: 60px;
+    /* Push down from under the fixed header */
+    margin-bottom: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Lighter border for dark theme */
+}
+
+.pill-btn {
+    text-decoration: none;
+    color: var(--apple-white);
+    /* Light text */
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.pill-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light hover effect */
+}
+
+.pill-btn.active {
+    background-color: var(--apple-white);
+    color: var(--apple-black);
+    /* Invert colors for active state */
+}
+
+/* Updated Container Style */
 .container-g {
     display: flex;
-    background-color: #e1e1e1;
-    color: var(--apple-black);
-    padding: 40px;
-    border-radius: 10px;
-    margin: 100px auto;
+    background-color: #fbfbfd;
+    /* Apple-like light grey */
+    color: #1d1d1f;
+    padding: 60px;
+    border-radius: 18px;
+    margin: 40px auto;
     flex-direction: row;
     width: 90%;
     max-width: 1200px;
     align-items: center;
-    animation: fadeIn 0.6s ease-out; /* Ajout de l'animation */
+    animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     flex-wrap: wrap;
     align-content: center;
-    justify-content: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-bottom: 100px;
+    /* Add space for the absolute button */
+    scroll-margin-top: 150px;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.image-section {
-    flex: 0 0 30%;
-}
-
-h1 {
-    margin-right: 0;
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.text-section {
-    flex: 2;
-    padding-left: 20px;
-}
-
-.img {
-    width: 100%;
-    height: auto;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 40px;
-    margin: 0 auto;
-    /* max-width: 1200px; */
-    margin-top: 50px;
-}
-
-.service-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    animation: cardAppear 0.6s ease-out forwards; /* Ajout de l'animation pour les cartes de service */
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: stretch;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Ajout pour le positionnement absolu du bouton */
-}
-
-@keyframes cardAppear {
-    from {
-        opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-right: 0;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.text-section {
+    flex: 1;
+    padding-right: 40px;
+    padding-left: 0;
+}
+
+.text-section p {
+    font-size: 21px;
+    color: #86868b;
+    line-height: 1.4;
+}
+
+.img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    /* Optional: rounded corners for images */
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+    margin-top: 20px;
+    scroll-margin-top: 150px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 18px;
+    padding: 40px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+    animation: cardAppear 0.6s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .service-icon img {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
+    object-fit: contain;
 }
 
 .service-card h2 {
-    color: var(--apple-black);
-    margin-bottom: 15px;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .service-card p {
-    color: #666;
-    margin-bottom: 25px;
+    color: #86868b;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .service-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    width: 100%;
 }
 
-.download-link, .download-interface, .learn-more {
-    padding: 10px 20px;
-    border-radius: 5px;
+.download-link,
+.download-interface,
+.learn-more {
+    padding: 12px 24px;
+    border-radius: 980px;
+    /* Pill shape buttons */
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
 }
 
 .download-link {
-    background-color: #007AFF;
+    background-color: #0071e3;
     color: white;
 }
 
 .download-interface {
-    background-color: #007AFF;
+    background-color: #0071e3;
     color: white;
-    margin-top: 250px;
-    position: absolute; /* Position absolue */
-    margin-left : 0;
-    padding : 15px;
+    margin-top: 0;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    font-size: 17px;
 }
 
 .learn-more {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.download-link:hover {
-    background-color: #0056b3;
+    color: #0071e3;
+    background-color: transparent;
 }
 
 .learn-more:hover {
-    background-color: #e5e5e5;
+    text-decoration: underline;
+    background-color: transparent;
 }
 
-@media (max-width: 480px) {
+.download-link:hover,
+.download-interface:hover {
+    background-color: #0077ed;
+}
+
+@media (max-width: 768px) {
     .container-g {
-        display: flex;
-        flex-direction: column; /* Contenu empilé */
-        align-items: center;
-        justify-content: center; /* Centre les éléments */
-    }
-
-    .text-section {
-        padding: 0;
-        text-align: center; /* Centre le texte */
-    }
-
-    .image-section {
+        flex-direction: column-reverse;
+        padding: 40px 20px;
         text-align: center;
     }
 
-    .img {
-        max-width: 80%; /* Limite la taille des images */
-        height: auto;
+    .text-section {
+        padding-right: 0;
+        margin-top: 30px;
     }
 
-    .download-interface {
-        margin-top: 20px; /* Ajoute un espace entre l'image et le bouton */
-        width: auto; /* Ajuste automatiquement la largeur */
-        align-self: center; /* Centre le bouton si container-g utilise le flexbox */
-        padding: 10px 20px; /* Embellit l'espacement interne */
-        text-align: center; /* Centre le texte à l'intérieur */
-        margin-top: 100%;
+    .pill-nav {
+        justify-content: flex-start;
+        padding-left: 20px;
     }
 }
