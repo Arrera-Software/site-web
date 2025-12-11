@@ -30,7 +30,7 @@
 
     <div class="container-g">
         <div class="text-section">
-            <h1>Arrera Store</h1>
+            <h1>Arrera Hub</h1>
             <p>Magasin d'applications d'Arrera qui permet d'installer, de mettre à jour et de désinstaller toutes les applications Arrera.</p>
         </div>
         <section class="image-section">
@@ -40,7 +40,7 @@
     </div>
 
     <div class="title-session">
-        <h1>Composant de l'Arrera Store</h1>
+        <h1>Composant de l'Arrera Hub</h1>
     </div>
 
     <main class="services-container">
