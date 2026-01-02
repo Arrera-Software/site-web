@@ -22,7 +22,7 @@
         <div class="header-links">
             <a href="/assistant" class="header-link">Assistant</a>
             <a href="/interface" class="header-link">Interface</a>
-            <a href="/store" class="header-link">Store</a>
+            <a href="/hub" class="header-link">Hub</a>
             <a href="/articles" class="header-link">Articles</a>
             <a href="/contact" class="header-link">Contact</a>
             <a href="/a-propos" class="header-link">À propos</a>
@@ -48,7 +48,7 @@
         <div class="mobile-nav hidden">
             <a href="assistant" class="mobile-link">Assistant</a>
             <a href="interface" class="mobile-link">Interface</a>
-            <a href="store" class="mobile-link">Store</a>
+            <a href="hub" class="mobile-link">Hub</a>
             <a href="articles" class="mobile-link">Articles</a>
             <a href="contact" class="mobile-link">Contact</a>
             <a href="a-propos" class="mobile-link">À propos</a>
