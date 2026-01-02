@@ -40,8 +40,10 @@
                 <div class="service-icon">
                     <img src="img/six-icon.webp" alt="Arrera SIX">
                 </div>
-                <h2>Arrera SIX</h2>
-                <p>Arrera SIX est le premier assistant créé par Arrera. Il a pour but de lancer des tâches sur votre ordinateur à l'aide de commandes vocales.</p>
+                <div class="service-content">
+                    <h2>Arrera SIX</h2>
+                    <p>Arrera SIX est le premier assistant créé par Arrera. Il a pour but de lancer des tâches sur votre ordinateur à l'aide de commandes vocales.</p>
+                </div>
                 <div class="service-links">
                     <a href="<?php echo getLink($pdo,'download-six'); ?>" class="download-link">Télécharger</a>
                     <a href="https://github.com/Arrera-Software/Six" class="learn-more">Code source</a>
@@ -53,8 +55,10 @@
                 <div class="service-icon">
                     <img src="img/ryley-icon.webp" alt="Arrera RYLEY">
                 </div>
-                <h2>Arrera RYLEY</h2>
-                <p>Arrera Ryley est le deuxième assistant d'Arrera. Il a pour but de lancer des tâches, comme SIX, et de vous aider dans votre projet de développement grâce à la fonctionnalité CODEHELP. Contrôle uniquement par texte.</p>
+                <div class="service-content">
+                    <h2>Arrera RYLEY</h2>
+                    <p>Arrera Ryley est le deuxième assistant d'Arrera. Il a pour but de lancer des tâches, comme SIX, et de vous aider dans votre projet de développement grâce à la fonctionnalité CODEHELP. Contrôle uniquement par texte.</p>
+                </div>
                 <div class="service-links">
                     <a href="<?php echo getLink($pdo,'download-ryley'); ?>" class="download-link">Télécharger</a>
                     <a href="https://github.com/Arrera-Software/Ryley" class="learn-more">Code source</a>
@@ -67,8 +71,10 @@
                 <div class="service-icon">
                     <img src="img/copilot-icon.webp" alt="Arrera COPILOTE">
                 </div>
-                <h2>Arrera COPILOTE</h2>
-                <p>Arrera COPILOTE est le dernier assistant d'Arrera. Il propose une interface regroupant les deux assistants d'Arrera avec toutes leurs fonctionnalités. De plus, il offre deux modes de contrôle : vocal et texte.</p>
+                <div class="service-content">
+                    <h2>Arrera COPILOTE</h2>
+                    <p>Arrera COPILOTE est le dernier assistant d'Arrera. Il propose une interface regroupant les deux assistants d'Arrera avec toutes leurs fonctionnalités. De plus, il offre deux modes de contrôle : vocal et texte.</p>
+                </div>
                 <div class="service-links">
                     <a href="<?php echo getLink($pdo,'download-copilote'); ?>" class="download-link">Télécharger</a>
                     <a href="https://github.com/Arrera-Software/Arrera-Copilote" class="learn-more">Code source</a>

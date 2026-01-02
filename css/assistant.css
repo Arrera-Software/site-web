@@ -29,8 +29,8 @@
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     padding: 60px 30px;
     max-width: 1200px;
@@ -41,12 +41,13 @@
     background: white;
     border-radius: 18px;
     padding: 30px;
-    text-align: center;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
-    min-height: 450px;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    height: 300px;
     opacity: 0;
     animation: cardAppear 0.6s ease-out forwards;
 }
@@ -58,7 +59,7 @@
 .service-icon {
     width: 120px;
     height: 120px;
-    margin: 0 auto 20px;
+    flex-shrink: 0;
 }
 
 .service-icon img {
@@ -67,30 +68,35 @@
     object-fit: contain;
 }
 
+.service-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
 .service-card h2 {
     font-size: 24px;
     margin-bottom: 16px;
     color: var(--apple-text);
+    text-align: left;
 }
 
 .service-card p {
     color: #86868b;
     line-height: 1.5;
     margin-bottom: 24px;
-    min-height: 80px;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    text-align: left;
+    flex: 1;
 }
 
 .service-links {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: center;
-    margin-top: auto;
-    padding-top: 20px;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
 }
 
 .download-link, .learn-more {
@@ -126,8 +132,32 @@
         font-size: 20px;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .service-card {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        min-height: 450px;
+    }
+
+    .service-icon {
+        margin: 0 auto 20px;
+    }
+
+    .service-content {
+        text-align: center;
+    }
+
+    .service-card h2,
+    .service-card p {
+        text-align: center;
+    }
+
+    .service-links {
+        align-items: center;
+        align-self: center;
+        margin-left: 0;
+        margin-top: auto;
+        padding-top: 20px;
     }
 }
 
