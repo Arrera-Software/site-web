@@ -36,7 +36,7 @@
 
         <section class="services-grid">
             <!-- Arrera SIX -->
-            <div class="service-card">
+            <div class="service-card six-card">
                 <div class="service-icon">
                     <img src="img/six-icon.webp" alt="Arrera SIX">
                 </div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <!-- Arrera RYLEY -->
-            <div class="service-card">
+            <div class="service-card ryley-card">
                 <div class="service-icon">
                     <img src="img/ryley-icon.webp" alt="Arrera RYLEY">
                 </div>
@@ -67,7 +67,7 @@
             </div>
 
             <!-- Arrera COPILOTE -->
-            <div class="service-card">
+            <div class="service-card copilote-card">
                 <div class="service-icon">
                     <img src="img/copilot-icon.webp" alt="Arrera COPILOTE">
                 </div>
