@@ -57,20 +57,84 @@
 }
 
 .six-card {
-    background: linear-gradient(135deg, #003366 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #4facfe 0%, #0072ff 100%);
+    color: white;
+}
+
+.six-card .service-card h2 {
+    color: white;
+
+}
+
+.six-card .service-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.six-card .download-link {
+    background: white;
+    color: #4facfe;
+}
+
+.six-card .learn-more {
+    color: white;
 }
 
 .ryley-card {
-    background: linear-gradient(135deg, #003366 0%, #cc0000 100%);
+    /* Dégradé Rouge Foncé pour Ryley */
+    background: linear-gradient(135deg, #8E0E00 0%, #1F1C18 100%);
+    color: white;
+}
+
+.ryley-card .service-card h2 {
+    color: white;
+
+}
+
+.ryley-card .service-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ryley-card .download-link {
+    background: white;
+    color: #8E0E00;
+    /* Texte rouge pour rappeler le fond */
+}
+
+.ryley-card .learn-more {
+    color: white;
 }
 
 .copilote-card {
     background: linear-gradient(135deg, #0066cc 0%, #8a2be2 100%);
 }
 
+.copilote-card {
+    background: linear-gradient(135deg, #0066cc 0%, #8a2be2 100%);
+    color: white;
+}
+
+.copilote-card .service-card h2 {
+    color: white;
+
+}
+
+.copilote-card .service-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.copilote-card .download-link {
+    background: white;
+    color: #8a2be2;
+    /* Texte violet pour rappeler le fond */
+}
+
+.copilote-card .learn-more {
+    color: white;
+}
+
 .service-icon {
-    width: 120px;
-    height: 120px;
+    width: 250px;
+    height: 250px;
     flex-shrink: 0;
 }
 
@@ -90,12 +154,10 @@
 .service-card h2 {
     font-size: 24px;
     margin-bottom: 16px;
-    color: var(--apple-text);
     text-align: left;
 }
 
 .service-card p {
-    color: #86868b;
     line-height: 1.5;
     margin-bottom: 24px;
     text-align: left;
@@ -111,7 +173,8 @@
     margin-left: auto;
 }
 
-.download-link, .learn-more {
+.download-link,
+.learn-more {
     width: 200px;
     text-align: center;
     padding: 12px 20px;
@@ -178,6 +241,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
