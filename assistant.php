@@ -30,8 +30,8 @@
 
     <main class="services-container">
         <section class="services-hero">
-            <h1>Nos Assistants Intelligents</h1>
-            <p class="hero-subtitle">Des outils puissants pour votre productivité</p>
+            <h1>Des assistants intelligents,<br>pour votre productivité</h1>
+            <p class="hero-subtitle">Open source fonctionnant sur un base unique uniquement en local</p>
         </section>
 
         <section class="services-grid">

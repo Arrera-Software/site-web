@@ -11,9 +11,15 @@
 }
 
 .services-hero {
-    text-align: center;
-    padding: 120px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 30px 100px;
     color: var(--apple-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+    text-align: left;
 }
 .services-hero h1 {
     font-size: 48px;
@@ -26,6 +32,7 @@
 .hero-subtitle {
     font-size: 24px;
     color: #86868b;
+    max-width: 720px;
 }
 
 .services-grid {
@@ -196,7 +203,9 @@
 
 @media (max-width: 768px) {
     .services-hero {
-        padding: 60px 20px;
+        padding: 80px 20px 60px;
+        align-items: center;
+        text-align: center;
     }
 
     .services-hero h1 {
