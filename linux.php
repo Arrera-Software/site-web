@@ -19,9 +19,9 @@ if (!file_exists($envFile)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assitant</title>
+    <title>Arrera Linux</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/assistant.css">
+    <link rel="stylesheet" href="css/linux.css">
     <link rel="icon" href="img/arrera-linux.webp">
 </head>
 <body>
@@ -40,6 +40,9 @@ if (!file_exists($envFile)) {
     require_once $configFile;
 
     ?>
+    <main>
+        <img src="img/baniere2026-linux.webp" alt="Logo Linux" class="logo-linux">
+    </main>
     <?php include 'header-footer/footer.php'; ?>
 </body>
 </html>
