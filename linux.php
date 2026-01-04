@@ -52,6 +52,8 @@ if (!file_exists($envFile)) {
                 <p>Le deuxieme script est un script qui permet de parametrer vos linux (Base redhat)</p>
             </div>
         </div>
+
+        <div class="ligne"></div>
         
     </main>
     <?php include 'header-footer/footer.php'; ?>
