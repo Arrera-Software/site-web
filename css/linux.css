@@ -33,3 +33,47 @@
     background-color: rgba(255, 255, 255, 0.2);
     margin: 0 auto;
 }
+
+.scripts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.presentation-script {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    color: black;
+    text-align: left;
+}
+
+.presentation-script h1,
+.presentation-script h2,
+.presentation-script p {
+    text-align: left;
+    color: black;
+}
+
+.presentation-script h2 {
+    margin-top: 20px;
+}
+
+.view_depos {
+    display: inline-block;
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.view_depos:hover {
+    background-color: #0052a3;
+}

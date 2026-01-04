@@ -54,6 +54,28 @@ if (!file_exists($envFile)) {
         </div>
 
         <div class="ligne"></div>
+
+        <section class="scripts">
+
+            <div class="presentation-script">
+                <h1></h1>
+                <h2>Description : </h2><p></p>
+                <div class ="system-compatibility"></div>
+                <a href="" class="view_depos">Voir le depots</a>
+            </div>
+
+            <!--
+            <div class="presentation-script">
+                <h1></h1>
+                <h2>Description : </h2><p></p>
+                <div class ="system-compatibility"></div>
+                <a href="" class="view_depos">Voir le depots</a>
+            </div>
+            -->
+
+
+
+        </section>
         
     </main>
     <?php include 'header-footer/footer.php'; ?>
