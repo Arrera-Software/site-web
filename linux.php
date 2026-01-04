@@ -56,7 +56,6 @@ if (!file_exists($envFile)) {
         <div class="ligne"></div>
 
         <section class="scripts">
-
             <div class="presentation-script">
                 <h1>Arrera Update</h1>
                 <h2>Description : </h2><p>Script qui permet de mettre a jour votre distribution Linux au complet. Ce qui veux dire mise a jour systeme et flatpack</p>
@@ -74,18 +73,47 @@ if (!file_exists($envFile)) {
                 </div>
                 <a href="" class="view_depos">Voir le depots</a>
             </div>
+            
+            <div class="presentation-script">
+                <h1>Arrera Configurator Redhat Base</h1>
+                <h2>Description : </h2><p>Script qui permet de faire tout la configuartion de votre systeme Redhat, fedora ou centos. Ce qui vous permet de cree des template pour deployer des systeme en une seul commande</p>
+                <div class ="system-compatibility">
+                    <h3>Distributions compatibles :</h3>
+                    <div class="distro-logos">
+                        <div class="distro-logo logo-fedora" title="Fedora"></div>
+                        <div class="distro-logo logo-redhat" title="Red Hat"></div>
+                        <div class="distro-logo logo-centos" title="CentOS"></div>
+                    </div>
+                </div>
+                <a href="" class="view_depos">Voir le depots</a>
+            </div>
+    
+            <div class="presentation-script">
+                <h1>Arrera Configurator Debian Base</h1>
+                <h2>Description : </h2><p>Script qui permet de faire tout la configuartion de votre systeme Redhat, fedora ou centos. Ce qui vous permet de cree des template pour deployer des systeme en une seul commande</p>
+                <div class ="system-compatibility">
+                    <h3>Distributions compatibles :</h3>
+                    <div class="distro-logos">
+                        <div class="distro-logo logo-mint" title="Linux Mint"></div>
+                        <div class="distro-logo logo-ubuntu" title="Ubuntu"></div>
+                        <div class="distro-logo logo-popos" title="Pop!_OS"></div>
+                    </div>
+                </div>
+                <a href="" class="view_depos">Voir le depots</a>
+            </div>
+            
 
             <!--
             <div class="presentation-script">
                 <h1></h1>
                 <h2>Description : </h2><p></p>
-                <div class ="system-compatibility"></div>
+                <div class ="system-compatibility">
+                    <h3>Distributions compatibles :</h3>
+                    <div class="distro-logos"></div>
+                </div>
                 <a href="" class="view_depos">Voir le depots</a>
             </div>
             -->
-
-
-
         </section>
         
     </main>
