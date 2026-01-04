@@ -77,3 +77,61 @@
 .view_depos:hover {
     background-color: #0052a3;
 }
+
+.system-compatibility {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.system-compatibility h3 {
+    margin-bottom: 15px;
+    color: black;
+}
+
+.distro-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.distro-logo {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.distro-logo:hover {
+    transform: scale(1.1);
+}
+
+.logo-fedora {
+    background-image: url('https://fedoraproject.org/favicon.ico');
+}
+
+.logo-redhat {
+    background-image: url('https://www.redhat.com/favicon.ico');
+}
+
+.logo-centos {
+    background-image: url('https://www.centos.org/assets/icons/favicon.svg');
+}
+
+.logo-debian {
+    background-image: url('https://www.debian.org/logos/openlogo-nd.svg');
+}
+
+.logo-mint {
+    background-image: url('https://linuxmint.com/favicon.ico');
+}
+
+.logo-ubuntu {
+    background-image: url('https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png');
+}
+
+.logo-popos {
+    background-image: url('https://avatars.githubusercontent.com/u/33131755?s=200&v=4');
+}
