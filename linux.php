@@ -58,9 +58,20 @@ if (!file_exists($envFile)) {
         <section class="scripts">
 
             <div class="presentation-script">
-                <h1></h1>
-                <h2>Description : </h2><p></p>
-                <div class ="system-compatibility"></div>
+                <h1>Arrera Update</h1>
+                <h2>Description : </h2><p>Script qui permet de mettre a jour votre distribution Linux au complet. Ce qui veux dire mise a jour systeme et flatpack</p>
+                <div class="system-compatibility">
+                    <h3>Distributions compatibles :</h3>
+                    <div class="distro-logos">
+                        <div class="distro-logo logo-fedora" title="Fedora"></div>
+                        <div class="distro-logo logo-redhat" title="Red Hat"></div>
+                        <div class="distro-logo logo-centos" title="CentOS"></div>
+                        <div class="distro-logo logo-debian" title="Debian"></div>
+                        <div class="distro-logo logo-mint" title="Linux Mint"></div>
+                        <div class="distro-logo logo-ubuntu" title="Ubuntu"></div>
+                        <div class="distro-logo logo-popos" title="Pop!_OS"></div>
+                    </div>
+                </div>
                 <a href="" class="view_depos">Voir le depots</a>
             </div>
 
