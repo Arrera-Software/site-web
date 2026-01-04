@@ -41,7 +41,18 @@ if (!file_exists($envFile)) {
 
     ?>
     <main>
-        <img src="img/baniere2026-linux.webp" alt="Logo Linux" class="logo-linux">
+        <div class="presentation-section">
+            <img src="img/baniere2026-linux.webp" alt="Logo Linux" class="banner-linux">
+            <div class="presentation-text">
+                <h1>Arrera Linux</h1>
+                <h3>Quesque est Arrera Linux ?</h3>
+                <p>Arrera Linux est un esemble de script bash qui est a voir comme un boite a outil pour installer des packet et gerer votre distribution linux installer</p>
+                <h3>Quelle sont les script d'Arrera Linux ?</h3>
+                <p>Le script que propose Arrera Linux pour le moment est un script d'update de votre systeme et au flatpack nommer Arrera Update (Fonctionne sur base debian et base redhat).</p>
+                <p>Le deuxieme script est un script qui permet de parametrer vos linux (Base redhat)</p>
+            </div>
+        </div>
+        
     </main>
     <?php include 'header-footer/footer.php'; ?>
 </body>
