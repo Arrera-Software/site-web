@@ -139,3 +139,41 @@
 .logo-alpine {
     background-image: url('https://alpinelinux.org/alpine-logo.ico');
 }
+
+.configuration-writting {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.configuration-writting > h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.presentation-config {
+    background-color: #c5c5c5;
+    border-radius: 15px;
+    padding: 30px;
+    color: black;
+    text-align: left;
+}
+
+.presentation-config h1,
+.presentation-config h2,
+.presentation-config p {
+    text-align: left;
+    color: black;
+}
+
+.presentation-config h2 {
+    margin-top: 20px;
+}

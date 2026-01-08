@@ -127,6 +127,44 @@ if (!file_exists($envFile)) {
             </div>
             -->
         </section>
+
+        <div class="ligne"></div>
+
+        <section class="configuration-writting">
+            <h1>Configuration disponible pour Arrera Configurator</h1>
+            
+            <div class="config-grid">
+                <div class="presentation-config">
+                    <h1>Configuration Redhat Compile :</h1>
+                    <p><h2>Description :</h2> Configuration qui permet de preparer un systeme Redhat, Fedora ou Centos pour compiler des application ou des kernel. Cette configuration installe tout les packet necessaire pour compiler dans de bonne condition.</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-redhat" title="Red Hat"></div>
+                            <div class="distro-logo logo-centos" title="CentOS"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <!--
+                <div class="presentation-config">
+                    <h1></h1>
+                    <p><h2>Description :</h2> </p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+                -->
+
+            </div>
+        </section>
         
     </main>
     <?php include 'header-footer/footer.php'; ?>
