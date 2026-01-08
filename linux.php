@@ -90,7 +90,7 @@ if (!file_exists($envFile)) {
     
             <div class="presentation-script">
                 <h1>Arrera Configurator Debian Base</h1>
-                <h2>Description : </h2><p>Script qui permet de faire tout la configuartion de votre systeme Redhat, fedora ou centos. Ce qui vous permet de cree des template pour deployer des systeme en une seul commande</p>
+                <h2>Description : </h2><p>Script qui permet de faire tout la configuartion de votre systeme Debian, Linux Mint, Ubuntu ou Pop!_OS. Ce qui vous permet de cree des template pour deployer des systeme en une seul commande</p>
                 <div class ="system-compatibility">
                     <h3>Distributions compatibles :</h3>
                     <div class="distro-logos">
@@ -101,8 +101,20 @@ if (!file_exists($envFile)) {
                 </div>
                 <a href="" class="view_depos">Voir le depots</a>
             </div>
-            
 
+            <div class="presentation-script">
+                <h1>Arrera Configurator Alpine Base</h1>
+                <h2>Description : </h2><p>Script qui permet de faire tout la configuartion de votre systeme Alpine Linux. Ce qui vous permet de cree des template pour deployer des systeme en une seul commande</p>
+                <div class ="system-compatibility">
+                    <h3>Distributions compatibles :</h3>
+                    <div class="distro-logos">
+                        <div class="distro-logo logo-alpine" title="Alpine Linux"></div>
+                    </div>
+                </div>
+                <a href="" class="view_depos">Voir le depots</a>
+            </div>
+
+        
             <!--
             <div class="presentation-script">
                 <h1></h1>
