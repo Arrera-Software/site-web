@@ -135,8 +135,106 @@ if (!file_exists($envFile)) {
             
             <div class="config-grid">
                 <div class="presentation-config">
-                    <h1>Configuration Redhat Compile :</h1>
-                    <p><h2>Description :</h2> Configuration qui permet de preparer un systeme Redhat, Fedora ou Centos pour compiler des application ou des kernel. Cette configuration installe tout les packet necessaire pour compiler dans de bonne condition.</p>
+                    <h1>Configuration Redhat Compile</h1>
+                    <p><h2>Description :</h2>Configuration concu pour cree un machine sur Redhat 10 pour faire la compilation des application d'Arrera Software (Compilation de logiciel Python et C++/QT)</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-redhat" title="Red Hat"></div>
+                            <div class="distro-logo logo-centos" title="CentOS"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration Debian Compile</h1>
+                    <p><h2>Description :</h2>Configuration concu pour cree un machine sur LMDE 4 pour faire la compilation des application d'Arrera Software (Compilation de logiciel Python et C++/QT)</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-debian" title="Debian"></div>
+                            <div class="distro-logo logo-mint" title="Linux Mint"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration Webserveur Debian</h1>
+                    <p><h2>Description :</h2>Configuration concu pour cree un machine faisant tourner un serveur LAMP sous Debian et deriver</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-debian" title="Debian"></div>
+                            <div class="distro-logo logo-mint" title="Linux Mint"></div>
+                            <div class="distro-logo logo-ubuntu" title="Ubuntu"></div>
+                            <div class="distro-logo logo-popos" title="Pop!_OS"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration Webserveur Redhat</h1>
+                    <p><h2>Description :</h2>Configuration concu pour cree un machine faisant tourner un serveur LAMP sous Redhat et CentOS</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-redhat" title="Red Hat"></div>
+                            <div class="distro-logo logo-centos" title="CentOS"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration serveur ELK Redhat</h1>
+                    <p><h2>Description :</h2>Configuration de l'installation d'un serveur ELK complet sur Redhat et CentOS avec la configuration de la surveillance du serveur Apache2</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-redhat" title="Red Hat"></div>
+                            <div class="distro-logo logo-centos" title="CentOS"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration serveur ELK Debian</h1>
+                    <p><h2>Description :</h2>Configuration de l'installation d'un serveur ELK complet sur Debian 13 (Pas tester sur les deriver) avec la configuration de la surveillance du serveur Apache2</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-debian" title="Debian"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration serveur docker sur Alpine</h1>
+                    <p><h2>Description :</h2>Configuration pour cree un serveur Docker léger et sécurisé sur Alpine Linux. Avec la connection SSH avec VSCODE fonctionnelle</p>
+                    <div class ="system-compatibility">
+                        <h3>Distributions compatibles :</h3>
+                        <div class="distro-logos">
+                            <div class="distro-logo logo-alpine" title="Alpine Linux"></div>
+                        </div>
+                        <a href="" class="view_depos">Telecharger la configuration</a>
+                        <a href="" class="view_depos">Voir les packet installer</a>
+                    </div>
+                </div>
+
+                <div class="presentation-config">
+                    <h1>Configuration serveur Docker Redhat</h1>
+                    <p><h2>Description :</h2>Configuration de l'installation d'un serveur Docker complet sur Redhat et CentOS</p>
                     <div class ="system-compatibility">
                         <h3>Distributions compatibles :</h3>
                         <div class="distro-logos">
