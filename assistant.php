@@ -79,6 +79,43 @@
                 </div>
             </div>
         </section>
+
+        <section class="components-section">
+            <h2>Composant des assistants</h2>
+            <p class="section-subtitle">Brique logicielle des assistants Arrera Software</p>
+            
+            <div class="components-grid">
+                <!-- Composant 1 -->
+                <div class="component-card">
+                    <h3>Arrera Neuron Network</h3>
+                    <p>Base centrale des 3 assistants Arrera Software.Qui permet au assistant d'avoir tout c'est fonctionnalités.</p>
+                </div>
+
+                <!-- Composant 2 -->
+                <div class="component-card">
+                    <h3>Arrera Gazelle</h3>
+                    <p>Interface des parametres utiliser dans les assistants. Il existe 2 version une pour Arrera SIX et une pour Arrera RYLEY et Arrera Copilote.</p>
+                </div>
+
+                <!-- Composant 3 -->
+                <div class="component-card">
+                    <h3>Arrera Lynx</h3>
+                    <p>Arrera Lynx est l'interface qui se lance au premier démarrage des assistants. Elle permet de configurer au mieux vos assistants</p>
+                </div>
+
+                 <!-- Composant 4 -->
+                <div class="component-card">
+                    <h3>Integration de model d'IA local</h3>
+                    <p>Depuis leurs version I2026 (Arrera Neuron Network version 3) les assistant d'Arrera Software on la possibiliter d'utiliser des model d'inteligence Artificielle tournant en local. les model utiliser sont Gemma, Mistral et LLAMA</p>
+                </div>
+
+                <div class="component-card">
+                    <h3>Communication avec Arrera</h3>
+                    <p>Grace un websocket depuis les version I2025. Les assistant comunique et inversement avec l'application Arrera ce qui permet au assistant d'utiliser les fonctionnalités de l'application et inversement.</p>
+                </div>
+
+            </div>
+        </section>
     </main>
 
 
