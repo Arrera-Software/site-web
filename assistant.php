@@ -94,13 +94,18 @@
                 <!-- Composant 2 -->
                 <div class="component-card">
                     <h3>Arrera Gazelle</h3>
-                    <p>Interface des parametres utiliser dans les assistants. Il existe 2 version une pour Arrera SIX et une pour Arrera RYLEY et Arrera Copilote.</p>
+                    <p>Interface des parametres utiliser dans les assistants.</p>
                 </div>
 
                 <!-- Composant 3 -->
                 <div class="component-card">
                     <h3>Arrera Lynx</h3>
                     <p>Arrera Lynx est l'interface qui se lance au premier démarrage des assistants. Elle permet de configurer au mieux vos assistants</p>
+                </div>
+
+                <div class="component-card">
+                    <h3>Arrera TK</h3>
+                    <p>Librairy de creation d'interface graphique en python baser sur customtkinter (Base sur Tkinter).Cette librairie permet de cree des interface graphique python avec un style Material 3 Expresive</p>
                 </div>
 
                  <!-- Composant 4 -->
