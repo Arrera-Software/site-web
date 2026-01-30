@@ -46,6 +46,7 @@
                 </div>
                 <div class="service-links">
                     <a href="" class="learn-more">Découvrir</a>
+                    <a href="" class="learn-more">Documentation</a>
                     <a href="<?php echo getLink($pdo,'download-six'); ?>" class="download-link">Télécharger</a>
                 </div>
             </div>
@@ -60,6 +61,7 @@
                 </div>
                 <div class="service-links">
                     <a href="" class="learn-more">Découvrir</a>
+                    <a href="" class="learn-more">Documentation</a>
                     <a href="<?php echo getLink($pdo,'download-ryley'); ?>" class="download-link">Télécharger</a>
                 </div>
             </div>
@@ -75,6 +77,7 @@
                 </div>
                 <div class="service-links">
                     <a href="" class="learn-more">Découvrir</a>
+                    <a href="" class="learn-more">Documentation</a>
                     <a href="<?php echo getLink($pdo,'download-copilote'); ?>" class="download-link">Télécharger</a>
                 </div>
             </div>
