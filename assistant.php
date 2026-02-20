@@ -45,7 +45,7 @@
                     <p>Arrera SIX est le premier assistant créé par Arrera. Il a pour but de lancer des tâches sur votre ordinateur à l’aide de commandes vocales.</p>
                 </div>
                 <div class="service-links">
-                    <a href="" class="learn-more">Découvrir</a>
+                    <a href="discoverSix" class="learn-more">Découvrir</a>
                     <a href="docSix" class="learn-more">Documentation</a>
                     <a href="<?php echo getLink($pdo,'download-six'); ?>" class="download-link">Télécharger</a>
                 </div>
@@ -60,7 +60,7 @@
                     <p>Arrera Ryley est le deuxième assistant d’Arrera. Il a pour but de lancer des tâches, comme SIX, et de vous aider dans votre projet de développement grâce à la fonctionnalité CODEHELP. Contrôle uniquement par texte.</p>
                 </div>
                 <div class="service-links">
-                    <a href="" class="learn-more">Découvrir</a>
+                    <a href="discoverRyley" class="learn-more">Découvrir</a>
                     <a href="docRyley" class="learn-more">Documentation</a>
                     <a href="<?php echo getLink($pdo,'download-ryley'); ?>" class="download-link">Télécharger</a>
                 </div>
@@ -76,7 +76,7 @@
                     <p>Arrera COPILOTE est le dernier assistant d’Arrera. Il propose une interface regroupant les deux assistants d’Arrera avec toutes leurs fonctionnalités. De plus, il offre deux modes de contrôle : vocal et texte.</p>
                 </div>
                 <div class="service-links">
-                    <a href="" class="learn-more">Découvrir</a>
+                    <a href="discoverCopilote" class="learn-more">Découvrir</a>
                     <a href="docCopilote" class="learn-more">Documentation</a>
                     <a href="<?php echo getLink($pdo,'download-copilote'); ?>" class="download-link">Télécharger</a>
                 </div>
