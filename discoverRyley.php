@@ -55,7 +55,7 @@
 
     <div class = "detail-container-btn">
         <a href="assistant" class="btn">Page assistant</a>
-        <a href="" class="btn">Lien du code source</a>
+        <a href="https://github.com/Arrera-Software/Ryley" class="btn">Lien du code source</a>
     </div>
 
     </section>

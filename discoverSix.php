@@ -56,7 +56,7 @@ Et Six aura un thème de couleur bleu/bleu clair.</p>
 
     <div class = "detail-container-btn">
         <a href="assistant" class="btn">Page assistant</a>
-        <a href="" class="btn">Lien du code source</a>
+        <a href="https://github.com/Arrera-Software/Six" class="btn">Lien du code source</a>
     </div>
 
     </section>
