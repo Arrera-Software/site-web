@@ -1,6 +1,7 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.9",
-        "ext-mysqli": "8.0"
+        "phpmailer/phpmailer": "*",
+        "ext-mysqli": "*",
+        "league/commonmark": "^2.8"
     }
 }
