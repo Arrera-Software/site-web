@@ -50,7 +50,7 @@
             <a href="assistant" class="mobile-link">Assistant</a>
             <a href="interface" class="mobile-link">Interface</a>
             <a href="hub" class="mobile-link">Hub</a>
-            <a href="linux" class="mobile-link">Arrera Linux</a>
+            <!--<a href="linux" class="mobile-link">Arrera Linux</a>-->
             <a href="articles" class="mobile-link">Articles</a>
             <a href="contact" class="mobile-link">Contact</a>
             <a href="a-propos" class="mobile-link">À propos</a>
