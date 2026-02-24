@@ -249,7 +249,7 @@ blockquote {
 }
 
 /* Images */
-img {
+.markdown-content img {
     max-width: 100%;
     border-radius: 14px;
     display: block;
