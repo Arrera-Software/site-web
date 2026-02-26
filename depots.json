@@ -1,6 +1,22 @@
 {
   "arrera-interface": {
-    "version" : "I2025-2.50-LTS",
+    "version" : "I2026-1.00",
+    "linkWin" : "",
+    "linkLinux" : "",
+    "linkMac":"",
+    "namezipwin" : "",
+    "nameziplinux" : "",
+    "namefolderWin" : "",
+    "namefolderLinux" : "",
+    "nameexelinux": "Arrera-Interface",
+    "nameexewin": "Arrera-Interface.exe",
+    "iconLinux": "",
+    "iconWin": "",
+    "listFileUser": [],
+    "img" : ""},
+
+    "arrera-interface-lts": {
+    "version" : "I2025-2.50.1-LTS",
     "linkWin" : "https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-2.50-LTS/arrera-interface-windows-x86.zip",
     "linkLinux" : "https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-2.50-LTS/arrera-interface-linux-x86.zip",
     "linkMac":"https://github.com/Arrera-Software/Arrera-Interface/releases/download/I2025-2.50-LTS/arrera-interface.dmg",
@@ -13,7 +29,7 @@
     "iconLinux": "icon.png",
     "iconWin": "icon.ico",
     "listFileUser": [],
-    "img" : "https://raw.githubusercontent.com/Arrera-Software/Arrera-Interface/refs/heads/main/img/i2025-icon.png"},
+    "img" : "https://raw.githubusercontent.com/Arrera-Software/Arrera-Interface/refs/heads/lts/img/i2025-icon.png"},
 
   "ryley": {
     "version" : "I2025-2.05",
