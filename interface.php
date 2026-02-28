@@ -44,8 +44,7 @@
         <section class="image-section">
             <img src="img/I2026-Icon.webp" alt="Arrera Interface I2025" class="img">
         </section>
-        <a href = "<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="download-interface">Code-source</a>
-        <!--<a href = "<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="download-interface">Télécharger</a>-->
+        <a href = "<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="download-interface">Télécharger</a>
     </div>
 
     <div id="i2025" class="container-g">
