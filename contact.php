@@ -73,10 +73,7 @@ if (!file_exists($envFile)) {
                 </div>
 
                 <div class="form-group">
-                    <img src="scripts/generate_captcha.php" alt="CAPTCHA" id="captchaImage">
-                    <button type="button" onclick="refreshCaptcha()" class="refresh-captcha">Rafraîchir</button>
-                    <input type="text" id="captcha" name="captcha" required>
-                    <label for="captcha">Entrez le code ci-dessus</label>
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADIj-8xVKinXIoCw"></div>
                 </div>
 
                 <button type="submit" class="submit-btn">Envoyer</button>
