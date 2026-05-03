@@ -24,6 +24,7 @@ if (!file_exists($envFile)) {
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="icon" href="img/logo-arrera.webp">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -68,13 +69,15 @@ if (!file_exists($envFile)) {
                 </div>
 
                 <div class="form-group">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADIj-8xVKinXIoCw"></div>
+                </div>
+
+                <div class="form-group">
                     <textarea id="message" name="message" required><?php echo isset($_SESSION['form_data']['message']) ? htmlspecialchars($_SESSION['form_data']['message']) : ''; ?></textarea>
                     <label for="message">Message</label>
                 </div>
 
-                <div class="form-group">
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADIj-8xVKinXIoCw"></div>
-                </div>
+                
 
                 <button type="submit" class="submit-btn">Envoyer</button>
             </form>
