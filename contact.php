@@ -77,8 +77,6 @@ if (!file_exists($envFile)) {
                     <label for="message">Message</label>
                 </div>
 
-                
-
                 <button type="submit" class="submit-btn">Envoyer</button>
             </form>
         </div>
