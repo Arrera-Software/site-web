@@ -31,7 +31,7 @@
     <div class="container-g">
         <div class="text-section">
             <h1>Arrera Hub</h1>
-            <p>Magasin d'applications d'Arrera qui permet d'installer, de mettre à jour et de désinstaller toutes les applications Arrera.</p>
+            <p></p>
         </div>
         <section class="image-section">
             <img src="img/arrera-tiger.webp" alt="Arrera Interface I2024" class="img">
