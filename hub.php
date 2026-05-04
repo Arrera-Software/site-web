@@ -57,13 +57,13 @@
                 </div>
 
                 <div class="tech-card">
-                    <img src="" alt="" class="tech-icon">
+                    <img src="img/architecture.webp" alt="Architecture icone" class="tech-icon">
                     <h3>Architecture Robuste</h3>
                     <p>L'alliance du C++ et de Qt crée une fondation solide comme le roc. Votre centre de contrôle est conçu pour tourner en arrière-plan avec une stabilité et une fiabilité à toute épreuve.</p>
                 </div>
 
                 <div class="tech-card">
-                    <img src="" alt="" class="tech-icon">
+                    <img src="img/update.webp" alt="Update icone" class="tech-icon">
                     <h3>Mises à jour Intelligentes</h3>
                     <p>Chaque application intègre un module de communication dédié. Arrera Hub détecte ainsi instantanément les nouvelles versions et vous indique avec précision quand une mise à jour est requise pour maintenir votre écosystème au top.</p>
                 </div>
