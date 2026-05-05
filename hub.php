@@ -80,12 +80,12 @@
             
             <div class="showcase-images">
                 <div class="showcase-item">
-                    <img src="" alt="Interface d'accueil Arrera Hub" class="showcase-img">
+                    <img src="img/hub_gui_normal.webp" alt="Interface d'accueil Arrera Hub" class="showcase-img">
                     <p class="showcase-caption">Tableau de bord central</p>
                 </div>
                 
                 <div class="showcase-item">
-                    <img src="" alt="Interface de mise à jour Arrera Hub" class="showcase-img">
+                    <img src="img/hub_gui_maj.webp" alt="Interface de mise à jour Arrera Hub" class="showcase-img">
                     <p class="showcase-caption">Centre des mises à jour</p>
                 </div>
             </div>
