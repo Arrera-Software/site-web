@@ -1,0 +1,213 @@
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 85vh; /* Prend 85% de l'écran en hauteur pour aérer */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    animation: fadeIn 1s ease-out; /* Petite animation d'apparition douce */
+}
+
+/* --- L'icône Arrera Hub --- */
+.app-icon {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 24px;
+    object-fit: cover;
+}
+
+/* --- Textes --- */
+.app-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.015em; /* Resserre un peu les lettres à la Apple */
+    margin: 0 0 12px 0;
+}
+
+.app-description {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #86868b; /* Gris secondaire d'Apple */
+    margin: 0 0 32px 0;
+    max-width: 600px;
+}
+
+/* --- Bouton d'action --- */
+.btn-primary {
+    background-color: #0071e3; /* Bleu classique Apple */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 980px; /* Forme de pilule */
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+    transform: scale(1.02); /* Petit effet de grossissement au survol */
+}
+
+/* --- Animation --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Section Technologie --- */
+.tech-section {
+    padding: 5px 5px;
+}
+
+.tech-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.015em;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: #86868b; /* Gris secondaire d'Apple */
+    margin: 0 auto 60px auto;
+    max-width: 650px;
+    line-height: 1.4;
+}
+
+
+/* --- Grille et Cartes --- */
+.tech-grid {
+    display: grid;
+    /* On force 2 colonnes de taille égale pour avoir un rendu 2x2 parfait */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    /* Optionnel : on peut limiter un peu la largeur de la grille pour que les cartes ne soient pas trop étirées */
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+.tech-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 24px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px); /* Petit soulèvement au survol */
+    background-color: #a7a7a8;
+}
+
+.tech-icon {
+    width: 64px; /* Parfait si tu utilises des images/svg au lieu d'emojis */
+    height: 64px;
+    margin: 0 auto 20px auto; /* On s'assure que l'icône est bien centrée dans la carte */
+    display: block;
+}
+
+.tech-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 12px 0;
+}
+
+.tech-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #373737;
+    margin: 0;
+}
+
+/* --- Responsive : Pour les téléphones et petites tablettes --- */
+@media (max-width: 768px) {
+    .tech-grid {
+        /* Sur petit écran, on passe à 1 seule colonne pour que ce soit lisible */
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* --- Section Interface (Captures d'écran) --- */
+.showcase-section {
+    padding: 80px 20px;
+    /* On garde le même fond que la page pour une transition fluide */
+}
+
+.showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.showcase-header {
+    margin-bottom: 60px;
+}
+
+/* --- Conteneur des images --- */
+.showcase-images {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* Espace entre les deux images */
+}
+
+.showcase-item {
+    flex: 1;
+    max-width: 550px; /* Empêche les images de devenir gigantesques sur les très grands écrans */
+}
+
+/* --- Style des captures d'écran --- */
+.showcase-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Bords arrondis style macOS/iOS */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Ombre pour détacher l'image du fond */
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Légère bordure claire pour faire ressortir l'image sur fond sombre */
+    transition: transform 0.3s ease;
+}
+
+.showcase-img:hover {
+    transform: scale(1.02); /* Petit effet de zoom au survol */
+}
+
+/* --- Légende sous les images --- */
+.showcase-caption {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #a1a1a6;
+    margin: 0;
+}
+
+/* --- Responsive : Pour les téléphones et petites tablettes --- */
+@media (max-width: 900px) {
+    .showcase-images {
+        flex-direction: column; /* Empile les images l'une sur l'autre */
+        align-items: center;
+        gap: 60px; /* Un peu plus d'espace vertical entre les deux */
+    }
+    
+    .showcase-item {
+        width: 100%;
+    }
+}
