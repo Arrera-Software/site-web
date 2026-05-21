@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: arrera_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html:Z
+    restart: always
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
