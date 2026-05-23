@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color: #000000;
+    background-color: #1d1d1f;
     color: #f5f5f7;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -24,6 +24,8 @@ body {
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 .pill-btn {
@@ -46,52 +48,71 @@ body {
     color: #000000;
 }
 
-/* --- Hero Section I2026 --- */
-.hero-section {
+/* --- Container Box Styles --- */
+.container-box {
     display: flex;
-    justify-content: center;
+    background: rgba(28, 28, 30, 0.7); /* Dark modern box */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+    padding: 40px 50px;
+    padding-bottom: 90px;
+    border-radius: 24px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1200px;
     align-items: center;
-    text-align: center;
-    min-height: 90vh;
-    padding: 100px 20px 80px;
-    background: radial-gradient(circle at top, #1c1c1e 0%, #000000 70%);
-}
-
-.hero-content {
-    max-width: 900px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    scroll-margin-top: 160px;
     animation: fadeInUp 1s ease-out;
 }
 
+.container-box.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-section {
+    flex: 1;
+    padding: 0 40px;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .app-title {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin: 0 0 20px 0;
     background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .app-description {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #86868b;
     line-height: 1.5;
-    margin: 0 auto 40px;
-    max-width: 700px;
+    margin: 0 0 20px 0;
 }
 
 .hero-img {
     width: 100%;
-    max-width: 450px;
-    border-radius: 30px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    margin-bottom: 40px;
+    max-width: 350px;
     transition: transform 0.4s ease;
-    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .hero-img:hover {
-    transform: scale(1.02);
+    transform: translateY(-10px);
 }
 
 /* --- Buttons --- */
@@ -131,91 +152,17 @@ body {
     color: #000000;
 }
 
-/* --- Showcase Sections (I2025, I2024) --- */
-.showcase-section {
-    padding: 120px 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.light-bg {
-    background-color: #f5f5f7;
-    color: #1d1d1f;
-}
-
-.dark-bg {
-    background-color: #000000;
-    color: #f5f5f7;
-}
-
-.showcase-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    gap: 80px;
-}
-
-.showcase-content.reverse {
-    flex-direction: row-reverse;
-}
-
-.text-block {
-    flex: 1;
-}
-
-.section-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    margin: 0 0 20px 0;
-}
-
-.light-bg .section-title {
-    color: #1d1d1f;
-}
-
-.dark-bg .section-title {
-    color: #ffffff;
-}
-
-.section-subtitle {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin: 0 0 40px 0;
-}
-
-.light-bg .section-subtitle {
-    color: #86868b;
-}
-
-.dark-bg .section-subtitle {
-    color: #a1a1a6;
-}
-
-.showcase-img-large {
-    flex: 1;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease;
-}
-
-.dark-bg .showcase-img-large {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.showcase-img-large:hover {
-    transform: translateY(-10px);
+.btn-download-absolute {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 /* --- Modules Section --- */
 .modules-section {
-    padding: 120px 20px;
-    background-color: #111111;
+    padding: 80px 20px;
 }
 
 .modules-container {
@@ -227,6 +174,24 @@ body {
     text-align: center;
 }
 
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: #86868b;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+}
+
 .modules-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -235,9 +200,9 @@ body {
 }
 
 .module-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
+    background: rgba(28, 28, 30, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
     padding: 50px 40px;
     text-align: center;
     backdrop-filter: blur(20px);
@@ -251,7 +216,7 @@ body {
     background: rgba(255, 255, 255, 0.06);
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .module-icon {
@@ -314,23 +279,23 @@ body {
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
-    .showcase-content, .showcase-content.reverse {
+    .container-box, .container-box.reverse {
         flex-direction: column;
         text-align: center;
-        gap: 50px;
+        padding: 40px 20px 80px;
+        gap: 30px;
     }
     
+    .text-section {
+        padding: 0;
+    }
+
     .app-title {
-        font-size: 3.5rem;
-    }
-    
-    .section-title {
         font-size: 2.8rem;
     }
-    
-    .showcase-img-large {
-        margin-top: 20px;
-        max-width: 400px;
+
+    .hero-img {
+        max-width: 350px;
     }
 }
 
@@ -339,37 +304,28 @@ body {
         font-size: 2.5rem;
     }
     
-    .hero-section {
-        padding: 180px 20px 40px;
-    }
-    
-    /* --- CORRECTION DU MENU MOBILE --- */
     .pill-nav {
         gap: 8px;
         padding: 12px 16px;
-        top: 90px; /* Aligné avec la hauteur de ton header (comme sur desktop) */
-        
-        /* Passage en défilement horizontal plutôt qu'à la ligne */
+        top: 90px;
         justify-content: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Scroll fluide sur iOS */
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* Masquer la barre de défilement pour un design plus propre */
     .pill-nav::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none;
     }
     .pill-nav {
-        -ms-overflow-style: none; /* IE et Edge */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
-    /* ---------------------------------- */
     
     .pill-btn {
-        padding: 8px 16px; /* Légèrement élargi pour un meilleur touché */
+        padding: 8px 16px;
         font-size: 0.8rem;
-        white-space: nowrap; /* Empêche le texte des boutons de se couper */
+        white-space: nowrap;
     }
     
     .section-title {

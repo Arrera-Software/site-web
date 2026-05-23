@@ -35,36 +35,37 @@
         <a href="#modules" class="pill-btn">MODULES</a>
     </nav>
 
-    <section id="i2026" class="hero-section">
-        <div class="hero-content">
+    <div id="i2026" class="container-box">
+        <div class="text-section">
             <h1 class="app-title">Arrera I2026</h1>
             <p class="app-description">Reprise de la base de l'interface I2025, avec un changement de design pour quelque chose de plus moderne, tout en gardant la même ergonomie que la version I2025. Refonte complète de la partie communication avec les assistants pour plus de fonctionnalités et de stabilité.</p>
+        </div>
+        <div class="image-section">
             <img src="img/I2026-Icon.webp" alt="Arrera I2026" class="hero-img">
-            <br>
-            <a href="<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="btn-primary">Télécharger</a>
         </div>
-    </section>
+        <a href="<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="btn-primary btn-download-absolute">Télécharger</a>
+    </div>
 
-    <section id="i2025" class="showcase-section light-bg">
-        <div class="showcase-content">
-            <div class="text-block">
-                <h2 class="section-title">Arrera I2025</h2>
-                <p class="section-subtitle">Refonte totale de l'interface par rapport à la version I2024. Inspiration du design de l'interface de NexStep OS. Début de la communication avec les assistants d'Arrera.</p>
-                <a href="<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="btn-secondary">Télécharger</a>
-            </div>
-            <img src="img/i2025-icon.webp" alt="Arrera I2025" class="showcase-img-large">
+    <div id="i2025" class="container-box reverse">
+        <div class="text-section">
+            <h2 class="app-title">Arrera I2025</h2>
+            <p class="app-description">Refonte totale de l'interface par rapport à la version I2024. Inspiration du design de l'interface de NexStep OS. Début de la communication avec les assistants d'Arrera.</p>
         </div>
-    </section>
+        <div class="image-section">
+            <img src="img/i2025-icon.webp" alt="Arrera I2025" class="hero-img">
+        </div>
+        <a href="<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="btn-secondary btn-download-absolute">Télécharger</a>
+    </div>
 
-    <section id="i2024" class="showcase-section dark-bg">
-        <div class="showcase-content reverse">
-            <div class="text-block">
-                <h2 class="section-title">Arrera I2024</h2>
-                <p class="section-subtitle">Première version de l'interface Arrera. (Plus maintenue)</p>
-            </div>
-            <img src="img/ArreraI2024.webp" alt="Arrera I2024" class="showcase-img-large">
+    <div id="i2024" class="container-box">
+        <div class="text-section">
+            <h2 class="app-title">Arrera I2024</h2>
+            <p class="app-description">Première version de l'interface Arrera. (Plus maintenue)</p>
         </div>
-    </section>
+        <div class="image-section">
+            <img src="img/ArreraI2024.webp" alt="Arrera I2024" class="hero-img">
+        </div>
+    </div>
 
     <section id="modules" class="modules-section">
         <div class="modules-container">
