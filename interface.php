@@ -83,11 +83,11 @@
                 </div>
                 
                 <div class="module-card">
-                    <img src="img/copy-writing.png" alt="Arrera Markdown" class="module-icon">
+                    <img src="img/arrera_md.webp" alt="Arrera Markdown" class="module-icon">
                     <h3>Arrera Markdown</h3>
                     <p>L'éditeur de Markdown de l'écosystème Arrera qui est boosté avec des modules d'intelligence artificielle grâce à la connexion avec les assistants d'Arrera</p>
                     <div class="module-links">
-                        <a href="#" class="btn-module-secondary">Bientôt disponible</a>
+                        <a href="#" class="btn-module">Découvrir</a>
                     </div>
                 </div>
             </div>
