@@ -130,7 +130,6 @@ body {
 
 .btn-primary:hover {
     background-color: #005bb5;
-    transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
 }
 
@@ -158,6 +157,53 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+}
+
+.btn-download-absolute:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* --- Colored Cards --- */
+.i2026-card {
+    background: linear-gradient(135deg, #0022cc 0%, #000055 100%);
+    border: 1px solid rgba(255, 140, 0, 0.3); /* Accent orange du logo */
+}
+.i2026-card .app-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+.i2026-card .btn-primary {
+    background-color: #ffffff;
+    color: #0022cc;
+}
+.i2026-card .btn-primary:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.i2025-card {
+    /* Fond très sombre avec un subtil rappel des couleurs du cube NeXT */
+    background: linear-gradient(135deg, #111a11 0%, #1a1111 100%);
+    border: 1px solid rgba(0, 255, 0, 0.15); /* Accent vert */
+}
+.i2025-card .app-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+.i2025-card .btn-secondary {
+    background-color: #ffffff;
+    color: #1a1111;
+}
+.i2025-card .btn-secondary:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.i2024-card {
+    /* Fond bleu profond correspondant au logo A bleu */
+    background: linear-gradient(135deg, #0055ff 0%, #0022aa 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.i2024-card .app-description {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* --- Modules Section --- */

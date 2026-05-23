@@ -35,7 +35,7 @@
         <a href="#modules" class="pill-btn">MODULES</a>
     </nav>
 
-    <div id="i2026" class="container-box">
+    <div id="i2026" class="container-box i2026-card">
         <div class="text-section">
             <h1 class="app-title">Arrera I2026</h1>
             <p class="app-description">Reprise de la base de l'interface I2025, avec un changement de design pour quelque chose de plus moderne, tout en gardant la même ergonomie que la version I2025. Refonte complète de la partie communication avec les assistants pour plus de fonctionnalités et de stabilité.</p>
@@ -46,7 +46,7 @@
         <a href="<?php echo getLink($pdo,'download-interface-i2026'); ?>" class="btn-primary btn-download-absolute">Télécharger</a>
     </div>
 
-    <div id="i2025" class="container-box reverse">
+    <div id="i2025" class="container-box reverse i2025-card">
         <div class="text-section">
             <h2 class="app-title">Arrera I2025</h2>
             <p class="app-description">Refonte totale de l'interface par rapport à la version I2024. Inspiration du design de l'interface de NexStep OS. Début de la communication avec les assistants d'Arrera.</p>
@@ -57,7 +57,7 @@
         <a href="<?php echo getLink($pdo,'download-interface-i2025'); ?>" class="btn-secondary btn-download-absolute">Télécharger</a>
     </div>
 
-    <div id="i2024" class="container-box">
+    <div id="i2024" class="container-box i2024-card">
         <div class="text-section">
             <h2 class="app-title">Arrera I2024</h2>
             <p class="app-description">Première version de l'interface Arrera. (Plus maintenue)</p>
