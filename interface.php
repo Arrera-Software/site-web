@@ -87,7 +87,7 @@
                     <h3>Arrera Markdown</h3>
                     <p>L'éditeur de Markdown de l'écosystème Arrera qui est boosté avec des modules d'intelligence artificielle grâce à la connexion avec les assistants d'Arrera</p>
                     <div class="module-links">
-                        <a href="#" class="btn-module">Découvrir</a>
+                        <a href="discoverArreraMd.php" class="btn-module">Découvrir</a>
                     </div>
                 </div>
             </div>
