@@ -24,22 +24,20 @@
 
     <h1>Édition simplifiée</h1>
     <div class ="detail-container">
-        <!-- Remplacement temporaire par le logo -->
-        <img src="img/arrera_md.webp" alt="edition_md" class="img-detail">
-        <p>Arrera Markdown propose une interface claire et minimaliste conçue pour vous concentrer sur l'essentiel : l'écriture. Avec la prévisualisation en temps réel et des raccourcis efficaces, la rédaction de documents n'a jamais été aussi fluide.</p>
+        <img src="img/editeur_md.webp" alt="edition_md" class="img-detail">
+        <p>Arrera Markdown s'appuie sur le format de fichier Markdown qui permet d'avoir un texte formaté et des tailles de fichier assez réduites. Son éditeur permet de visualiser le texte formaté en temps réel, sans avoir à quitter l'éditeur</p>
     </div>
 
-    <h1>Boosté par l'IA</h1>
+    <h1>Interface QT stylisée</h1>
     <div class ="detail-container">
-        <p>Grâce à son intégration native avec les assistants de l'écosystème Arrera, l'éditeur Markdown vous aide dans votre rédaction. Demandez à l'IA de reformuler des paragraphes, de corriger des fautes ou de générer des structures de documents.</p>
-        <!-- Remplacement temporaire par une image IA existante -->
-        <img src="img/ia_ryley.webp" alt="ia_integration" class="img-detail">
+        <p>Arrera Markdown est le premier logiciel de l'écosystème Arrera à utiliser une librairie de style QT nommée Arrera QT qui permet de donner un style Material 3 expressive à l'interface pour donner le même style entre les applications et les assistants qui eux utilisent Arrera TK</p>
+        <img src="img/interface_md.webp" alt="Interface" class="img-detail">
     </div>
 
-    <h1>Intégration à l'écosystème Arrera</h1>
+    <h1>Connexion avec les assistants Arrera</h1>
     <div class ="detail-container">
-        <img src="img/arrera_hub.webp" alt="ecosystem_arrera" class="img-detail">
-        <p>Arrera Markdown fonctionne main dans la main avec Arrera Hub et les autres outils de la suite. Gérez vos notes, liez vos documents et centralisez vos informations facilement au sein de l'écosystème.</p>
+        <img src="img/assistant_markdown.webp" alt="assistant_markdown" class="img-detail">
+        <p>Arrera Markdown est aussi équipé d'une connexion avec les trois assistants d'Arrera, ce qui permet d'avoir des options IA dans l'éditeur</p>
     </div>
 
     <div class = "detail-container-btn">
