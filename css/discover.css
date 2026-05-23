@@ -63,19 +63,23 @@ h1, h2 {
 }
 
 .detail-container-btn .btn {
-    padding: 8px 12px;
+    padding: 14px 32px;
     border: none;
-    border-radius: 4px;
+    border-radius: 980px;
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
-    background: #0019f8;
-    color: #fff;
+    background-color: #0071e3;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .detail-container-btn .btn:hover {
-    background: #273cfd;
-    color: #fff;
+    background-color: #005bb5;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
 }
 
 @media (max-width: 700px) {
