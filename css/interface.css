@@ -1,74 +1,83 @@
-/* --- Navigation Pill Style --- */
-.pill-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    background: var(--apple-black, #000);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: sticky;
-    top: 70px; /* Augmenté pour ne pas chevaucher le header desktop */
-    z-index: 998;
-    margin-top: 80px; /* Plus d'espace sous le header fixe */
-    margin-bottom: 40px;
-    overflow-x: auto;
-    white-space: nowrap;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+/* --- Global Styles for Interface --- */
+html {
+    scroll-behavior: smooth;
 }
 
-.pill-nav::-webkit-scrollbar {
-    display: none; /* Cache la scrollbar sur Chrome/Safari */
+body {
+    background-color: #1d1d1f;
+    color: #f5f5f7;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+} 
+
+.pill-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(28, 28, 30, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 60px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 .pill-btn {
     text-decoration: none;
-    color: var(--apple-white, #fff);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
+    color: #a1a1a6;
+    padding: 10px 20px;
+    border-radius: 980px;
+    font-size: 0.9rem;
+    font-weight: 600;
     transition: all 0.3s ease;
-    background-color: transparent;
 }
 
 .pill-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .pill-btn.active {
-    background-color: var(--apple-white, #fff);
-    color: var(--apple-black, #000);
+    background: #ffffff;
+    color: #000000;
 }
 
-/* --- Container Global Style --- */
-.container-g {
+/* --- Container Box Styles --- */
+.container-box {
     display: flex;
-    background-color: #fbfbfd;
-    color: #1d1d1f;
-    padding: 60px;
-    padding-bottom: 100px; /* Espace pour le bouton absolu en Desktop */
-    border-radius: 18px;
-    margin: 40px auto;
+    background: rgba(28, 28, 30, 0.7); /* Dark modern box */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+    padding: 40px 50px;
+    padding-bottom: 90px;
+    border-radius: 24px;
+    margin: 30px auto;
     width: 90%;
     max-width: 1200px;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    scroll-margin-top: 160px; /* Ajusté pour le scroll vers l'ancre */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    scroll-margin-top: 160px;
+    animation: fadeInUp 1s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.container-box.reverse {
+    flex-direction: row-reverse;
 }
 
 .text-section {
     flex: 1;
-    padding-right: 40px;
+    padding: 0 40px;
 }
 
 .image-section {
@@ -78,194 +87,298 @@
     align-items: center;
 }
 
-h1 {
-    font-size: 48px;
-    font-weight: 600;
-    margin-bottom: 10px;
+.app-title {
+    font-size: 3.5rem;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.text-section p {
-    font-size: 21px;
+.app-description {
+    font-size: 1.3rem;
     color: #86868b;
-    line-height: 1.4;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
 }
 
-.img {
+.hero-img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 12px;
+    max-width: 350px;
+    transition: transform 0.4s ease;
 }
 
-/* --- Boutons --- */
-.download-interface {
+.hero-img:hover {
+    transform: translateY(-10px);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    display: inline-block;
     background-color: #0071e3;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    padding: 12px 30px;
-    font-size: 17px;
-    font-weight: 500;
+    padding: 14px 32px;
     border-radius: 980px;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: all 0.3s ease;
-    
-    /* Positionnement Desktop */
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+    box-shadow: 0 10px 20px rgba(0, 113, 227, 0.3);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #1d1d1f;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 980px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-download-absolute {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    display: inline-block;
+    z-index: 10;
+}
+
+.btn-download-absolute:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* --- Colored Cards --- */
+.i2026-card {
+    background: linear-gradient(135deg, #0022cc 0%, #000055 100%);
+    border: 1px solid rgba(255, 140, 0, 0.3); /* Accent orange du logo */
+}
+.i2026-card .app-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+.i2026-card .btn-primary {
+    background-color: #ffffff;
+    color: #0022cc;
+}
+.i2026-card .btn-primary:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.i2025-card {
+    /* Fond très sombre avec un subtil rappel des couleurs du cube NeXT */
+    background: linear-gradient(135deg, #111a11 0%, #1a1111 100%);
+    border: 1px solid rgba(0, 255, 0, 0.15); /* Accent vert */
+}
+.i2025-card .app-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+.i2025-card .btn-secondary {
+    background-color: #ffffff;
+    color: #1a1111;
+}
+.i2025-card .btn-secondary:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.i2024-card {
+    /* Fond bleu profond correspondant au logo A bleu */
+    background: linear-gradient(135deg, #0055ff 0%, #0022aa 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.i2024-card .app-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Modules Section --- */
+.modules-section {
+    padding: 80px 20px;
+}
+
+.modules-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.center {
     text-align: center;
 }
 
-.download-interface:hover {
-    background-color: #0077ed;
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* --- Services & Modules --- */
-.services-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.section-subtitle {
+    font-size: 1.3rem;
+    color: #86868b;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    padding: 60px 20px;
-    margin: 20px auto 0;
-    max-width: 1400px;
-    scroll-margin-top: 150px;
+    margin-top: 60px;
 }
 
-.service-card {
-    background-color: white;
-    border-radius: 18px;
-    padding: 40px;
-    width: 320px;
+.module-card {
+    background: rgba(28, 28, 30, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 50px 40px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
-    animation: cardAppear 0.6s ease-out forwards;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.service-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+.module-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@keyframes cardAppear {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.service-icon img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
+.module-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 30px;
     object-fit: contain;
 }
 
-.service-card h2 {
-    color: #1d1d1f;
-    margin-bottom: 10px;
-    font-size: 24px;
+.module-card h3 {
+    font-size: 1.8rem;
     font-weight: 600;
+    margin: 0 0 16px 0;
+    color: #ffffff;
+    letter-spacing: -0.01em;
 }
 
-.service-card p {
-    color: #86868b;
-    margin-bottom: 30px;
-    font-size: 16px;
+.module-card p {
+    font-size: 1.1rem;
+    color: #a1a1a6;
     line-height: 1.5;
+    margin: 0 0 40px 0;
+    flex-grow: 1;
 }
 
-.service-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-}
-
-.download-link,
-.learn-more {
-    padding: 12px 24px;
-    border-radius: 980px;
+.btn-module {
+    background-color: #ffffff;
+    color: #000000;
     text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 980px;
+    font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    font-size: 14px;
-    font-weight: 500;
-    display: inline-block;
-    text-align: center;
 }
 
-.download-link {
-    background-color: #0071e3;
-    color: white;
+.btn-module:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
 }
 
-.download-link:hover {
-    background-color: #0077ed;
-}
-
-.learn-more {
-    color: #0071e3;
+.btn-module-secondary {
     background-color: transparent;
+    color: #86868b;
+    border: 1px solid #86868b;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 980px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.learn-more:hover {
-    text-decoration: underline;
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- RESPONSIVE MOBILE (Correction des problèmes) --- */
-@media (max-width: 768px) {
-    .pill-nav {
-        top: 60px; /* Ajusté pour coller sous le header mobile sans chevaucher */
-        margin-top: 80px;
-        justify-content: flex-start;
-        padding-left: 20px;
-    }
-
-    .container-g {
-        flex-direction: column; /* Aligne verticalement */
-        padding: 40px 20px;
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .container-box, .container-box.reverse {
+        flex-direction: column;
         text-align: center;
-        width: 95%;
-        margin-top: 20px;
-    }
-
-    .image-section {
-        order: 1; /* L'image en premier */
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .text-section {
-        order: 2; /* Le texte en second */
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
-
-    .text-section h1 {
-        font-size: 32px;
-    }
-
-    .text-section p {
-        font-size: 18px;
-    }
-
-    .download-interface {
-        order: 3; /* Le bouton en dernier */
-        position: static; /* Retire l'absolute pour qu'il suive le flux du texte */
-        transform: none;
-        margin: 10px auto;
-        width: 80%; /* Plus large pour faciliter le clic au doigt */
-    }
-
-    .img {
-        max-width: 280px;
+        padding: 40px 20px 80px;
+        gap: 30px;
     }
     
-    .service-card {
-        width: 100%; /* Cartes de modules en pleine largeur sur mobile */
+    .text-section {
+        padding: 0;
+    }
+
+    .app-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-img {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .app-title {
+        font-size: 2.5rem;
+    }
+    
+    .pill-nav {
+        gap: 8px;
+        padding: 12px 16px;
+        top: 90px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pill-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .pill-nav {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .pill-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .module-card {
+        padding: 40px 20px;
     }
 }
