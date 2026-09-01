@@ -69,15 +69,19 @@ if (!file_exists($envFile)) {
                 </div>
 
                 <div class="form-group">
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADIj-8xVKinXIoCw"></div>
-                </div>
-
-                <div class="form-group">
                     <textarea id="message" name="message" required><?php echo isset($_SESSION['form_data']['message']) ? htmlspecialchars($_SESSION['form_data']['message']) : ''; ?></textarea>
                     <label for="message">Message</label>
                 </div>
 
+                <div class="form-group captcha-group">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADIj-8xVKinXIoCw" data-theme="light"></div>
+                </div>
+
                 <button type="submit" class="submit-btn">Envoyer</button>
+
+                <p class="rgpd-notice">
+                    Vos données sont uniquement utilisées pour traiter votre demande et ne sont jamais transmises à des tiers. Conformément au RGPD, contactez <a href="mailto:contact@arrera-software.fr">contact@arrera-software.fr</a> pour exercer vos droits.
+                </p>
             </form>
         </div>
     </main>

@@ -75,11 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requ�
     // --- LE CAPTCHA EST VALIDE, ON CONTINUE ---
 
     // 3. Validation et assainissement des entrées
-    $nom = htmlspecialchars(trim(filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING)));
-    $prenom = htmlspecialchars(trim(filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING)));
-    $email = filter_var(trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)), FILTER_VALIDATE_EMAIL);
-    $sujet = htmlspecialchars(trim(filter_input(INPUT_POST, 'sujet', FILTER_SANITIZE_STRING)));
-    $message = htmlspecialchars(trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING)));
+    $nom = htmlspecialchars(trim($_POST['nom'] ?? ''));
+    $prenom = htmlspecialchars(trim($_POST['prenom'] ?? ''));
+    $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
+    $sujet = htmlspecialchars(trim($_POST['sujet'] ?? ''));
+    $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
     // Vérification de l'email
     if ($email === false) { 
