@@ -1,4 +1,4 @@
-FROM docker.io/library/php:8.5-apache
+FROM docker.io/library/php:8.5.12-apache
 
 RUN docker-php-ext-install pdo pdo_mysql
 
