@@ -4,11 +4,17 @@
 $envFile = __DIR__ . '/.env'; // Définir le chemin du fichier .env
 if (file_exists($envFile)) { // Vérifier si le fichier .env existe
     $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); // Lire les lignes du fichier .env
-    foreach ($lines as $line) { // Parcourir chaque ligne
+    foreach ($lines as $line) {
+        $line = trim($line);
         // Vérifier si la ligne contient un '=' et n'est pas un commentaire
-        if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+        if (!empty($line) && strpos($line, '=') !== false && strpos($line, '#') !== 0) {
             list($key, $value) = explode('=', $line, 2); // Séparer la clé et la valeur
-            $_ENV[trim($key)] = trim($value); // Stocker la valeur dans la variable d'environnement
+            $value = trim($value);
+            if ((str_starts_with($value, '"') && str_ends_with($value, '"')) ||
+                (str_starts_with($value, "'") && str_ends_with($value, "'"))) {
+                $value = substr($value, 1, -1);
+            }
+            $_ENV[trim($key)] = $value; // Stocker la valeur dans la variable d'environnement
         }
     }
 }

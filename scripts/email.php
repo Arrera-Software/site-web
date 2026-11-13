@@ -22,9 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requ�
     if (file_exists($envFile)) {
         $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($lines as $line) {
-            if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+            $line = trim($line);
+            if (!empty($line) && strpos($line, '=') !== false && strpos($line, '#') !== 0) {
                 list($key, $value) = explode('=', $line, 2);
-                $_ENV[trim($key)] = trim($value);
+                $value = trim($value);
+                if ((str_starts_with($value, '"') && str_ends_with($value, '"')) ||
+                    (str_starts_with($value, "'") && str_ends_with($value, "'"))) {
+                    $value = substr($value, 1, -1);
+                }
+                $_ENV[trim($key)] = $value;
             }
         }
     }
@@ -93,17 +99,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Vérifier si la méthode de requ�
 
     try {
         $mail->isSMTP();
-        $mail->Host = 'ssl0.ovh.net';
+        $mail->Host = $_ENV['SMTP_HOST'] ?? 'ssl0.ovh.net';
         $mail->SMTPAuth = true;
-        $mail->Username = 'contact@arrera-software.fr';
-        $mail->Password = $_ENV['SMTP_PASSWORD']; 
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+        $mail->Username = $_ENV['SMTP_USER'] ?? 'contact@arrera-software.fr';
+        $mail->Password = $_ENV['SMTP_PASSWORD'] ?? ''; 
+        $mail->SMTPSecure = $_ENV['SMTP_SECURE'] ?? 'ssl';
+        $mail->Port = (int)($_ENV['SMTP_PORT'] ?? 465);
         
         // Configuration de base
         $mail->CharSet = 'UTF-8';
-        $mail->setFrom('contact@arrera-software.fr', 'Contact Arrera Software');
-        $mail->addAddress('contact@arrera-software.fr');
+        $fromName = $_ENV['SMTP_FROM_NAME'] ?? 'Contact Arrera Software';
+        $fromEmail = $_ENV['SMTP_FROM_EMAIL'] ?? $mail->Username;
+        $toEmail = $_ENV['SMTP_TO_EMAIL'] ?? $mail->Username;
+
+        $mail->setFrom($fromEmail, $fromName);
+        $mail->addAddress($toEmail);
         $mail->addReplyTo($email, "$nom $prenom");
 
         // Contenu de l'email
